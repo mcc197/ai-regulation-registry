@@ -28,3 +28,85 @@ review_notes: >
   2026-09-27. Publication on 10 Jul 2025, the three chapters and their links to
   Arts 53 and 55, and the 1 Aug 2025 adequacy confirmation by the Commission and the
   AI Board all match.
+requirements:
+  - id: transparency
+    ref: Transparency chapter, Commitment 1
+    title: Model documentation
+    kind: recommendation
+    category: technical-documentation
+    roles: [gpai-provider]
+    risks: [opacity]
+    summary: >
+      Keep up-to-date model documentation (the chapter supplies a Model Documentation
+      Form) and keep earlier versions for ten years. Publish a contact point, give
+      downstream providers the information meant for them plus further details on
+      request within 14 days, and give the AI Office what it asks for. Protect the
+      quality and integrity of the records. Open-source models are exempt unless they
+      have systemic risk.
+    controls:
+      - Model Documentation Form kept per model version under version control
+      - Public contact point for documentation requests
+      - Tracked handling of downstream and AI Office requests
+    evidence: [technical-documentation]
+    assurance: [regulator-review]
+    source: https://ec.europa.eu/newsroom/dae/redirection/document/118120
+    last_verified: 2026-09-27
+    verified_against: official
+    note: >
+      Corrected on 2026-09-27: downstream providers get the information meant for them
+      without having to ask; only the AI Office route and additional details are on
+      request. Added the 10-year retention, 14-day response and open-source exemption.
+  - id: copyright
+    ref: Copyright chapter, Commitment 1
+    title: Copyright policy and opt-out compliance
+    kind: recommendation
+    category: copyright
+    roles: [gpai-provider]
+    risks: [ip-copyright]
+    summary: >
+      Adopt and maintain a copyright policy, crawl only lawfully accessible content,
+      respect machine-readable opt-outs such as robots.txt, reduce infringing outputs,
+      and provide a point of contact for rightsholder complaints.
+    controls:
+      - Single copyright policy document with named owners
+      - Crawlers that honour robots.txt and other recognised opt-out protocols, and skip paywalls and listed piracy sites
+      - Output safeguards and acceptable use terms against infringing outputs
+      - Electronic complaint channel for rightsholders
+    evidence: [copyright-policy]
+    assurance: [self-assessment]
+    source: https://ec.europa.eu/newsroom/dae/redirection/document/118115
+    last_verified: 2026-09-27
+    verified_against: official
+  - id: safety-security
+    ref: Safety and security chapter, Commitments 1-10
+    title: Safety and security framework for systemic-risk models
+    kind: recommendation
+    category: risk-management
+    roles: [gpai-systemic-provider]
+    risks: [catastrophic, security]
+    summary: >
+      Adopt a safety and security framework, identify and analyse systemic risks, run
+      model evaluations, set risk acceptance criteria, apply safety and security
+      mitigations, report serious incidents, and document all of this in model reports
+      for the AI Office.
+    controls:
+      - Framework notified to the AI Office and kept up to date
+      - Model evaluations, including by qualified independent external evaluators
+      - Clear allocation of systemic-risk responsibilities and resources
+      - Serious incident reporting on fixed clocks (2, 5, 10 or 15 days by severity)
+    evidence: [transparency-report, test-reports, incident-report, risk-register]
+    assurance: [regulator-notification, third-party-assessment, public-disclosure]
+    assurance_note: >
+      Independent external evaluators assess the model unless it is similarly safe or
+      safer than an existing one, or none can be found after a reasonable search.
+      External security reviews are needed where internal expertise is not enough.
+      Summaries of the framework and model reports are published where needed to assess
+      or mitigate systemic risk.
+    maps_to: [us-ca-sb53#frontier-framework]
+    source: https://ec.europa.eu/newsroom/dae/redirection/document/118119
+    last_verified: 2026-09-27
+    verified_against: official
+    note: >
+      Corrected on 2026-09-27: added public-disclosure (Measure 10.2) and spelled out when
+      independent external evaluation applies (Appendix 3.5) and when external security
+      review applies (Appendix 4.5).

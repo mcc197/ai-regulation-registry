@@ -38,3 +38,182 @@ review_notes: >
   developers, not only large ones. Watch federal preemption: an 11 Dec 2025 executive
   order directs the Attorney General to challenge state AI laws, but as of late Aug
   2026 no statute or court had preempted or paused SB 53 (secondary sources).
+requirements:
+  - id: frontier-framework
+    ref: Bus. & Prof. Code s. 22757.12(a)-(b)
+    title: Frontier AI framework
+    kind: obligation
+    category: risk-management
+    roles: [large-frontier-developer]
+    risks: [catastrophic, security]
+    summary: >
+      Write, implement, comply with and publish on the developer's website a frontier
+      AI framework explaining how the developer incorporates standards and best
+      practice, sets and assesses catastrophic-risk capability thresholds, applies
+      and reviews mitigations before deployment or extensive internal use, uses third
+      parties to assess risks and mitigations, secures unreleased model weights,
+      responds to critical safety incidents, governs all of this internally and
+      manages catastrophic risk from internal use. Review it at least once a year.
+    controls:
+      - Framework reviewed at least annually; a materially modified framework and its justification published within 30 days
+      - Capability thresholds for catastrophic risk, with mitigations tied to assessment results
+      - Deployment and extensive-internal-use decisions that review assessments and mitigations
+      - Cybersecurity controls protecting unreleased model weights
+      - Internal governance to make sure the framework is followed
+    evidence: [transparency-report, policy]
+    assurance: [public-disclosure]
+    assurance_note: >
+      Published on the developer's website. The framework must describe how third
+      parties are used to assess catastrophic risk, but the Act does not itself require
+      an independent audit. Failing to comply with one's own framework can draw a civil
+      penalty of up to $1 million per violation, recoverable only by the Attorney General.
+    applies_from: 2026-01-01
+    maps_to: [eu-gpai-code-of-practice#safety-security]
+    source: https://leginfo.legislature.ca.gov/faces/codes_displaySection.xhtml?lawCode=BPC&sectionNum=22757.12
+    last_verified: 2026-09-27
+    verified_against: official
+    note: >
+      Corrected on 2026-09-27: added the elements the draft left out (tiered capability
+      thresholds, review of mitigations before deployment or extensive internal use,
+      and internal-use risk), and noted that publishing within 30 days applies to
+      material modifications and needs a justification. Removed third-party-assessment
+      from assurance, since the framework only has to describe how third parties are
+      used, not undergo an independent assessment.
+  - id: transparency-report
+    ref: Bus. & Prof. Code s. 22757.12(c)
+    title: Transparency report before deployment
+    kind: obligation
+    category: transparency
+    roles: [frontier-developer, large-frontier-developer]
+    risks: [opacity, catastrophic]
+    summary: >
+      Before or when deploying a new or substantially modified frontier model, publish
+      a transparency report on the developer's website (website, contact route,
+      release date, languages, output modalities, intended uses and general
+      restrictions on use). Large frontier developers add summaries of their
+      catastrophic-risk assessments, the results, the involvement of any third-party
+      evaluators and other steps taken under their framework. A system card or model
+      card containing the same information counts.
+    controls:
+      - Release checklist that blocks deployment until the transparency report is published
+      - Documented redactions, with the reason described and unredacted copies kept for five years
+    evidence: [transparency-report]
+    assurance: [public-disclosure]
+    applies_from: 2026-01-01
+    source: https://leginfo.legislature.ca.gov/faces/codes_displaySection.xhtml?lawCode=BPC&sectionNum=22757.12
+    last_verified: 2026-09-27
+    verified_against: official
+  - id: internal-use-summaries
+    ref: Bus. & Prof. Code s. 22757.12(d)
+    title: Summaries of catastrophic-risk assessments from internal use
+    kind: obligation
+    category: risk-management
+    roles: [large-frontier-developer]
+    risks: [catastrophic]
+    summary: >
+      Send the Office of Emergency Services a summary of any assessment of catastrophic
+      risk arising from internal use of the developer's frontier models, every three
+      months or on another reasonable schedule that the developer sets and
+      communicates to the Office in writing.
+    controls:
+      - Quarterly (or declared) schedule for confidential submissions to the Office of Emergency Services
+    evidence: [risk-register]
+    assurance: [regulator-notification]
+    assurance_note: Submitted confidentially to the Office of Emergency Services; exempt from the California Public Records Act.
+    applies_from: 2026-01-01
+    source: https://leginfo.legislature.ca.gov/faces/codes_displaySection.xhtml?lawCode=BPC&sectionNum=22757.12
+    last_verified: 2026-09-27
+    verified_against: official
+    note: >
+      Corrected on 2026-09-27: the alternative schedule is set by the developer and
+      communicated in writing to the Office, not agreed with it; category changed from
+      incident-reporting to risk-management and evidence from incident-report to
+      risk-register, since these are risk-assessment summaries rather than incident reports.
+  - id: incident-reporting
+    ref: Bus. & Prof. Code s. 22757.13(c)
+    title: Critical safety incident reporting
+    kind: obligation
+    category: incident-reporting
+    roles: [frontier-developer, large-frontier-developer]
+    risks: [catastrophic, health-safety]
+    summary: >
+      Report any critical safety incident involving the developer's frontier models to
+      the Office of Emergency Services within 15 days of discovering it. If an incident
+      poses an imminent risk of death or serious physical injury, disclose it within 24
+      hours to an appropriate authority, such as a law enforcement or public safety
+      agency with jurisdiction. Amended reports may follow as more is learned.
+    controls:
+      - Incident triage with 24-hour and 15-day reporting clocks
+      - Escalation route to law enforcement or public safety agencies for imminent-harm incidents
+    evidence: [incident-report]
+    assurance: [regulator-notification]
+    assurance_note: >
+      Reports go to the Office of Emergency Services, which must review them. A developer
+      may instead declare that it follows a federal standard that the Office has
+      designated as equivalent.
+    applies_from: 2026-01-01
+    maps_to: [nist-ai-600-1#incident-disclosure]
+    source: https://leginfo.legislature.ca.gov/faces/codes_displaySection.xhtml?lawCode=BPC&sectionNum=22757.13
+    last_verified: 2026-09-27
+    verified_against: official
+  - id: no-misleading-statements
+    ref: Bus. & Prof. Code s. 22757.12(e)
+    title: No materially false or misleading statements about catastrophic risk
+    kind: prohibition
+    category: transparency
+    roles: [frontier-developer, large-frontier-developer]
+    risks: [catastrophic, accountability]
+    summary: >
+      Frontier developers may not make materially false or misleading statements about
+      catastrophic risk from their frontier models or how they manage it. Large frontier
+      developers also may not make such statements about how they implement or comply
+      with their frontier AI framework. Statements made in good faith that were
+      reasonable in the circumstances are excluded.
+    controls:
+      - Review of public safety claims against the underlying assessments before release
+    evidence: [transparency-report]
+    assurance: [none]
+    applies_from: 2026-01-01
+    source: https://leginfo.legislature.ca.gov/faces/codes_displaySection.xhtml?lawCode=BPC&sectionNum=22757.12
+    last_verified: 2026-09-27
+    verified_against: official
+    note: Added on 2026-09-27 from the chaptered text.
+  - id: whistleblowers
+    ref: Lab. Code ss. 1107-1107.1
+    title: Whistleblower protections
+    kind: obligation
+    category: whistleblowing
+    roles: [frontier-developer, large-frontier-developer]
+    risks: [catastrophic, accountability]
+    summary: >
+      Frontier developers may not adopt rules, policies or contracts that stop covered
+      employees (those responsible for assessing, managing or addressing the risk of
+      critical safety incidents) from disclosing, or retaliate against them for
+      disclosing, information they reasonably believe shows a specific and substantial
+      danger to public health or safety from catastrophic risk, or a breach of the Act.
+      Protected recipients are the Attorney General, federal authorities, managers and
+      colleagues with authority to investigate. Developers must tell covered employees
+      of these rights through a workplace notice or an acknowledged annual written
+      notice. Large frontier developers must also run an anonymous internal reporting
+      process, give the reporter monthly status updates, and share disclosures with
+      officers and directors at least quarterly.
+    controls:
+      - Posted or annually acknowledged notice of whistleblower rights for covered employees
+      - Anonymous internal reporting channel with monthly updates to the reporter
+      - Quarterly reporting of disclosures to officers and directors, excluding any who are accused
+    evidence: [policy, training-records]
+    assurance: [none]
+    assurance_note: >
+      Enforced through civil actions by employees, with injunctive relief and attorney's
+      fees; once protected activity is shown to be a contributing factor, the developer
+      bears the burden of proof by clear and convincing evidence.
+    applies_from: 2026-01-01
+    source: https://leginfo.legislature.ca.gov/faces/codes_displaySection.xhtml?lawCode=LAB&sectionNum=1107.1
+    last_verified: 2026-09-27
+    verified_against: official
+    note: >
+      Corrected on 2026-09-27: section reference narrowed to Lab. Code ss. 1107-1107.1
+      (Chapter 5.1, added by s. 4 of the Act); protected disclosures also go to managers
+      and colleagues with authority to investigate, not only to authorities; added the
+      duty to notify covered employees; internal-process updates are monthly and
+      disclosures go to officers and directors quarterly.

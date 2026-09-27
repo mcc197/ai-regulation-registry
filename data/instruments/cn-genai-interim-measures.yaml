@@ -33,3 +33,192 @@ review_notes: >
   agreement; the order is dated 10 Jul 2023, was posted on 13 Jul 2023 and takes
   effect on 15 Aug 2023 (Art. 24). The adoption date was corrected from 10 Jul 2023.
   Summary checked against Arts 2, 4, 7, 12 and 17.
+requirements:
+  - id: art-7
+    ref: Art. 7
+    title: Lawful training data
+    kind: obligation
+    category: data-governance
+    roles: [service-provider]
+    risks: [ip-copyright, privacy, reliability]
+    summary: >
+      Carry out pre-training, optimisation training and other training-data processing
+      lawfully: use data and foundation models from lawful sources, do not infringe
+      intellectual property, get consent or another legal basis for personal
+      information, take effective steps to make training data more truthful, accurate,
+      objective and diverse, and follow cybersecurity, data security and personal
+      information laws.
+    controls:
+      - Provenance and licence records for training data and base models
+      - Legal basis recorded for personal information in training data
+    evidence: [data-documentation]
+    assurance: [regulator-review]
+    assurance_note: >
+      During supervisory inspections, providers must explain the source, scale and type of
+      training data, annotation rules and algorithmic mechanisms (Art. 19).
+    applies_from: 2023-08-15
+    source: https://www.cac.gov.cn/2023-07/13/c_1690898327029107.htm
+    last_verified: 2026-09-27
+    verified_against: official
+    note: >
+      Corrected on 2026-09-27: the lawful-source rule also covers foundation models, not
+      only data.
+  - id: art-8
+    ref: Art. 8
+    title: Data annotation rules
+    kind: obligation
+    category: data-governance
+    roles: [service-provider]
+    risks: [reliability]
+    summary: >
+      Where data is annotated during research and development, set clear, specific and
+      workable annotation rules, assess annotation quality and check accuracy by
+      sampling, and train and supervise annotators.
+    evidence: [data-documentation, training-records]
+    assurance: [self-assessment]
+    applies_from: 2023-08-15
+    source: https://www.cac.gov.cn/2023-07/13/c_1690898327029107.htm
+    last_verified: 2026-09-27
+    verified_against: official
+  - id: art-9
+    ref: Art. 9
+    title: Provider responsibility and service agreements
+    kind: obligation
+    category: governance
+    roles: [service-provider]
+    risks: [accountability, privacy]
+    summary: >
+      Providers bear responsibility as producers of online information content and meet
+      network information security duties; where personal information is involved they
+      are also personal information handlers. They sign service agreements with
+      registered users setting out both sides' rights and obligations.
+    evidence: [policy]
+    assurance: [none]
+    applies_from: 2023-08-15
+    source: https://www.cac.gov.cn/2023-07/13/c_1690898327029107.htm
+    last_verified: 2026-09-27
+    verified_against: official
+  - id: art-10
+    ref: Art. 10
+    title: Intended users and protection of minors
+    kind: obligation
+    category: transparency
+    roles: [service-provider]
+    risks: [child-safety, manipulation]
+    summary: >
+      State and publish the groups of people, occasions and purposes the service is
+      meant for, guide users to understand and use generative AI rationally and
+      lawfully, and take effective measures to stop minors from relying on or becoming
+      addicted to the service.
+    evidence: [user-notice, policy]
+    assurance: [none]
+    applies_from: 2023-08-15
+    source: https://www.cac.gov.cn/2023-07/13/c_1690898327029107.htm
+    last_verified: 2026-09-27
+    verified_against: official
+    note: Added on 2026-09-27 from the CAC text.
+  - id: art-11
+    ref: Art. 11
+    title: Protection of user inputs and personal information requests
+    kind: obligation
+    category: data-governance
+    roles: [service-provider]
+    risks: [privacy]
+    summary: >
+      Protect users' inputs and usage records: collect no unnecessary personal
+      information, do not unlawfully keep inputs and records that can identify a user,
+      and do not unlawfully give them to others. Promptly handle people's requests to
+      access, copy, correct, supplement or delete their personal information.
+    controls:
+      - Retention limits for identifiable prompts and usage logs
+      - Process for personal information access, correction and deletion requests
+    evidence: [policy]
+    assurance: [none]
+    applies_from: 2023-08-15
+    source: https://www.cac.gov.cn/2023-07/13/c_1690898327029107.htm
+    last_verified: 2026-09-27
+    verified_against: official
+    note: Added on 2026-09-27 from the CAC text.
+  - id: art-12
+    ref: Art. 12
+    title: Labelling generated content
+    kind: obligation
+    category: content-labelling
+    roles: [service-provider]
+    risks: [misinformation, manipulation]
+    summary: >
+      Label generated images, video and other content as required by the Deep Synthesis
+      Provisions. The Measures for Labelling AI-Generated Synthetic Content (in force
+      1 Sep 2025) add detailed rules on explicit and implicit labels.
+    evidence: [content-marking]
+    assurance: [regulator-review]
+    applies_from: 2023-08-15
+    maps_to: [eu-ai-act#art-50-providers]
+    source: https://www.cac.gov.cn/2023-07/13/c_1690898327029107.htm
+    last_verified: 2026-09-27
+    verified_against: official
+    note: >
+      The 2025 Labelling Measures were checked against the CAC notice of 14 Mar 2025
+      (https://www.cac.gov.cn/2025-03/14/c_1743654684782215.htm), which sets the
+      1 Sep 2025 start and defines explicit and implicit labels.
+  - id: art-14
+    ref: Art. 14
+    title: Handling illegal content and illegal use
+    kind: obligation
+    category: post-market-monitoring
+    roles: [service-provider]
+    risks: [misinformation, security]
+    summary: >
+      On finding illegal content, promptly stop its generation and transmission, remove
+      it, fix the model through measures such as optimisation training, and report to
+      the competent authorities. On finding users engaged in illegal activity, warn
+      them, restrict functions, or suspend or end the service as the law and the
+      agreement allow, keep records, and report to the authorities.
+    controls:
+      - Content moderation with takedown and model-remediation workflow
+      - User enforcement actions logged and reported
+    evidence: [incident-report, logs]
+    assurance: [regulator-notification]
+    applies_from: 2023-08-15
+    source: https://www.cac.gov.cn/2023-07/13/c_1690898327029107.htm
+    last_verified: 2026-09-27
+    verified_against: official
+    note: >
+      Corrected on 2026-09-27: added the second paragraph on users engaged in illegal
+      activity (warnings, restriction or suspension, records and reporting), and logs
+      as evidence.
+  - id: art-15
+    ref: Art. 15
+    title: Complaints and reports mechanism
+    kind: obligation
+    category: individual-rights
+    roles: [service-provider]
+    risks: [accountability]
+    summary: >
+      Set up a sound complaint and reporting mechanism with a convenient entry point,
+      publish the handling process and response time, and promptly accept and handle
+      complaints and reports from the public and tell them the outcome.
+    evidence: [policy]
+    assurance: [none]
+    applies_from: 2023-08-15
+    source: https://www.cac.gov.cn/2023-07/13/c_1690898327029107.htm
+    last_verified: 2026-09-27
+    verified_against: official
+  - id: art-17
+    ref: Art. 17
+    title: Security assessment and algorithm filing
+    kind: obligation
+    category: registration
+    roles: [service-provider]
+    scope: Services with public-opinion attributes or social mobilisation capacity
+    risks: [misinformation, security]
+    summary: >
+      Carry out a security assessment under national rules and complete algorithm
+      filing, including changes and deregistration, under the Algorithm Recommendation
+      Provisions.
+    evidence: [registration-entry]
+    assurance: [regulator-registration, regulator-review]
+    applies_from: 2023-08-15
+    source: https://www.cac.gov.cn/2023-07/13/c_1690898327029107.htm
+    last_verified: 2026-09-27
+    verified_against: official

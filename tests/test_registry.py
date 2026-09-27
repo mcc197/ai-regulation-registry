@@ -141,3 +141,88 @@ def test_stale_official_lists_secondary_only_checks(capsys, tmp_path):
     cli.main(args + ["--official"])
     listed = {line.split()[0] for line in capsys.readouterr().out.splitlines() if line.strip()}
     assert listed == {"checked-secondary"}
+
+
+# --- requirements -----------------------------------------------------------
+
+from airegs import query  # noqa: E402
+
+
+def req(**over):
+    raw = {"id": "r1", "ref": "Art. 1", "title": "T", "kind": "obligation",
+           "category": "risk-management", "roles": ["provider"], "summary": "S."}
+    raw.update(over)
+    return raw
+
+
+@pytest.mark.parametrize("over, msg", [
+    ({"roles": ["wizard"]}, "unknown roles"),
+    ({"category": "vibes"}, "unknown category"),
+    ({"evidence": ["selfie"]}, "unknown evidence"),
+    ({"assurance": "certification"}, "assurance must be a list"),
+    ({"applies_from": "soon"}, "not a YYYY-MM-DD"),
+    ({"colour": "red"}, "unknown fields"),
+    ({"summary": ""}, "missing summary"),
+])
+def test_requirement_validation(over, msg):
+    with pytest.raises(ValidationError, match=msg):
+        parse(minimal(requirements=[req(**over)]), "x.yaml")
+
+
+def test_duplicate_requirement_ids_rejected():
+    with pytest.raises(ValidationError, match="duplicate id"):
+        parse(minimal(requirements=[req(), req()]), "x.yaml")
+
+
+def test_crosswalk_target_must_exist(tmp_path):
+    raw = minimal(id="a", requirements=[req(maps_to=["b#nope"])])
+    (tmp_path / "a.yaml").write_text(yaml.safe_dump(raw))
+    with pytest.raises(ValidationError, match="does not exist"):
+        load(tmp_path)
+
+
+def test_seed_requirements_load_with_crosswalk(registry):
+    reqs = [r for i in registry.values() for r in i.requirements]
+    assert len(reqs) >= 80
+    links = __import__("airegs.requirements", fromlist=["x"]).crosswalk(registry.values())
+    # Links are stored both ways.
+    assert "eu-ai-act#art-9" in links["iso-iec-42001#cl-6-1-2"]
+
+
+def test_find_filters_combine(registry):
+    insts = list(registry.values())
+    hits = query.find(insts, jurisdiction=["EU"], assurance=["third-party-assessment"], role=["provider"])
+    keys = {r.key for _, r in hits}
+    assert "eu-ai-act#art-43" in keys
+    assert all(i.jurisdiction == "EU" and "provider" in r.roles for i, r in hits)
+
+
+def test_find_on_date_respects_applies_from(registry):
+    insts = list(registry.values())
+    keys = lambda day: {r.key for _, r in query.find(insts, on=D(*day))}
+    assert "eu-ai-act#art-9" not in keys((2026, 9, 27))
+    assert "eu-ai-act#art-9" in keys((2027, 12, 2))
+    assert "us-co-sb24-205#deployer-duties" not in keys((2027, 1, 1))  # superseded
+
+
+def test_find_text_matches_controls(registry):
+    hits = query.find(list(registry.values()), text="weights")
+    assert "us-ca-sb53#frontier-framework" in {r.key for _, r in hits}
+
+
+def test_export_and_explorer(registry, tmp_path, capsys):
+    data = query.export(list(registry.values()), D(2026, 9, 27))
+    assert {"instruments", "requirements", "vocab"} <= set(data)
+    art9 = next(r for r in data["requirements"] if r["key"] == "eu-ai-act#art-9")
+    assert "iso-iec-42001#cl-6-1-2" in art9["links"]
+    out = tmp_path / "explorer.html"
+    cli.main(["explorer", "--out", str(out), "--today", "2026-09-27"])
+    html = out.read_text()
+    assert "/*REGISTRY_DATA*/" not in html and '"eu-ai-act#art-9"' in html
+    assert "</script" not in html.split("const DATA = ", 1)[1].split("\n", 1)[0]
+
+
+def test_obligations_cli(capsys):
+    cli.main(["obligations", "--role", "deployer", "-j", "EU", "--category", "impact-assessment"])
+    out = capsys.readouterr().out
+    assert "eu-ai-act#art-27" in out and "1 requirement(s)" in out

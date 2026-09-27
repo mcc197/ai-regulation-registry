@@ -17,7 +17,23 @@ python -m airegs search 'literacy OR watermark*'         # full-text search
 python -m airegs stale                                   # due for re-verification
 python -m airegs build    # -> build/registry.db (open with sqlite3 or `datasette`)
 python -m airegs watch    # hash watched source pages; exit code 3 if any changed
+
+# Obligations: filter requirements across every law and standard
+python -m airegs obligations --assurance certification --assurance third-party-assessment
+python -m airegs obligations --role deployer -j EU --detail
+python -m airegs obligations --evidence logs --on 2028-01-01
+python -m airegs obligations "red-teaming"
+python -m airegs crosswalk "eu-ai-act#art-9"   # linked ISO, NIST and other requirements
+python -m airegs stale --requirements          # requirements not yet verified
+python -m airegs explorer                      # -> build/explorer.html (the web page)
 ```
+
+## The explorer page
+
+`python -m airegs explorer` writes a self-contained web page with the whole register
+embedded. It has three tabs: **Obligations** (filters and search), **Ask** (Claude
+answers questions from the register, citing requirements) and **Laws & standards**.
+It is published as a claude.ai artifact; rebuild and republish it after data changes.
 
 ## Adding or updating an instrument
 
