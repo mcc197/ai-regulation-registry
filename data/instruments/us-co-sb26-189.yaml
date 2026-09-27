@@ -24,3 +24,7 @@ sources:
   - {url: "https://www.nortonrosefulbright.com/en-us/knowledge/publications/18733d31/colorado-enacts-revised-ai-law", label: Norton Rose Fulbright, kind: secondary}
 last_verified: 2026-09-27
 verified_against: secondary
+review_notes: >
+  Still secondary only. On 2026-09-27 leg.colorado.gov, coleg.gov, colorado.gov and
+  sos.state.co.us were all blocked by the network policy, so no date here has been
+  checked against the General Assembly's bill page.

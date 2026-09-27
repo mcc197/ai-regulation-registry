@@ -21,7 +21,8 @@ sources:
   - {url: "https://nvlpubs.nist.gov/nistpubs/ai/NIST.AI.600-1.pdf", label: NIST AI 600-1 (PDF), kind: official}
   - {url: "https://www.techpolicy.press/unpacking-new-nist-guidance-on-artificial-intelligence/", label: Tech Policy Press, kind: secondary}
 last_verified: 2026-09-27
-verified_against: secondary
+verified_against: official
 review_notes: >
-  Release date checked against secondary sources. The official page could not be
-  opened from the verification environment.
+  Checked on 2026-09-27 against the NIST AI RMF page (released 26 Jul 2024) and the
+  PDF (dated July 2024; DOI 10.6028/NIST.AI.600-1; lists 12 GAI risks). doi.org was
+  blocked by the network policy, so the DOI link itself was not opened.

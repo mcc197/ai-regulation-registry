@@ -31,5 +31,6 @@ python -m airegs watch    # hash watched source pages; exit code 3 if any change
 
 `airegs stale` lists entries not checked in the last 90 days. `airegs stale --official`
 also lists entries checked only against secondary sources (law-firm notes,
-trackers). As of Sept 2026 that is all of them, because the official sites were
-unreachable from the environment used to check them.
+trackers). As of 27 Sept 2026 that is four entries (Korea, the two Colorado laws and
+the CoE Convention), because their official sites were unreachable from the
+environment used to check them.

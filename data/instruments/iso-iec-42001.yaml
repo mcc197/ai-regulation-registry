@@ -18,9 +18,11 @@ sources:
   - {url: "https://webstore.iec.ch/en/publication/90574", label: IEC webstore, kind: official}
   - {url: "https://www.dataguidance.com/news/international-iso-publishes-isoiec-420012023-ai", label: DataGuidance, kind: secondary}
 last_verified: 2026-09-27
-verified_against: secondary
+verified_against: official
 review_notes: >
-  Publication date (18 Dec 2023) checked against secondary sources. The official page
-  could not be opened from the verification environment. Still the only edition as of
-  Sept 2026. The European adoption, EN ISO/IEC 42001:2026, has the same text. ISO/IEC
-  42006 (July 2025, requirements for bodies certifying 42001) could get its own entry.
+  Title, edition 1 and the publication date (18 Dec 2023) checked on 2026-09-27
+  against the IEC webstore, an official co-publisher's catalogue. The iso.org page
+  blocked the verification environment. Still the only edition as of Sept 2026 (the
+  IEC lists only edition 1.0). Not checked against an official source: the European
+  adoption, EN ISO/IEC 42001:2026 (said to have the same text), and ISO/IEC 42006
+  (July 2025, requirements for bodies certifying 42001), which could get its own entry.

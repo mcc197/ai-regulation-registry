@@ -5,27 +5,36 @@ type: legislation
 binding: true
 jurisdiction: US-CA
 issuer: California State Legislature
-official_id: SB 53 (2025)
+official_id: "SB 53 (2025), Chapter 138, Statutes of 2025"
 url: https://leginfo.legislature.ca.gov/faces/billNavClient.xhtml?bill_id=202520260SB53
 topics: [frontier-models, transparency, safety-incidents]
 summary: >
-  Requires large developers of frontier models (trained with more than 10^26
-  operations) to publish a frontier AI framework and transparency reports, report
-  critical safety incidents to the state, and protect whistleblowers. The Attorney
-  General enforces it, with civil penalties of up to $1 million per violation.
+  Applies to developers of frontier models (trained with more than 10^26 integer or
+  floating-point operations). All such developers must publish a transparency report
+  before deploying a new or substantially modified frontier model and report critical
+  safety incidents to the state. Large frontier developers (over $500 million in annual
+  revenue) must also publish a frontier AI framework, add summaries of catastrophic-risk
+  assessments to their transparency reports, and send the state regular summaries of
+  risk assessments of internal use. It protects whistleblowers. The Attorney General can seek civil penalties of up to
+  $1 million per violation from large frontier developers.
 milestones:
-  - {date: 2025-09-29, event: signed}
+  - {date: 2025-09-29, event: signed, scope: "Approved by the Governor; chaptered as Chapter 138, Statutes of 2025"}
   - {date: 2026-01-01, event: applies}
 sources:
   - {url: "https://leginfo.legislature.ca.gov/faces/billNavClient.xhtml?bill_id=202520260SB53", label: California Legislative Information, kind: official, watch: true}
   - {url: "https://www.wilmerhale.com/en/insights/blogs/wilmerhale-privacy-and-cybersecurity-law/20251001-transparency-in-frontier-artificial-intelligence-act-sb-53-california-requires-new-standardized-ai-safety-disclosures", label: WilmerHale, kind: secondary}
   - {url: "https://www.kslaw.com/news-and-insights/new-state-ai-laws-are-effective-on-january-1-2026-but-a-new-executive-order-signals-disruption", label: King & Spalding (Dec 2025 executive order), kind: secondary}
 last_verified: 2026-09-27
-verified_against: secondary
+verified_against: official
 review_notes: >
-  Dates and scope checked against secondary sources. The official page could not be
-  opened from the verification environment. Watch federal preemption: a 11 Dec 2025
-  executive order directs the Attorney General to challenge state AI laws, but as of
-  late Aug 2026 no statute or court had preempted or paused SB 53. The $500M revenue
-  threshold for "large" developers comes from background knowledge and is not yet
-  checked.
+  Checked against the chaptered text and bill history on leginfo on 2026-09-27.
+  Chapter 138, Statutes of 2025, approved and chaptered on 29 Sep 2025. Bus. & Prof.
+  Code s. 22757.11 sets the 10^26 threshold and the $500,000,000 revenue test for a
+  "large frontier developer" (with affiliates, preceding calendar year). s. 22757.15
+  caps penalties at $1,000,000 per violation, recoverable only by the Attorney General.
+  The bill has no operative date for the main chapter, so it takes effect on
+  1 Jan 2026 under Cal. Const. art. IV, s. 8(c) (non-urgency statute). Corrected the
+  summary: transparency reports and incident reporting apply to all frontier
+  developers, not only large ones. Watch federal preemption: an 11 Dec 2025 executive
+  order directs the Attorney General to challenge state AI laws, but as of late Aug
+  2026 no statute or court had preempted or paused SB 53 (secondary sources).

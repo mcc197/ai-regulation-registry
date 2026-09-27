@@ -20,8 +20,10 @@ sources:
   - {url: "https://nvlpubs.nist.gov/nistpubs/ai/nist.ai.100-1.pdf", label: NIST AI 100-1 (PDF), kind: official}
   - {url: "https://www.gibsondunn.com/nist-releases-first-version-of-ai-risk-management-framework/", label: Gibson Dunn, kind: secondary}
 last_verified: 2026-09-27
-verified_against: secondary
+verified_against: official
 review_notes: >
-  Release date checked against secondary sources. The official page could not be
-  opened from the verification environment. No newer version (1.1 or 2.0) was found as
-  of Sept 2026.
+  Checked on 2026-09-27 against the NIST AI RMF page (released 26 Jan 2023) and the
+  PDF (dated January 2023; DOI 10.6028/NIST.AI.100-1; Govern, Map, Measure and Manage).
+  No newer version has been published, but NIST says the AI RMF 1.0 is being revised
+  under the White House AI Action Plan. Watch for a new version. doi.org was blocked by
+  the network policy, so the DOI link itself was not opened.

@@ -127,9 +127,10 @@ def test_verified_against_is_required_with_last_verified():
     assert ok.verified_against == "official"
 
 
-def test_stale_official_lists_secondary_only_checks(capsys):
+def test_stale_official_lists_secondary_only_checks(capsys, registry):
     cli.main(["stale", "--today", "2026-09-27"])
     assert "Everything verified" in capsys.readouterr().out
     cli.main(["stale", "--today", "2026-09-27", "--official"])
-    out = capsys.readouterr().out
-    assert "eu-ai-act" in out and "(secondary)" in out
+    listed = {line.split()[0] for line in capsys.readouterr().out.splitlines() if line.strip()}
+    secondary = {i.id for i in registry.values() if i.verified_against == "secondary"}
+    assert secondary and listed == secondary

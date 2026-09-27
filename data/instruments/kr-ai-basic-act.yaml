@@ -25,6 +25,8 @@ sources:
 last_verified: 2026-09-27
 verified_against: secondary
 review_notes: >
-  Dates checked against secondary sources. The official page could not be opened from
-  the verification environment. Still to do: add a deep link to the statute on
-  law.go.kr, and the date the fines grace period ends.
+  Still secondary only. On 2026-09-27 every official Korean host tried (www.law.go.kr,
+  law.go.kr, open.law.go.kr, elaw.klri.re.kr, moleg.go.kr, msit.go.kr) was blocked by
+  the network policy or dropped the connection. So the dates, the Enforcement Decree
+  number, the law.go.kr deep link and the end of the fines grace period are all still
+  unconfirmed. The homepage link is kept until a deep link can be opened and checked.
