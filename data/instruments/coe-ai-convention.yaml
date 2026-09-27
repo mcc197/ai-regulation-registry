@@ -35,4 +35,9 @@ review_notes: >
   corrected to match it), the EU's signature on 5 Sep 2024 (consistent with the
   opening date), and Council Decision (EU) 2026/1080 of 21 Apr 2026 approving it for
   the EU. Per secondary sources, not in force as of Sept 2026, with 1 of the 5
-  consents needed. Add the entry-into-force date when the fifth lands.
+  consents needed. Add the entry-into-force date when the fifth lands. Retried on
+  2026-09-27 with full network access: every CoE Treaty Office URL tried (treaty
+  detail, signatures-by-treaty chart, legacy conventions.coe.int, rm.coe.int) returned
+  a Cloudflare 403 block, so this entry stays secondary. The entry-into-force
+  condition ("5 Ratifications including at least 3 member States of the Council of
+  Europe") was read off the Treaty Office page by hand and matches the summary.

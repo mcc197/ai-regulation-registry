@@ -5,28 +5,46 @@ type: legislation
 binding: true
 jurisdiction: KR
 issuer: National Assembly of the Republic of Korea
-url: https://www.law.go.kr/
+official_id: Act No. 20676
+url: https://www.law.go.kr/%EB%B2%95%EB%A0%B9/%EC%9D%B8%EA%B3%B5%EC%A7%80%EB%8A%A5%EB%B0%9C%EC%A0%84%EA%B3%BC%EC%8B%A0%EB%A2%B0%EA%B8%B0%EB%B0%98%EC%A1%B0%EC%84%B1%EB%93%B1%EC%97%90%EA%B4%80%ED%95%9C%EA%B8%B0%EB%B3%B8%EB%B2%95
 topics: [high-risk, generative-ai, transparency, innovation, governance]
 summary: >
   Korea's comprehensive AI law. It sets national AI governance and promotion measures,
   adds duties for "high-impact" AI and generative AI (including notice and labelling),
   and requires some foreign providers to appoint a domestic representative.
 milestones:
-  - {date: 2024-12-26, event: adopted, scope: Passed by the National Assembly}
-  - {date: 2025-01-21, event: published, scope: Promulgated}
+  - {date: 2024-12-26, event: adopted, scope: "Passed by the National Assembly (bill no. 2206772, committee alternative)"}
+  - {date: 2025-01-21, event: published, scope: Promulgated as Act No. 20676}
+  - date: 2026-01-20
+    event: amended
+    scope: "Act No. 21311; most changes apply from 22 Jan 2026, some from 21 Jul 2026"
   - date: 2026-01-22
     event: applies
-    scope: Act and its Enforcement Decree (Presidential Decree No. 36053)
-    note: No fines for at least the first year, under the Decree's grace period
+    scope: Act and its Enforcement Decree (Presidential Decree No. 36053 of 21 Jan 2026)
+    note: >-
+      MSIT defers fact-finding investigations and fines for at least one year, as
+      ministry policy rather than a rule in the Act or Decree; no end date announced
 sources:
-  - {url: "https://www.law.go.kr/", label: "Korean Law Information Center (search the Act's title)", kind: official}
+  - {url: "https://www.law.go.kr/%EB%B2%95%EB%A0%B9/%EC%9D%B8%EA%B3%B5%EC%A7%80%EB%8A%A5%EB%B0%9C%EC%A0%84%EA%B3%BC%EC%8B%A0%EB%A2%B0%EA%B8%B0%EB%B0%98%EC%A1%B0%EC%84%B1%EB%93%B1%EC%97%90%EA%B4%80%ED%95%9C%EA%B8%B0%EB%B3%B8%EB%B2%95", label: "Korean Law Information Center (current text)", kind: official, watch: true}
+  - {url: "https://www.law.go.kr/LSW/lsInfoP.do?lsiSeq=268543", label: "Korean Law Information Center (Act No. 20676 as enacted)", kind: official}
+  - {url: "https://www.law.go.kr/LSW/lsInfoP.do?lsiSeq=282879", label: "Enforcement Decree (Presidential Decree No. 36053)", kind: official}
+  - {url: "https://likms.assembly.go.kr/bill/billDetail.do?billId=PRC_R2V4H1W1T2K5M1O6E4Q9T0V7Q9S0U0", label: "National Assembly bill information (bill no. 2206772)", kind: official}
+  - {url: "https://www.msit.go.kr/bbs/view.do?sCode=user&mId=307&mPid=208&bbsSeqNo=94&nttSeqNo=3186786", label: "MSIT press release on entry into force (21 Jan 2026)", kind: official}
   - {url: "https://cset.georgetown.edu/publication/south-korea-ai-law-2025/", label: CSET English translation, kind: secondary}
   - {url: "https://www.loc.gov/item/global-legal-monitor/2026-02-20/south-korea-comprehensive-ai-legal-framework-takes-effect", label: Library of Congress, kind: secondary}
 last_verified: 2026-09-27
-verified_against: secondary
+verified_against: official
 review_notes: >
-  Still secondary only. On 2026-09-27 every official Korean host tried (www.law.go.kr,
-  law.go.kr, open.law.go.kr, elaw.klri.re.kr, moleg.go.kr, msit.go.kr) was blocked by
-  the network policy or dropped the connection. So the dates, the Enforcement Decree
-  number, the law.go.kr deep link and the end of the fines grace period are all still
-  unconfirmed. The homepage link is kept until a deep link can be opened and checked.
+  Checked against official Korean sources on 2026-09-27. law.go.kr: Act No. 20676,
+  promulgated 21 Jan 2025 ("[시행 2026. 1. 22.] [법률 제20676호, 2025. 1. 21., 제정]");
+  Addenda art. 1 sets entry into force one year after promulgation (digital medical
+  device provisions from 24 Jan 2026). Enforcement Decree: Presidential Decree
+  No. 36053 of 21 Jan 2026, in force 22 Jan 2026 (Addenda art. 1). National Assembly
+  bill system: bill 2206772 passed in plenary on 26 Dec 2024 (passed as proposed).
+  Corrections: the grace period for fines is not in the Decree. The Decree's text has
+  no such provision; MSIT announced it as policy (press releases of 12 Nov 2025,
+  21 Jan 2026 and 28 Jan 2026): fact-finding investigations and fines deferred for
+  "at least one year" from 22 Jan 2026, possibly extended later. No official end date
+  has been announced. Added the amendment by Act No. 21311 (20 Jan 2026); a further
+  amendment by Act No. 21065 (1 Oct 2025, Government Organization Act) only renamed an
+  agency. Replaced the law.go.kr homepage link with a deep link to the statute.
