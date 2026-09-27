@@ -11,12 +11,30 @@ topics: [human-rights, governance, public-sector]
 summary: >
   First binding international treaty on AI. Parties must ensure that activities across
   the AI lifecycle are consistent with human rights, democracy and the rule of law.
-  Open to non-member states.
+  Open for signature by non-member states that took part in drafting it, and later by
+  accession. It enters into force on the first day of the month after a three-month
+  period following consent to be bound by five signatories, including at least three
+  Council of Europe member states. The EU was the first to give its consent
+  (approval), on 15 May 2026.
 milestones:
   - {date: 2024-05-17, event: adopted, scope: Committee of Ministers}
   - {date: 2024-09-05, event: signed, scope: Opened for signature}
 sources:
   - {url: "https://www.coe.int/en/web/conventions/full-list?module=treaty-detail&treatynum=225", label: CoE Treaty Office (signatures and ratifications), kind: official, watch: true}
+  - {url: "https://www.coe.int/en/web/artificial-intelligence/-/european-union-ratifies-the-council-of-europe-framework-convention-on-artificial-intelligence", label: CoE news (EU ratification), kind: official}
+  - {url: "https://op.europa.eu/en/publication-detail/-/publication/c54893c6-4e64-11f1-b3e2-01aa75ed71a1/language-en", label: Council Decision (EU) 2026/1080, kind: official}
+  - {url: "https://eur-lex.europa.eu/eli/agree_internation/2026/1081/oj", label: "Convention text in the EU Official Journal (OJ L 2026/1081)", kind: official}
+last_verified: 2026-09-27
+verified_against: official
 review_notes: >
-  Entry into force depends on ratifications; check the Treaty Office page and add the
-  date once it is known.
+  Checked against official sources on 2026-09-27. The CoE Treaty Office page blocks
+  automated access (Cloudflare 403 on every URL tried), so it was read by hand the
+  same day: the European Union is the only Party to have ratified (approval deposited
+  15 May 2026), several states have signed without ratifying, and the entry-into-force
+  condition reads "5 Ratifications including at least 3 member States of the Council
+  of Europe". So it is not in force, with 1 of the 5 consents needed. Confirmed from
+  the EU Official Journal: the Convention text (Art. 30 entry-into-force rule; the
+  summary was corrected to match it), the EU's signature on 5 Sep 2024, and Council
+  Decision (EU) 2026/1080 of 21 Apr 2026 approving it for the EU. Still from secondary
+  sources: the 17 May 2024 adoption date and the full list of signatories. Add the
+  entry-into-force date when the fifth consent lands.

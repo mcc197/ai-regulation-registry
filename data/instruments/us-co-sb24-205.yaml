@@ -11,17 +11,37 @@ topics: [high-risk, algorithmic-discrimination, automated-decisions, consumer-pr
 summary: >
   First US state law on high-risk AI. It imposed a duty of care against algorithmic
   discrimination, risk-management programmes and impact assessments on developers and
-  deployers. Its start was delayed and it never took effect. SB 26-189 replaced it.
+  deployers. Its duties were delayed to 30 Jun 2026, a federal court paused enforcement
+  in April 2026, and SB 26-189 repeals and re-enacts it from 1 Jan 2027.
 milestones:
-  - {date: 2024-05-17, event: signed, scope: "Signed; originally to apply from 1 Feb 2026"}
-  - {date: 2025-08-28, event: amended, scope: "SB 25B-004 moved the start date to 30 Jun 2026"}
-  - date: 2026-05-14
+  - {date: 2024-05-17, event: signed, scope: "Approved by the Governor and effective; duties originally to apply from 1 Feb 2026"}
+  - {date: 2025-08-28, event: amended, scope: "SB 25B-004 signed, moving the start of the duties to 30 Jun 2026 (SB 25B-004 itself effective 25 Nov 2025)"}
+  - date: 2026-06-30
+    event: applies
+    scope: Developer and deployer duties, as delayed by SB 25B-004
+    note: A federal court had paused enforcement on 27 Apr 2026 (secondary sources)
+  - date: 2027-01-01
     event: superseded
-    scope: Repealed and replaced by SB 26-189
-    note: A federal court had paused enforcement on 27 Apr 2026
+    scope: Repealed and re-enacted by SB 26-189 (signed 14 May 2026)
 relations:
   - {type: superseded_by, target: us-co-sb26-189}
 sources:
   - {url: "https://leg.colorado.gov/bills/sb24-205", label: Colorado General Assembly, kind: official}
+  - {url: "https://leg.colorado.gov/bills/sb25b-004", label: "Colorado General Assembly (SB 25B-004, 2025 delay)", kind: official}
   - {url: "https://www.akingump.com/en/insights/ai-law-and-regulation-tracker/colorado-postpones-implementation-of-colorado-ai-act-sb-24-205", label: Akin (2025 delay), kind: secondary}
+  - {url: "https://www.nortonrosefulbright.com/en-us/knowledge/publications/de3ad9de/xai-sues-doj-intervenes-enforcement-of-colorado-ai-act-suspended", label: Norton Rose Fulbright (court pause), kind: secondary}
 last_verified: 2026-09-27
+verified_against: official
+review_notes: >
+  Checked against leg.colorado.gov on 2026-09-27. SB 24-205: approved by the Governor
+  and effective 17 May 2024, duties from 1 Feb 2026 (bill summary as enacted).
+  SB 25B-004: approved 28 Aug 2025, effective 25 Nov 2025, extends the effective date
+  of SB 24-205's requirements to 30 Jun 2026. SB 26-189 (Session Laws ch. 131,
+  approved 14 May 2026): section 1 repeals and re-enacts part 17 of article 1 of
+  title 6 C.R.S.; section 5 makes that take effect 1 Jan 2027 (only some provisions
+  took effect on passage). Corrections: the supersession date is 1 Jan 2027, when the
+  repeal takes effect, not the 14 May 2026 signing date; added the 30 Jun 2026 start
+  of the duties; removed "it never took effect" from the summary, since the bill page
+  shows the act effective 17 May 2024 and the statute text sets no later start than
+  30 Jun 2026. The federal court pause of 27 Apr 2026 (D. Colo., xAI's suit) is still
+  from secondary sources: the docket is on PACER, which needs a login.

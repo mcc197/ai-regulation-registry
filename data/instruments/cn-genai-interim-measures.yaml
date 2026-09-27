@@ -4,17 +4,32 @@ short_title: China GenAI Interim Measures
 type: regulation
 binding: true
 jurisdiction: CN
-issuer: Cyberspace Administration of China and six other agencies
+issuer: Cyberspace Administration of China, with NDRC, MOE, MOST, MIIT, MPS and NRTA
+official_id: CAC Order No. 15 (joint order of seven agencies)
 url: https://www.cac.gov.cn/2023-07/13/c_1690898327029107.htm
 topics: [generative-ai, content-labelling, governance]
 summary: >
   Rules for generative AI services offered to the public in China: content
-  requirements, training-data duties, labelling, security assessment and algorithm
-  filing.
+  requirements, training-data duties and labelling of generated content. Services
+  with public-opinion or social-mobilisation capacity also need a security assessment
+  and algorithm filing.
 milestones:
-  - {date: 2023-07-10, event: adopted}
+  - date: 2023-05-23
+    event: adopted
+    scope: CAC office meeting (12th of 2023), with the other six agencies' agreement
+    note: Was recorded as 10 Jul 2023, which is the date of the joint order
+  - {date: 2023-07-10, event: signed, scope: Joint order signed by the heads of the seven agencies}
   - {date: 2023-07-13, event: published}
   - {date: 2023-08-15, event: applies}
 sources:
   - {url: "https://www.cac.gov.cn/2023-07/13/c_1690898327029107.htm", label: CAC notice, kind: official, watch: true}
-review_notes: Seeded from background knowledge; verify against the source.
+  - {url: "https://www.chinalawtranslate.com/en/generative-ai-interim/", label: China Law Translate (English), kind: secondary}
+  - {url: "https://fpf.org/blog/chinas-interim-measures-for-the-management-of-generative-ai-services-a-comparison-between-the-final-and-draft-versions-of-the-text/", label: Future of Privacy Forum, kind: secondary}
+last_verified: 2026-09-27
+verified_against: official
+review_notes: >
+  Checked against the official CAC notice on 2026-09-27. The order says the CAC
+  office meeting adopted the Measures on 23 May 2023 with the other agencies'
+  agreement; the order is dated 10 Jul 2023, was posted on 13 Jul 2023 and takes
+  effect on 15 Aug 2023 (Art. 24). The adoption date was corrected from 10 Jul 2023.
+  Summary checked against Arts 2, 4, 7, 12 and 17.

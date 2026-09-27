@@ -5,7 +5,7 @@ type: legislation
 binding: true
 jurisdiction: US-CO
 issuer: Colorado General Assembly
-official_id: SB 26-189
+official_id: "SB 26-189, Chapter 131, Session Laws 2026"
 url: https://leg.colorado.gov/bills/sb26-189
 topics: [automated-decisions, consumer-protection, employment, transparency]
 summary: >
@@ -15,11 +15,25 @@ summary: >
   drops the earlier duty of care, risk-management programme and impact assessments.
 milestones:
   - {date: 2026-05-14, event: signed}
-  - {date: 2026-05-14, event: entry_into_force, scope: Sections effective on signature}
+  - {date: 2026-05-14, event: entry_into_force, scope: "Only listed provisions, incl. the Attorney General's rule-making duties and the appropriation"}
+  - {date: 2027-01-01, event: entry_into_force, scope: Rest of the act}
   - {date: 2027-01-01, event: applies, scope: "Consequential decisions made on or after this date"}
 relations:
   - {type: supersedes, target: us-co-sb24-205}
 sources:
   - {url: "https://leg.colorado.gov/bills/sb26-189", label: Colorado General Assembly, kind: official, watch: true}
+  - {url: "https://leg.colorado.gov/laws/session-laws/SB26-189/131/download", label: "Session Laws 2026, ch. 131 (signed text)", kind: official}
   - {url: "https://www.nortonrosefulbright.com/en-us/knowledge/publications/18733d31/colorado-enacts-revised-ai-law", label: Norton Rose Fulbright, kind: secondary}
 last_verified: 2026-09-27
+verified_against: official
+review_notes: >
+  Checked against leg.colorado.gov and the signed session law (ch. 131) on 2026-09-27.
+  Governor signed 14 May 2026. Section 1 repeals and re-enacts SB 24-205's part 17.
+  Section 5: the act takes effect 1 Jan 2027, except ss. 6-1-1704(4), 6-1-1705(3),
+  6-1-1706(6), 10-3-1104.9(3)(e), the appropriation and ss. 5-6, which took effect on
+  passage; s. 5(3) applies it to consequential decisions made on or after 1 Jan 2027.
+  Correction: the 14 May 2026 entry into force covers only those listed provisions,
+  not the act as a whole; added the 1 Jan 2027 entry into force of the rest. The
+  summary matches the enacted bill summary (point-of-interaction notice, post-adverse
+  outcome disclosure, correction and human review rights; no duty of care or impact
+  assessments in the new text).

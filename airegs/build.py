@@ -21,6 +21,7 @@ CREATE TABLE instruments (
     url TEXT,
     summary TEXT NOT NULL,
     last_verified TEXT,
+    verified_against TEXT,
     review_notes TEXT,
     provisions_json TEXT
 );
@@ -64,10 +65,10 @@ def build(instruments: list[Instrument], db_path: Path) -> Path:
         con.executescript(SCHEMA)
         for i in instruments:
             con.execute(
-                "INSERT INTO instruments VALUES (?,?,?,?,?,?,?,?,?,?,?,?,?)",
+                "INSERT INTO instruments VALUES (?,?,?,?,?,?,?,?,?,?,?,?,?,?)",
                 (i.id, i.title, i.short_title, i.type, int(i.binding), i.jurisdiction,
                  i.issuer, i.official_id, i.url, i.summary.strip(),
-                 i.last_verified.isoformat() if i.last_verified else None,
+                 i.last_verified.isoformat() if i.last_verified else None, i.verified_against,
                  i.review_notes, json.dumps(i.provisions, default=str) if i.provisions else None))
             con.executemany(
                 "INSERT INTO milestones VALUES (?,?,?,?,?)",

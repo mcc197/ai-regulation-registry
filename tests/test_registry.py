@@ -116,3 +116,28 @@ def test_watch_records_fetch_errors(registry, tmp_path):
         raise OSError("offline")
     (r,) = watch.check([registry["nist-ai-rmf"]], tmp_path / "w.json", boom)
     assert r["status"] == "error" and "offline" in r["error"]
+
+
+def test_verified_against_is_required_with_last_verified():
+    with pytest.raises(ValidationError, match="needs verified_against"):
+        parse(minimal(last_verified="2026-01-01"), "x.yaml")
+    with pytest.raises(ValidationError, match="needs last_verified"):
+        parse(minimal(verified_against="official"), "x.yaml")
+    ok = parse(minimal(last_verified="2026-01-01", verified_against="official"), "x.yaml")
+    assert ok.verified_against == "official"
+
+
+def test_stale_official_lists_secondary_only_checks(capsys, tmp_path):
+    fresh = {"last_verified": "2026-09-01"}
+    entries = [
+        minimal(id="checked-official", verified_against="official", **fresh),
+        minimal(id="checked-secondary", verified_against="secondary", **fresh),
+    ]
+    for raw in entries:
+        (tmp_path / f"{raw['id']}.yaml").write_text(yaml.safe_dump(raw))
+    args = ["--data", str(tmp_path), "stale", "--today", "2026-09-27"]
+    cli.main(args)
+    assert "Everything verified" in capsys.readouterr().out
+    cli.main(args + ["--official"])
+    listed = {line.split()[0] for line in capsys.readouterr().out.splitlines() if line.strip()}
+    assert listed == {"checked-secondary"}

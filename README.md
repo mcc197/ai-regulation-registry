@@ -25,8 +25,12 @@ python -m airegs watch    # hash watched source pages; exit code 3 if any change
 2. Put every date in `milestones`. Never hand-set a status: status is worked out from
    the milestones. If an amendment moves a date, add the new milestone with a `note`
    giving the old date, and link the two instruments with `amends` / `amended_by`.
-3. Cite at least one `official` source. Set `last_verified` to the day you checked it.
+3. Cite at least one `official` source. Set `last_verified` to the day you checked it,
+   and `verified_against` to `official` or `secondary` for what you actually read.
 4. Run `python -m airegs validate` and `pytest`.
 
-Entries with no `last_verified` were seeded from background knowledge and still need
-checking against their sources. `airegs stale` lists them.
+`airegs stale` lists entries not checked in the last 90 days. `airegs stale --official`
+also lists entries checked only against secondary sources (law-firm notes,
+trackers). As of 27 Sept 2026 that is four entries (Korea, the two Colorado laws and
+the CoE Convention), because their official sites were unreachable from the
+environment used to check them.

@@ -9,12 +9,20 @@ official_id: NIST AI 600-1
 url: https://doi.org/10.6028/NIST.AI.600-1
 topics: [generative-ai, risk-management]
 summary: >
-  Profile of the AI RMF for generative AI. It lists risks specific to or made worse by
-  generative AI, and suggests actions for each.
+  Profile of the AI RMF for generative AI. It maps the Govern, Map, Measure and Manage
+  functions to 12 risks that are specific to or made worse by generative AI, and
+  suggests actions for each.
 milestones:
   - {date: 2024-07-26, event: published}
 relations:
   - {type: supports, target: nist-ai-rmf}
 sources:
   - {url: "https://doi.org/10.6028/NIST.AI.600-1", label: NIST publication, kind: official}
-review_notes: Seeded from background knowledge; verify against the source.
+  - {url: "https://nvlpubs.nist.gov/nistpubs/ai/NIST.AI.600-1.pdf", label: NIST AI 600-1 (PDF), kind: official}
+  - {url: "https://www.techpolicy.press/unpacking-new-nist-guidance-on-artificial-intelligence/", label: Tech Policy Press, kind: secondary}
+last_verified: 2026-09-27
+verified_against: official
+review_notes: >
+  Checked on 2026-09-27 against the NIST AI RMF page (released 26 Jul 2024) and the
+  PDF (dated July 2024; DOI 10.6028/NIST.AI.600-1; lists 12 GAI risks). doi.org was
+  blocked by the network policy, so the DOI link itself was not opened.
