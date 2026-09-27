@@ -55,14 +55,36 @@ requirements:
     scope: High-risk AI systems
     risks: [discrimination]
     summary: >
-      Use reasonable care to protect consumers from known or foreseeable algorithmic
-      discrimination, give deployers documentation about the system's uses, data,
-      limitations and evaluations, and publish a statement of the high-risk systems the
-      developer offers.
-    evidence: [technical-documentation, transparency-report]
-    assurance: [public-disclosure]
+      Use reasonable care to protect consumers from known or reasonably foreseeable
+      risks of algorithmic discrimination from intended and contracted uses. Give
+      deployers documentation on foreseeable and harmful uses, training data,
+      limitations, purpose, evaluation, data governance, mitigations and how the system
+      should be used and monitored, enough for them to complete impact assessments.
+      Publish a statement of the high-risk systems offered and how discrimination risks
+      are managed, updated within 90 days of a substantial modification. Tell the
+      Attorney General and known deployers of known or foreseeable discrimination risks
+      within 90 days of discovering them.
+    controls:
+      - Model or dataset cards covering the listed documentation items
+      - Public use-case statement kept current
+      - 90-day discrimination-risk disclosure process to the Attorney General and deployers
+    evidence: [technical-documentation, transparency-report, incident-report]
+    assurance: [public-disclosure, regulator-notification]
+    assurance_note: >
+      Complying with the section and any Attorney General rules creates a rebuttable
+      presumption of reasonable care. The Attorney General can require the
+      documentation within 90 days of a request.
     applies_from: 2026-06-30
-    note: Enforcement paused by a federal court (Apr 2026); replaced by SB 26-189 from 1 Jan 2027.
+    source: https://leg.colorado.gov/sites/default/files/2024a_205_signed.pdf
+    last_verified: 2026-09-27
+    verified_against: official
+    note: >
+      Corrected on 2026-09-27: added the 90-day notice of discrimination risks to the
+      Attorney General and deployers (s. 6-1-1702(5)), with regulator-notification
+      assurance and incident-report evidence, and the 90-day update of the public
+      statement. The enacted text says 1 Feb 2026; SB 25B-004 moved this to 30 Jun 2026.
+      Enforcement was paused by a federal court in Apr 2026 (secondary sources), and
+      SB 26-189 replaces the section from 1 Jan 2027.
   - id: deployer-duties
     ref: C.R.S. 6-1-1703
     title: Deployer risk management and impact assessments
@@ -72,10 +94,60 @@ requirements:
     scope: High-risk AI systems
     risks: [discrimination]
     summary: >
-      Maintain a risk management policy and programme, complete an impact assessment at
-      least yearly and after substantial changes, notify consumers of consequential
-      decisions, and give them a way to correct data and appeal adverse decisions.
-    evidence: [impact-assessment, policy, user-notice]
-    assurance: [self-assessment]
+      Use reasonable care against algorithmic discrimination. Keep a risk management
+      policy and programme, reasonable against the NIST AI RMF, ISO/IEC 42001 or a
+      similar framework. Complete an impact assessment before deployment, at least
+      yearly and within 90 days of an intentional and substantial modification, and
+      review each system every year. Before a consequential decision, notify consumers
+      and describe the system; after an adverse decision, give the principal reasons,
+      a chance to correct personal data, and an appeal with human review where
+      technically feasible. Publish a statement of deployed high-risk systems, and tell
+      the Attorney General within 90 days of discovering that a system has caused
+      algorithmic discrimination.
+    controls:
+      - Risk management policy and programme reviewed over the system life cycle
+      - Impact assessments kept for three years after final deployment
+      - Consumer notices, adverse-decision statements and an appeal route with human review
+      - Public statement of deployed high-risk systems
+    evidence: [impact-assessment, policy, user-notice, transparency-report]
+    assurance: [self-assessment, public-disclosure, regulator-notification]
+    assurance_note: >
+      Impact assessments may be done by the deployer or a third party it contracts; no
+      independent audit is required. The Attorney General can request the policy,
+      assessments and records within 90 days. Deployers with fewer than 50 FTEs that do
+      not train the system with their own data are exempt from the programme,
+      assessment and website statement duties if they meet the other conditions in
+      s. 6-1-1703(6).
     applies_from: 2026-06-30
-    note: Enforcement paused by a federal court (Apr 2026); replaced by SB 26-189 from 1 Jan 2027.
+    source: https://leg.colorado.gov/sites/default/files/2024a_205_signed.pdf
+    last_verified: 2026-09-27
+    verified_against: official
+    note: >
+      Corrected on 2026-09-27: impact assessments are due within 90 days of an
+      intentional and substantial modification, plus an annual review for
+      discrimination; added the public statement and the 90-day notice to the Attorney
+      General, with public-disclosure and regulator-notification assurance. Enforcement
+      was paused by a federal court in Apr 2026 (secondary sources), and SB 26-189
+      replaces the section from 1 Jan 2027.
+  - id: ai-interaction-disclosure
+    ref: C.R.S. 6-1-1704
+    title: Disclosure that a consumer is interacting with AI
+    kind: obligation
+    category: transparency
+    roles: [deployer, developer]
+    scope: AI systems intended to interact with consumers (not limited to high-risk systems)
+    risks: [manipulation, opacity]
+    summary: >
+      A deployer or developer that makes available an AI system intended to interact
+      with consumers must make sure each consumer is told they are interacting with an
+      AI system, unless that would be obvious to a reasonable person.
+    evidence: [user-notice]
+    assurance: [none]
+    applies_from: 2026-06-30
+    maps_to: [eu-ai-act#art-50-providers]
+    source: https://leg.colorado.gov/sites/default/files/2024a_205_signed.pdf
+    last_verified: 2026-09-27
+    verified_against: official
+    note: >
+      Added on 2026-09-27 from the signed act. SB 26-189 repeals this section from
+      1 Jan 2027 and does not re-enact it.

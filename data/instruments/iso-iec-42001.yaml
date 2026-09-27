@@ -35,11 +35,19 @@ requirements:
     roles: [organisation]
     risks: [accountability]
     summary: >
-      Understand internal and external issues, interested parties and the
-      organisation's roles with respect to AI (for example provider, producer or user),
-      and define the scope of the AI management system.
+      Understand the organisation and its context, including its role with respect to
+      AI systems, and the needs and expectations of interested parties; determine the
+      scope of the AI management system; and establish the management system itself.
     evidence: [policy]
     assurance: [internal-audit, certification]
+    source: https://webstore.iec.ch/en/publication/90574
+    last_verified: 2026-09-27
+    verified_against: official
+    note: >
+      Corrected on 2026-09-27: clause structure (4.1-4.4) checked against the official
+      table of contents in the IEC webstore preview. The example roles "provider,
+      producer or user" are not visible in the public preview, so the summary now says
+      only "role with respect to AI systems", as the Introduction does.
   - id: cl-5
     ref: Clause 5
     title: Leadership and AI policy
@@ -48,11 +56,17 @@ requirements:
     roles: [organisation]
     risks: [accountability]
     summary: >
-      Top management shows leadership and commitment, sets an AI policy aligned with
-      business objectives, and assigns responsibilities and authorities for the AI
-      management system.
+      Top management shows leadership and commitment, sets an AI policy, and assigns
+      roles, responsibilities and authorities for the AI management system.
     evidence: [policy]
     assurance: [internal-audit, certification]
+    source: https://webstore.iec.ch/en/publication/90574
+    last_verified: 2026-09-27
+    verified_against: official
+    note: >
+      Corrected on 2026-09-27: sub-clauses 5.1-5.3 checked against the official table of
+      contents; dropped "aligned with business objectives", which is not visible in the
+      public preview.
   - id: cl-6-1-2
     ref: Clause 6.1.2
     title: AI risk assessment
@@ -61,11 +75,17 @@ requirements:
     roles: [organisation]
     risks: [health-safety, fundamental-rights, discrimination, security]
     summary: >
-      Define and apply a repeatable AI risk assessment process that identifies,
-      analyses and evaluates risks to the organisation and to individuals and society,
-      against defined risk criteria.
+      Define and apply an AI risk assessment process to identify, analyse and evaluate
+      AI risks, as part of planning actions to address risks and opportunities (6.1).
     evidence: [risk-register]
     assurance: [internal-audit, certification]
+    source: https://webstore.iec.ch/en/publication/90574
+    last_verified: 2026-09-27
+    verified_against: official
+    note: >
+      Corrected on 2026-09-27: clause number and title checked against the official
+      table of contents; the summary is now kept general because the clause text is not
+      publicly visible.
   - id: cl-6-1-3
     ref: Clause 6.1.3
     title: AI risk treatment and statement of applicability
@@ -74,11 +94,19 @@ requirements:
     roles: [organisation]
     risks: [health-safety, fundamental-rights, discrimination, security]
     summary: >
-      Choose risk treatment options, determine the necessary controls (comparing them
-      with Annex A), and produce a statement of applicability that justifies which
-      controls are included or excluded, plus a risk treatment plan.
+      Choose how to treat assessed AI risks and determine the controls needed. Annex A
+      (normative) gives a reference set of control objectives and controls, with
+      implementation guidance in Annex B.
     evidence: [risk-register, policy]
     assurance: [internal-audit, certification]
+    source: https://webstore.iec.ch/en/publication/90574
+    last_verified: 2026-09-27
+    verified_against: official
+    note: >
+      Corrected on 2026-09-27: clause number and title, and the normative status of
+      Annexes A and B, checked against the official table of contents. The statement of
+      applicability and risk treatment plan are not visible in the public preview, so
+      they were taken out of the summary.
   - id: cl-6-1-4
     ref: Clause 6.1.4
     title: AI system impact assessment
@@ -88,10 +116,18 @@ requirements:
     risks: [fundamental-rights, discrimination, privacy]
     summary: >
       Assess the potential consequences of AI systems for individuals, groups and
-      society, and use the results in risk assessment. ISO/IEC 42005 gives guidance on
-      how to do it.
+      society. ISO/IEC 42005:2025 gives guidance on AI system impact assessments and how
+      to fit them into AI risk management and an AI management system.
     evidence: [impact-assessment]
     assurance: [internal-audit, certification]
+    source: https://webstore.iec.ch/en/publication/90574
+    last_verified: 2026-09-27
+    verified_against: official
+    note: >
+      Corrected on 2026-09-27: clause number and title checked against the official
+      table of contents, and ISO/IEC 42005:2025 against its IEC webstore page
+      (https://webstore.iec.ch/en/publication/107659). Dropped "use the results in risk
+      assessment", which is not visible in the public preview.
   - id: cl-7
     ref: Clause 7
     title: Support (resources, competence, awareness, documented information)
@@ -100,10 +136,17 @@ requirements:
     roles: [organisation]
     risks: [reliability, accountability]
     summary: >
-      Provide resources, ensure competence of people doing AI work, raise awareness of
-      the AI policy, communicate, and control documented information.
+      Provide resources, ensure competence and awareness, plan communication, and
+      create, update and control documented information.
     evidence: [training-records, policy]
     assurance: [internal-audit, certification]
+    source: https://webstore.iec.ch/en/publication/90574
+    last_verified: 2026-09-27
+    verified_against: official
+    note: >
+      Corrected on 2026-09-27: sub-clauses 7.1-7.5 checked against the official table of
+      contents; the summary is now kept general because the clause text is not publicly
+      visible.
   - id: cl-8
     ref: Clause 8
     title: Operation
@@ -112,11 +155,17 @@ requirements:
     roles: [organisation]
     risks: [reliability]
     summary: >
-      Plan and control the processes needed to meet requirements, carry out risk
-      assessments and impact assessments at planned intervals or on significant change,
-      and implement the risk treatment plan.
+      Plan and control operations, and carry out AI risk assessment, AI risk treatment
+      and AI system impact assessment in practice.
     evidence: [risk-register, impact-assessment]
     assurance: [internal-audit, certification]
+    source: https://webstore.iec.ch/en/publication/90574
+    last_verified: 2026-09-27
+    verified_against: official
+    note: >
+      Corrected on 2026-09-27: sub-clauses 8.1-8.4 checked against the official table of
+      contents; the timing (planned intervals or significant change) is not visible in
+      the public preview and was taken out.
   - id: cl-9-1
     ref: Clause 9.1
     title: Monitoring, measurement, analysis and evaluation
@@ -125,10 +174,16 @@ requirements:
     roles: [organisation]
     risks: [reliability]
     summary: >
-      Decide what to monitor and measure, how and when, and evaluate the performance and
-      effectiveness of the AI management system.
+      Monitor, measure, analyse and evaluate the performance and effectiveness of the AI
+      management system.
     evidence: [monitoring-plan]
     assurance: [internal-audit, certification]
+    source: https://webstore.iec.ch/en/publication/90574
+    last_verified: 2026-09-27
+    verified_against: official
+    note: >
+      Corrected on 2026-09-27: clause title checked against the official table of
+      contents; the summary is now kept general.
   - id: cl-9-2
     ref: Clause 9.2
     title: Internal audit
@@ -137,11 +192,17 @@ requirements:
     roles: [organisation]
     risks: [accountability]
     summary: >
-      Run an internal audit programme at planned intervals to check the AI management
-      system conforms to the organisation's own requirements and the standard, and is
-      effectively implemented.
+      Establish an internal audit programme and audit the AI management system to check
+      that it is implemented and working.
     evidence: [audit-report]
     assurance: [internal-audit]
+    source: https://webstore.iec.ch/en/publication/90574
+    last_verified: 2026-09-27
+    verified_against: official
+    note: >
+      Corrected on 2026-09-27: sub-clauses 9.2.1-9.2.2 checked against the official table
+      of contents; the summary is now kept general because the clause text is not
+      publicly visible.
   - id: cl-9-3
     ref: Clause 9.3
     title: Management review
@@ -150,10 +211,17 @@ requirements:
     roles: [organisation]
     risks: [accountability]
     summary: >
-      Top management reviews the AI management system at planned intervals, including
-      audit results, risks, incidents and opportunities for improvement.
+      Top management reviews the AI management system, with defined review inputs and
+      recorded results.
     evidence: [management-review]
     assurance: [internal-audit, certification]
+    source: https://webstore.iec.ch/en/publication/90574
+    last_verified: 2026-09-27
+    verified_against: official
+    note: >
+      Corrected on 2026-09-27: sub-clauses 9.3.1-9.3.3 (general, inputs, results) checked
+      against the official table of contents; the list of inputs is not visible in the
+      public preview and was taken out.
   - id: cl-10
     ref: Clause 10
     title: Improvement, nonconformity and corrective action
@@ -166,6 +234,9 @@ requirements:
       management system.
     evidence: [audit-report]
     assurance: [internal-audit, certification]
+    source: https://webstore.iec.ch/en/publication/90574
+    last_verified: 2026-09-27
+    verified_against: official
   - id: a-2
     ref: Annex A.2
     title: Policies related to AI
@@ -176,6 +247,12 @@ requirements:
     summary: Documented AI policy, aligned with other organisational policies and reviewed regularly.
     evidence: [policy]
     assurance: [certification]
+    note: >
+      Unverified as of 2026-09-27: the public IEC preview lists Annex A only as
+      "Reference control objectives and controls" (normative), without its control
+      groups, and the ISO Online Browsing Platform and iso.org were blocked by a bot
+      check from the verification environment. The group number, title and summary
+      still need checking against an official source.
   - id: a-3
     ref: Annex A.3
     title: Internal organisation
@@ -186,6 +263,12 @@ requirements:
     summary: Defined AI roles and responsibilities, and a way for people to report concerns about AI systems.
     evidence: [policy]
     assurance: [certification]
+    note: >
+      Unverified as of 2026-09-27: the public IEC preview lists Annex A only as
+      "Reference control objectives and controls" (normative), without its control
+      groups, and the ISO Online Browsing Platform and iso.org were blocked by a bot
+      check from the verification environment. The group number, title and summary
+      still need checking against an official source.
   - id: a-4
     ref: Annex A.4
     title: Resources for AI systems
@@ -196,6 +279,12 @@ requirements:
     summary: Inventory and document the data, tooling, computing, system and human resources that AI systems depend on.
     evidence: [technical-documentation]
     assurance: [certification]
+    note: >
+      Unverified as of 2026-09-27: the public IEC preview lists Annex A only as
+      "Reference control objectives and controls" (normative), without its control
+      groups, and the ISO Online Browsing Platform and iso.org were blocked by a bot
+      check from the verification environment. The group number, title and summary
+      still need checking against an official source.
   - id: a-5
     ref: Annex A.5
     title: Assessing impacts of AI systems
@@ -206,6 +295,12 @@ requirements:
     summary: Process for assessing, documenting and acting on impacts of AI systems on individuals, groups and society.
     evidence: [impact-assessment]
     assurance: [certification]
+    note: >
+      Unverified as of 2026-09-27: the public IEC preview lists Annex A only as
+      "Reference control objectives and controls" (normative), without its control
+      groups, and the ISO Online Browsing Platform and iso.org were blocked by a bot
+      check from the verification environment. The group number, title and summary
+      still need checking against an official source.
   - id: a-6
     ref: Annex A.6
     title: AI system life cycle
@@ -219,6 +314,12 @@ requirements:
       documentation and event logs across the AI system life cycle.
     evidence: [technical-documentation, logs, test-reports]
     assurance: [certification]
+    note: >
+      Unverified as of 2026-09-27: the public IEC preview lists Annex A only as
+      "Reference control objectives and controls" (normative), without its control
+      groups, and the ISO Online Browsing Platform and iso.org were blocked by a bot
+      check from the verification environment. The group number, title and summary
+      still need checking against an official source.
   - id: a-7
     ref: Annex A.7
     title: Data for AI systems
@@ -229,6 +330,12 @@ requirements:
     summary: Data management covering acquisition, quality, provenance and preparation of data used by AI systems.
     evidence: [data-documentation]
     assurance: [certification]
+    note: >
+      Unverified as of 2026-09-27: the public IEC preview lists Annex A only as
+      "Reference control objectives and controls" (normative), without its control
+      groups, and the ISO Online Browsing Platform and iso.org were blocked by a bot
+      check from the verification environment. The group number, title and summary
+      still need checking against an official source.
   - id: a-8
     ref: Annex A.8
     title: Information for interested parties
@@ -241,6 +348,12 @@ requirements:
       to report adverse impacts, and communicate incidents.
     evidence: [user-notice, instructions-for-use]
     assurance: [certification]
+    note: >
+      Unverified as of 2026-09-27: the public IEC preview lists Annex A only as
+      "Reference control objectives and controls" (normative), without its control
+      groups, and the ISO Online Browsing Platform and iso.org were blocked by a bot
+      check from the verification environment. The group number, title and summary
+      still need checking against an official source.
   - id: a-9
     ref: Annex A.9
     title: Use of AI systems
@@ -251,6 +364,12 @@ requirements:
     summary: Processes and objectives for responsible use of AI systems, used according to their intended use.
     evidence: [policy, oversight-records]
     assurance: [certification]
+    note: >
+      Unverified as of 2026-09-27: the public IEC preview lists Annex A only as
+      "Reference control objectives and controls" (normative), without its control
+      groups, and the ISO Online Browsing Platform and iso.org were blocked by a bot
+      check from the verification environment. The group number, title and summary
+      still need checking against an official source.
   - id: a-10
     ref: Annex A.10
     title: Third-party and customer relationships
@@ -264,6 +383,12 @@ requirements:
       approach to responsible AI.
     evidence: [policy]
     assurance: [certification]
+    note: >
+      Unverified as of 2026-09-27: the public IEC preview lists Annex A only as
+      "Reference control objectives and controls" (normative), without its control
+      groups, and the ISO Online Browsing Platform and iso.org were blocked by a bot
+      check from the verification environment. The group number, title and summary
+      still need checking against an official source.
   - id: cert
     ref: Certification
     title: Third-party certification of the AI management system
@@ -272,8 +397,19 @@ requirements:
     roles: [organisation]
     risks: [accountability]
     summary: >
-      Organisations can be certified against ISO/IEC 42001 by an accredited
-      certification body. ISO/IEC 42006 sets requirements for bodies that audit and
-      certify AI management systems.
+      Organisations can have their AI management system certified against ISO/IEC
+      42001 by a third-party certification body. ISO/IEC 42006:2025 adds to ISO/IEC
+      17021-1 the requirements for bodies that audit and certify AI management systems,
+      so that they show competence, consistency and reliability. It can also serve as
+      the criteria for accrediting or peer-assessing those bodies.
     evidence: [certificate, audit-report]
     assurance: [certification, third-party-assessment]
+    source: https://webstore.iec.ch/en/publication/108460
+    last_verified: 2026-09-27
+    verified_against: official
+    note: >
+      Corrected on 2026-09-27 against the ISO/IEC 42006:2025 page on the IEC webstore:
+      42006 supplements ISO/IEC 17021-1 and treats AIMS certification as third-party
+      conformity assessment. It does not make accreditation mandatory (it "can be used"
+      for accreditation), so "accredited" was dropped. The iso.org page was blocked by
+      a bot check.

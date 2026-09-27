@@ -50,51 +50,98 @@ review_notes: >
   agency. Replaced the law.go.kr homepage link with a deep link to the statute.
 requirements:
   - id: art-31
-    ref: Art. 31
+    ref: Art. 31; Enforcement Decree Art. 23
     title: Transparency and labelling of generative and high-impact AI
     kind: obligation
     category: content-labelling
     roles: [service-provider]
     risks: [manipulation, misinformation]
     summary: >
-      Tell users in advance when a product or service uses high-impact or generative
-      AI, label generative AI outputs as AI-generated, and clearly disclose synthetic
-      content that is hard to tell apart from reality, such as deepfakes.
+      Tell users in advance when a product or service runs on high-impact or generative
+      AI, mark generative AI outputs as AI-generated, and give clearly recognisable
+      notice or labelling for AI-made sound, images or video that are hard to tell apart
+      from reality (artistic and creative works may be labelled in a way that does not
+      spoil them). Under the Decree, advance notice can go in the product, contract,
+      terms or instructions, on screen, or at the place of service; outputs may be
+      marked in a human-readable or machine-readable way (machine-readable marking
+      needs at least one text or voice notice); exceptions cover obvious AI use and
+      purely internal use.
+    controls:
+      - Advance AI-use notice in terms, on screen or at the point of service
+      - Human-readable or machine-readable marking of generative outputs
+      - Visible labels for realistic synthetic audio, images and video
     evidence: [user-notice, content-marking]
     assurance: [regulator-review]
+    assurance_note: >
+      The Minister of Science and ICT can investigate and order corrective action for
+      breaches of paragraphs 2 and 3. Failing to give the advance notice under
+      paragraph 1 carries an administrative fine of up to KRW 30 million. MSIT has said it
+      will defer investigations and fines for at least a year from 22 Jan 2026 (policy).
     applies_from: 2026-01-22
-    note: Article numbering drafted from translations; confirm against the enacted text.
+    source: https://www.law.go.kr/%EB%B2%95%EB%A0%B9/%EC%9D%B8%EA%B3%B5%EC%A7%80%EB%8A%A5%EB%B0%9C%EC%A0%84%EA%B3%BC%EC%8B%A0%EB%A2%B0%EA%B8%B0%EB%B0%98%EC%A1%B0%EC%84%B1%EB%93%B1%EC%97%90%EA%B4%80%ED%95%9C%EA%B8%B0%EB%B3%B8%EB%B2%95/%EC%A0%9C31%EC%A1%B0
+    last_verified: 2026-09-27
+    verified_against: official
+    note: >
+      Corrected on 2026-09-27: article number confirmed on law.go.kr (unchanged by Act
+      No. 21311); added the Enforcement Decree's methods and exceptions and the fine
+      for missing advance notice.
   - id: art-32
-    ref: Art. 32
+    ref: Art. 32; Enforcement Decree Art. 24
     title: Safety duties for high-compute AI
     kind: obligation
     category: risk-management
     roles: [service-provider]
-    scope: AI systems trained above the compute threshold set by decree
+    scope: >
+      AI systems trained with at least 10^26 floating-point operations of cumulative
+      compute that also use state-of-the-art AI technology and whose risk could have
+      broad and serious effects on life, physical safety or fundamental rights (all
+      three criteria, Decree Art. 24)
     risks: [catastrophic, health-safety]
     summary: >
-      Identify, assess and mitigate risks across the lifecycle, set up monitoring and
-      response to safety incidents, and submit the results to the Minister of Science
-      and ICT.
+      Identify, assess and mitigate risks across the AI life cycle, set up a risk
+      management system that monitors and responds to AI safety incidents, and submit
+      the results to the Minister of Science and ICT. The Minister sets how to comply
+      and report by public notice.
+    controls:
+      - Life-cycle risk assessment and mitigation for frontier-scale models
+      - Safety-incident monitoring and response
     evidence: [risk-register, incident-report]
     assurance: [regulator-notification]
+    assurance_note: The Minister can investigate suspected breaches and order corrective action.
     applies_from: 2026-01-22
+    source: https://www.law.go.kr/%EB%B2%95%EB%A0%B9/%EC%9D%B8%EA%B3%B5%EC%A7%80%EB%8A%A5%EB%B0%9C%EC%A0%84%EA%B3%BC%EC%8B%A0%EB%A2%B0%EA%B8%B0%EB%B0%98%EC%A1%B0%EC%84%B1%EB%93%B1%EC%97%90%EA%B4%80%ED%95%9C%EA%B8%B0%EB%B3%B8%EB%B2%95/%EC%A0%9C32%EC%A1%B0
+    last_verified: 2026-09-27
+    verified_against: official
+    note: >
+      Corrected on 2026-09-27: the scope now gives the Decree's three cumulative
+      criteria (10^26 FLOPs, state-of-the-art technology, broad and serious risk)
+      instead of a compute threshold alone.
   - id: art-33
-    ref: Art. 33
+    ref: Art. 33; Enforcement Decree Art. 25
     title: Determining whether AI is high-impact
     kind: obligation
     category: risk-management
     roles: [service-provider]
     risks: [fundamental-rights, health-safety]
     summary: >
-      Review in advance whether an AI system is high-impact (significant effects on
-      life, physical safety or fundamental rights in listed areas); the operator may
-      ask the Ministry to confirm.
+      Before providing an AI product or service, review whether it is high-impact AI:
+      AI used in listed areas such as energy, drinking water, health care, medical
+      devices, nuclear facilities, biometric analysis for criminal investigations,
+      hiring and loan decisions, transport, public-service decisions and school student
+      assessment, with significant effects on life, physical safety or fundamental
+      rights. The operator may ask the Minister to confirm; the Minister replies within
+      30 days (extendable once by 30 days), and the operator can request a re-check
+      within 10 days.
+    controls:
+      - Documented high-impact screening before launch
     evidence: [risk-register]
     assurance: [self-assessment, regulator-review]
     applies_from: 2026-01-22
+    source: https://www.law.go.kr/%EB%B2%95%EB%A0%B9/%EC%9D%B8%EA%B3%B5%EC%A7%80%EB%8A%A5%EB%B0%9C%EC%A0%84%EA%B3%BC%EC%8B%A0%EB%A2%B0%EA%B8%B0%EB%B0%98%EC%A1%B0%EC%84%B1%EB%93%B1%EC%97%90%EA%B4%80%ED%95%9C%EA%B8%B0%EB%B3%B8%EB%B2%95/%EC%A0%9C33%EC%A1%B0
+    last_verified: 2026-09-27
+    verified_against: official
   - id: art-34
-    ref: Art. 34
+    ref: Art. 34; Enforcement Decree Art. 27
     title: Duties of high-impact AI operators
     kind: obligation
     category: risk-management
@@ -102,15 +149,33 @@ requirements:
     scope: High-impact AI
     risks: [fundamental-rights, health-safety, opacity]
     summary: >
-      Put in place a risk management plan, explain results and the main criteria and
-      training data as far as technically feasible, protect users, ensure human
-      management and supervision, and keep documents showing these measures.
+      Set up and run a risk management plan, and as far as technically feasible a plan to
+      explain the AI's final results, the main criteria used and an overview of the
+      training data. Protect users, ensure human management and supervision, and write
+      and keep documents showing these measures. Under the Decree, the main points of
+      these measures and the name and contact of the person supervising the system must
+      be posted at the business or on its website (trade secrets excepted), and the
+      supporting documents kept for five years.
+    controls:
+      - Risk management policy and organisation for each high-impact system
+      - Explanation approach for results, key criteria and training data
+      - Named human supervisor with published contact details
+      - Five-year retention of supporting documents
     evidence: [risk-register, technical-documentation, oversight-records, user-notice]
-    assurance: [self-assessment]
+    assurance: [self-assessment, public-disclosure]
+    assurance_note: >
+      The Minister can investigate suspected breaches and order corrective action.
+      Equivalent measures taken under other laws count as compliance.
     applies_from: 2026-01-22
     maps_to: [eu-ai-act#art-9, eu-ai-act#art-14]
+    source: https://www.law.go.kr/%EB%B2%95%EB%A0%B9/%EC%9D%B8%EA%B3%B5%EC%A7%80%EB%8A%A5%EB%B0%9C%EC%A0%84%EA%B3%BC%EC%8B%A0%EB%A2%B0%EA%B8%B0%EB%B0%98%EC%A1%B0%EC%84%B1%EB%93%B1%EC%97%90%EA%B4%80%ED%95%9C%EA%B8%B0%EB%B3%B8%EB%B2%95/%EC%A0%9C34%EC%A1%B0
+    last_verified: 2026-09-27
+    verified_against: official
+    note: >
+      Corrected on 2026-09-27: added the Decree's publication duty (public-disclosure
+      assurance) and five-year document retention.
   - id: art-35
-    ref: Art. 35
+    ref: Art. 35; Enforcement Decree Art. 28
     title: Fundamental rights impact assessment for high-impact AI
     kind: recommendation
     category: impact-assessment
@@ -118,26 +183,45 @@ requirements:
     scope: High-impact AI
     risks: [fundamental-rights]
     summary: >
-      Operators should make efforts to assess the impact of high-impact AI on people's
-      fundamental rights in advance. Public procurement is to prefer products that have
-      had such an assessment.
+      Operators should make efforts to assess in advance the impact of high-impact AI on
+      people's fundamental rights. The Decree lists what the assessment covers (affected
+      people and groups, rights at stake, social and economic effects, how it is used,
+      metrics, mitigation and an improvement plan) and allows it to be done in-house or
+      by a third party. State bodies buying high-impact AI must give priority to
+      products that have been assessed.
     evidence: [impact-assessment]
     assurance: [self-assessment]
     applies_from: 2026-01-22
     maps_to: [eu-ai-act#art-27]
+    source: https://www.law.go.kr/%EB%B2%95%EB%A0%B9/%EC%9D%B8%EA%B3%B5%EC%A7%80%EB%8A%A5%EB%B0%9C%EC%A0%84%EA%B3%BC%EC%8B%A0%EB%A2%B0%EA%B8%B0%EB%B0%98%EC%A1%B0%EC%84%B1%EB%93%B1%EC%97%90%EA%B4%80%ED%95%9C%EA%B8%B0%EB%B3%B8%EB%B2%95/%EC%A0%9C35%EC%A1%B0
+    last_verified: 2026-09-27
+    verified_against: official
   - id: art-36
-    ref: Art. 36
+    ref: Art. 36; Enforcement Decree Art. 29
     title: Domestic representative for foreign operators
     kind: obligation
     category: representation
     roles: [service-provider]
-    scope: Foreign operators above user or revenue thresholds set by decree
+    scope: >
+      Operators with no address or place of business in Korea that had prior-year
+      revenue of KRW 1 trillion or more, AI-service revenue of KRW 10 billion or more,
+      an average of 1 million or more daily users in Korea over the last three months of
+      the prior year, or a past fine for ignoring a corrective order
     risks: [accountability]
     summary: >
-      Operators without an address or place of business in Korea that meet the
-      thresholds must designate a domestic representative in writing and report it to
-      the Minister.
+      Designate in writing a representative with an address or place of business in
+      Korea and report it to the Minister of Science and ICT. The representative handles
+      safety-result submissions, high-impact confirmation requests and support for the
+      high-impact measures (including checking that documents are current). Breaches
+      by the representative are treated as the operator's own.
     evidence: [registration-entry]
     assurance: [regulator-notification]
+    assurance_note: Failing to designate a representative carries an administrative fine of up to KRW 30 million.
     applies_from: 2026-01-22
     maps_to: [eu-ai-act#art-22]
+    source: https://www.law.go.kr/%EB%B2%95%EB%A0%B9/%EC%9D%B8%EA%B3%B5%EC%A7%80%EB%8A%A5%EB%B0%9C%EC%A0%84%EA%B3%BC%EC%8B%A0%EB%A2%B0%EA%B8%B0%EB%B0%98%EC%A1%B0%EC%84%B1%EB%93%B1%EC%97%90%EA%B4%80%ED%95%9C%EA%B8%B0%EB%B3%B8%EB%B2%95/%EC%A0%9C36%EC%A1%B0
+    last_verified: 2026-09-27
+    verified_against: official
+    note: >
+      Corrected on 2026-09-27: added the Decree's thresholds and the representative's
+      tasks.

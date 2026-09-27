@@ -28,56 +28,95 @@ review_notes: >
   blocked by the network policy, so the DOI link itself was not opened.
 requirements:
   - id: governance
-    ref: Governance
+    ref: Appendix A.1.1-A.1.3 (Governance)
     title: Governance of generative AI
     kind: recommendation
     category: governance
     roles: [organisation]
     risks: [accountability]
     summary: >
-      Adapt governance for generative AI: acceptable-use policies, oversight of
-      third-party models and data, and clear accountability for content the system
-      produces.
+      Adapt governance for generative AI: apply existing risk tiering or revise risk
+      levels, add oversight, human review, tracking and documentation where needed,
+      set acceptable-use policies for human-AI configurations, and manage third-party
+      models, systems and data through procurement due diligence, software bills of
+      materials, service level agreements and attestation reports.
+    controls:
+      - Acceptable-use policy for generative AI
+      - Due diligence, SBOM requests and SLAs for third-party models and data
     evidence: [policy]
     assurance: [self-assessment]
     maps_to: [nist-ai-rmf#govern]
+    source: https://nvlpubs.nist.gov/nistpubs/ai/NIST.AI.600-1.pdf#page=51
+    last_verified: 2026-09-27
+    verified_against: official
+    note: >
+      Corrected on 2026-09-27: ref now points to Appendix A.1.1-A.1.3; the summary drops
+      "clear accountability for content the system produces", which the appendix does
+      not say, and adds risk tiering, extra oversight and the third-party tools it
+      names (due diligence, SBOMs, SLAs, attestation reports).
   - id: pre-deployment-testing
-    ref: Pre-deployment testing
+    ref: Appendix A.1.4-A.1.5 (Pre-deployment testing)
     title: Pre-deployment testing and red-teaming
     kind: recommendation
     category: testing-evaluation
     roles: [organisation]
     risks: [security, misinformation, catastrophic]
     summary: >
-      Test generative AI systems before release against the profile's risks, with
-      structured evaluation, red-teaming (including external red teams where
-      appropriate) and field testing.
+      Apply and document test, evaluation, verification and validation (TEVV) early in
+      the life cycle, bearing in mind that benchmarks and lab tests may not reflect
+      real-world use. Use structured public feedback: participatory methods, field
+      testing and AI red-teaming by the general public, experts, or both, possibly
+      assisted by generative AI.
+    controls:
+      - Documented pre-release TEVV plan tied to the deployment context
+      - Red-teaming with domain experts and diverse participants
+      - Field tests that follow human-subjects practice (informed consent, compensation)
     evidence: [test-reports]
     assurance: [self-assessment, third-party-assessment]
+    assurance_note: >
+      The profile suggests red teams and feedback from people outside the developer,
+      and its actions include internal and external evaluations; none of this is
+      mandatory.
     maps_to: [nist-ai-rmf#measure]
+    source: https://nvlpubs.nist.gov/nistpubs/ai/NIST.AI.600-1.pdf#page=52
+    last_verified: 2026-09-27
+    verified_against: official
+    note: >
+      Corrected on 2026-09-27: ref now points to Appendix A.1.4-A.1.5; the summary now
+      follows the appendix (TEVV limits, structured public feedback and the four types of
+      red-teaming) rather than "testing against the profile's risks".
   - id: provenance
-    ref: Content provenance
+    ref: Appendix A.1.6-A.1.7 (Content provenance)
     title: Content provenance
     kind: recommendation
     category: content-labelling
     roles: [organisation]
     risks: [misinformation, manipulation]
     summary: >
-      Track the origin and history of generated content with techniques such as
-      watermarking, metadata and provenance records, and test how well they work.
+      Track the origin and history of content and training data with provenance
+      techniques such as digital watermarking, metadata recording and digital
+      fingerprinting, document their limits, and use testing and user feedback to see
+      how well they work.
     evidence: [content-marking]
     assurance: [self-assessment]
+    source: https://nvlpubs.nist.gov/nistpubs/ai/NIST.AI.600-1.pdf#page=55
+    last_verified: 2026-09-27
+    verified_against: official
   - id: incident-disclosure
-    ref: Incident disclosure
+    ref: Appendix A.1.8 (Incident disclosure)
     title: Incident disclosure
     kind: recommendation
     category: incident-reporting
     roles: [organisation]
     risks: [accountability]
     summary: >
-      Document and disclose AI incidents, keep records that allow incidents to be traced
-      and analysed, and share information with affected parties and, where
-      appropriate, regulators.
+      Document and disclose AI incidents, keep records such as logs, change-management
+      records and version history so that incidents can be traced and analysed, and
+      share information with relevant AI actors. The profile's suggested actions include
+      reporting incidents as legal and regulatory requirements demand.
     evidence: [incident-report, logs]
     assurance: [public-disclosure]
     maps_to: [nist-ai-rmf#manage]
+    source: https://nvlpubs.nist.gov/nistpubs/ai/NIST.AI.600-1.pdf#page=56
+    last_verified: 2026-09-27
+    verified_against: official

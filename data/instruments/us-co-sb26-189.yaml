@@ -39,34 +39,148 @@ review_notes: >
   assessments in the new text).
 requirements:
   - id: pre-use-notice
-    ref: SB 26-189
+    ref: C.R.S. 6-1-1704(1)-(2)
     title: Notice before using covered ADMT in consequential decisions
     kind: obligation
     category: transparency
     roles: [deployer]
-    scope: Covered automated decision-making technology used for consequential decisions
+    scope: >
+      Covered ADMT (automated decision-making technology that materially influences a
+      consequential decision) in education, employment, residential real estate,
+      financial or lending services, insurance, health care, or essential government
+      services and public benefits
     risks: [opacity, discrimination]
     summary: >
-      Before covered ADMT is used to make or substantially support a consequential
-      decision about a consumer (such as employment, credit, housing, insurance,
-      education or health care), tell the consumer it will be used.
+      Before using covered ADMT to materially influence a consequential decision about a
+      consumer, give a clear and conspicuous notice that the deployer used or will use
+      covered ADMT in a decision affecting the consumer, with instructions on how to get
+      further information. A prominent public notice at the points of consumer
+      interaction, such as a nearby link or posting, satisfies this. Notices must be
+      accessible to people with disabilities and limited English proficiency.
+    controls:
+      - Inventory of decision processes where ADMT output is a non-trivial factor
+      - Public ADMT notice linked at application and other interaction points
+      - Accessible and translated versions of the notice
     evidence: [user-notice]
     assurance: [none]
+    assurance_note: >
+      Enforced only by the Attorney General as a deceptive trade practice, with a 60-day
+      cure period after a notice of violation until 1 Jan 2030; no private right of action.
     applies_from: 2027-01-01
-    note: Drafted from secondary summaries; confirm the exact trigger and content of the notice.
+    source: https://leg.colorado.gov/laws/session-laws/SB26-189/131/download
+    last_verified: 2026-09-27
+    verified_against: official
+    note: >
+      Corrected on 2026-09-27: the trigger is using covered ADMT to "materially
+      influence" a consequential decision (a non-de minimis factor that affects the
+      outcome), not to "make or substantially support" it; the notice must include
+      instructions for getting more information and can be a public notice at points of
+      interaction; the covered domains follow s. 6-1-1701(6). ECOA/FCRA credit notices
+      and FERPA processes can satisfy it (s. 6-1-1704(6), (9)).
   - id: adverse-outcome-disclosure
-    ref: SB 26-189
+    ref: C.R.S. 6-1-1704(3)
     title: Disclosure after an adverse outcome
     kind: obligation
-    category: individual-rights
-    roles: [deployer, affected-person]
-    scope: Adverse consequential decisions involving covered ADMT
+    category: transparency
+    roles: [deployer]
+    scope: Consequential decisions materially influenced by covered ADMT that result in an adverse outcome
     risks: [opacity, discrimination]
     summary: >
-      After an adverse consequential decision involving covered ADMT, give the consumer
-      a disclosure about the decision and explain the rights available to them under
-      the Act.
+      Within 30 days of a consequential decision with an adverse outcome for a consumer,
+      give a plain-language description of the decision and the role the covered ADMT
+      played in it; instructions and a simple process to request more information about
+      the ADMT and its inputs (name, version where applicable, developer, and the types,
+      categories and sources of personal data used, as far as the developer has
+      supplied them); and an explanation of the consumer's correction and human-review
+      rights and how to exercise them. The Attorney General must adopt rules clarifying
+      these disclosures by 1 Jan 2027.
+    controls:
+      - Adverse-decision letters with an ADMT section, sent within 30 days
+      - Request process for ADMT and personal-data details
+      - Notice to the consumer when information is withheld as a trade secret or legally protected
     evidence: [user-notice]
     assurance: [none]
+    assurance_note: Enforced only by the Attorney General; no private right of action.
     applies_from: 2027-01-01
-    note: Drafted from secondary summaries; confirm which consumer rights (for example correction or review) apply.
+    maps_to: [eu-ai-act#art-86]
+    source: https://leg.colorado.gov/laws/session-laws/SB26-189/131/download
+    last_verified: 2026-09-27
+    verified_against: official
+    note: >
+      Corrected on 2026-09-27: added the 30-day deadline and the required content of the
+      disclosure; roles narrowed to deployer and category changed from
+      individual-rights to transparency, because the consumer rights themselves are in
+      s. 6-1-1705 (see consumer-rights).
+  - id: consumer-rights
+    ref: C.R.S. 6-1-1705
+    title: Correction and human review after an adverse outcome
+    kind: right
+    category: individual-rights
+    roles: [affected-person, deployer]
+    scope: Adverse outcomes from consequential decisions materially influenced by covered ADMT
+    risks: [opacity, discrimination, reliability]
+    summary: >
+      A consumer who gets an adverse outcome can ask the deployer for instructions on
+      obtaining and correcting factually incorrect or materially inaccurate personal data
+      used in the decision, and for meaningful human review and reconsideration of the
+      decision, as far as commercially reasonable. Opinions, predictions, scores and
+      protected evaluations need not be corrected. Meaningful human review means a
+      trained reviewer with authority to change the decision, who looks at the relevant
+      evidence and does not simply defer to the system output.
+    controls:
+      - Data access and correction route for decisions that used covered ADMT
+      - Reconsideration by a trained reviewer with authority to override
+    evidence: [oversight-records, policy]
+    assurance: [none]
+    assurance_note: Enforced only by the Attorney General; no private right of action.
+    applies_from: 2027-01-01
+    source: https://leg.colorado.gov/laws/session-laws/SB26-189/131/download
+    last_verified: 2026-09-27
+    verified_against: official
+    note: Added on 2026-09-27 from the signed session law.
+  - id: developer-documentation
+    ref: C.R.S. 6-1-1702
+    title: Developer documentation and update notices for deployers
+    kind: obligation
+    category: technical-documentation
+    roles: [developer]
+    scope: Covered ADMT marketed, configured, contracted or licensed to materially influence consequential decisions
+    risks: [opacity, discrimination]
+    summary: >
+      Give each deployer the intended uses and known harmful or inappropriate uses,
+      categories of training data as far as known, known limitations and risks,
+      instructions for appropriate use, monitoring and meaningful human review, and the
+      information deployers need for their disclosures. Notify deployers within a
+      reasonable time of material updates, substantial modifications and changes to
+      intended use, limitations or risk mitigation. Keep compliance records for at least
+      three years.
+    controls:
+      - Deployer documentation pack for each covered ADMT
+      - Release notes sent directly to deployers for material updates
+      - Version identifiers and changelogs kept for three years
+    evidence: [technical-documentation, instructions-for-use]
+    assurance: [none]
+    assurance_note: Enforced only by the Attorney General; no private right of action.
+    applies_from: 2027-01-01
+    source: https://leg.colorado.gov/laws/session-laws/SB26-189/131/download
+    last_verified: 2026-09-27
+    verified_against: official
+    note: Added on 2026-09-27 from the signed session law.
+  - id: deployer-records
+    ref: C.R.S. 6-1-1703
+    title: Deployer record-keeping
+    kind: obligation
+    category: record-keeping
+    roles: [deployer]
+    risks: [accountability]
+    summary: >
+      Keep records reasonably needed to show compliance for at least three years after
+      each consequential decision (or longer if other law requires), such as ADMT version
+      identifiers, changelogs and records of material mitigation changes.
+    evidence: [logs, technical-documentation]
+    assurance: [none]
+    applies_from: 2027-01-01
+    source: https://leg.colorado.gov/laws/session-laws/SB26-189/131/download
+    last_verified: 2026-09-27
+    verified_against: official
+    note: Added on 2026-09-27 from the signed session law.

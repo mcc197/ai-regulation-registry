@@ -43,6 +43,9 @@ requirements:
     evidence: [policy, training-records]
     assurance: [self-assessment]
     maps_to: [iso-iec-42001#cl-5, iso-iec-42001#a-10]
+    source: https://nvlpubs.nist.gov/nistpubs/ai/NIST.AI.100-1.pdf#page=26
+    last_verified: 2026-09-27
+    verified_against: official
   - id: map
     ref: MAP function
     title: Map
@@ -57,6 +60,9 @@ requirements:
     evidence: [risk-register, impact-assessment]
     assurance: [self-assessment]
     maps_to: [iso-iec-42001#cl-6-1-4]
+    source: https://nvlpubs.nist.gov/nistpubs/ai/NIST.AI.100-1.pdf#page=29
+    last_verified: 2026-09-27
+    verified_against: official
   - id: measure
     ref: MEASURE function
     title: Measure
@@ -70,7 +76,16 @@ requirements:
       and tracking of risks over time.
     evidence: [test-reports]
     assurance: [self-assessment, third-party-assessment]
-    assurance_note: The framework encourages independent assessors and red teams where appropriate.
+    assurance_note: >
+      MEASURE 1.3 calls for regular assessments by internal experts who were not
+      front-line developers of the system and/or by independent assessors.
+    source: https://nvlpubs.nist.gov/nistpubs/ai/NIST.AI.100-1.pdf#page=33
+    last_verified: 2026-09-27
+    verified_against: official
+    note: >
+      Corrected on 2026-09-27: the assurance note mentioned red teams, which the AI RMF
+      1.0 core does not; it now reflects MEASURE 1.3 (internal experts who were not
+      front-line developers and/or independent assessors).
   - id: manage
     ref: MANAGE function
     title: Manage
@@ -85,3 +100,6 @@ requirements:
     evidence: [risk-register, incident-report, monitoring-plan]
     assurance: [self-assessment]
     maps_to: [iso-iec-42001#cl-6-1-3]
+    source: https://nvlpubs.nist.gov/nistpubs/ai/NIST.AI.100-1.pdf#page=36
+    last_verified: 2026-09-27
+    verified_against: official
