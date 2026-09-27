@@ -1,0 +1,374 @@
+id: eu-dsa
+title: Regulation on a Single Market for Digital Services and amending Directive 2000/31/EC (Digital Services Act)
+short_title: EU Digital Services Act
+type: legislation
+binding: true
+jurisdiction: EU
+issuer: European Parliament and Council of the EU
+official_id: Regulation (EU) 2022/2065
+url: https://eur-lex.europa.eu/eli/reg/2022/2065/oj
+topics: [risk-management, transparency, governance, generative-ai, human-rights, consumer-protection]
+summary: >
+  EU rules for intermediary services, online platforms and search engines. Platforms
+  and search engines with at least 45 million average monthly active users in the EU
+  that the Commission designates as very large online platforms (VLOPs) or search
+  engines (VLOSEs) must assess and mitigate systemic risks, including those stemming
+  from recommender and other algorithmic systems, undergo an annual independent audit,
+  give vetted researchers data access, keep an independent compliance function and
+  publish their risk assessment and audit reports. This entry covers only those parts
+  relevant to AI governance and assurance.
+milestones:
+  - {date: 2020-12-15, event: proposed, scope: Commission proposal COM(2020) 825}
+  - {date: 2022-07-05, event: adopted, scope: European Parliament first-reading position}
+  - {date: 2022-10-04, event: adopted, scope: Council decision approving the Parliament's position}
+  - {date: 2022-10-19, event: signed}
+  - {date: 2022-10-27, event: published, scope: "Official Journal L 277"}
+  - date: 2022-11-16
+    event: entry_into_force
+    note: >
+      Art. 24(2), (3) and (6), Art. 33(3) to (6), Art. 37(7), Art. 40(13), Art. 43 and
+      Sections 4 to 6 of Chapter IV (enforcement) applied from this date (Art. 93(2)),
+      so the Commission could designate VLOPs and VLOSEs and adopt the audit delegated act.
+  - date: 2023-08-25
+    event: applies
+    scope: "Section 5 of Chapter III (Arts 34 to 43) and the rest of the Regulation, for the 17 VLOPs and 2 VLOSEs designated on 25 Apr 2023"
+    note: >
+      The first designations (Art. 33(4)) were adopted on 25 Apr 2023. They are not
+      recorded as a milestone of their own because a designation is a Commission decision,
+      not a lifecycle stage of the Regulation, and an `adopted` event would read as the
+      Regulation's status after entry into force.
+      Four months after notification of the designation (Art. 33(6) and Art. 92). Our
+      reading: the Commission's 25 Apr 2023 press release says the designated services
+      must comply "within four months", which gives 25 Aug 2023; each provider's exact
+      date runs from its own notification. Later designations follow the same four-month rule.
+  - {date: 2024-02-17, event: applies, scope: "General application to all providers of intermediary services (Art. 93(2))"}
+relations:
+  - {type: implemented_by, target: eu-dsa-audit-delegated-regulation}
+  - {type: referenced_by, target: eu-ai-act}
+sources:
+  - {url: "https://eur-lex.europa.eu/eli/reg/2022/2065/oj", label: EUR-Lex (original text), kind: official, watch: true}
+  - {url: "https://publications.europa.eu/resource/celex/32022R2065", label: "Publications Office CELLAR, CELEX 32022R2065 (OJ text as read)", kind: official}
+  - {url: "https://ec.europa.eu/commission/presscorner/detail/en/ip_23_2413", label: "Commission press release IP/23/2413 (first designations, 25 Apr 2023)", kind: official}
+  - {url: "https://ec.europa.eu/commission/presscorner/detail/en/ip_26_1772", label: "Commission press release IP/26/1772 (ChatGPT designated as a VLOSE, 31 Aug 2026)", kind: official}
+  - {url: "https://digital-strategy.ec.europa.eu/en/policies/list-designated-vlops-and-vloses", label: Commission list of designated VLOPs and VLOSEs, kind: official, watch: true}
+  - {url: "https://eur-lex.europa.eu/legal-content/EN/TXT/?uri=CELEX:52024XC03014", label: "Commission guidelines on systemic risks for electoral processes, C/2024/3014 (generative AI measures)", kind: official}
+last_verified: 2026-09-27
+verified_against: official
+review_notes: >
+  Checked against the Official Journal text on 2026-09-27. EUR-Lex was not used because
+  of its bot challenge; the same OJ document was read through the Publications Office
+  (CELLAR, CELEX 32022R2065). Dates of signature, publication, entry into force and
+  application come from the OJ header and Arts 92-93; the Parliament and Council dates
+  from the OJ footnote to the citations; the proposal date from the CELLAR record for
+  COM(2020) 825. The first designations (25 Apr 2023) and the designation of ChatGPT as
+  a VLOSE (31 Aug 2026; obligations "by January 2027" per the Commission) come from
+  Commission press releases and the Commission's list of designated services. The
+  Art. 34 text does not mention generative AI; generative AI features come in as part
+  of the "design or functioning of their service and its related systems, including
+  algorithmic systems", and the Commission's election guidelines (C/2024/3014) set out
+  generative-AI mitigation measures under Art. 35. The AI Act (recital 118) presumes
+  AI Act obligations are met for AI embedded in VLOPs and VLOSEs, to the extent the DSA
+  risk framework covers them. Only the VLOP/VLOSE articles relevant to AI governance and
+  assurance (27, 34, 35, 37, 38, 40, 41, 42) are modelled. Roles gap: the role
+  vocabulary has no "very large online platform" role, so `service-provider` is used
+  and each requirement's scope says which providers are bound. No consolidated text
+  was checked.
+requirements:
+  - id: art-34
+    ref: Art. 34
+    title: Systemic risk assessment, including recommender and algorithmic systems
+    kind: obligation
+    category: risk-management
+    roles: [service-provider]
+    scope: Very large online platforms and search engines designated under Art. 33
+    risks: [fundamental-rights, misinformation, manipulation, child-safety, privacy, discrimination, health-safety]
+    summary: >
+      Diligently identify, analyse and assess systemic risks in the EU stemming from the
+      design or functioning of the service and its related systems, including
+      algorithmic systems, or from its use: illegal content; negative effects on
+      fundamental rights; civic discourse, elections and public security; and
+      gender-based violence, public health, minors and physical and mental well-being.
+      The assessment must consider how recommender and other algorithmic systems, content
+      moderation, terms and conditions, ad systems and data practices influence those
+      risks, as well as intentional manipulation, inauthentic or automated use, and
+      regional and linguistic aspects. It is done by the date obligations first apply,
+      at least yearly after that, and before deploying functionalities likely to have a
+      critical impact on the risks. Supporting documents are kept for at least three years.
+    controls:
+      - Annual systemic risk assessment covering each Art. 34(1) risk and each Art. 34(2) factor, including recommender and generative AI features
+      - Pre-launch risk assessment gate for new functionalities likely to have a critical impact on systemic risks
+      - Severity and probability scoring, with regional and language breakdowns
+      - Retention of supporting documents for three years, producible to the Commission and the Digital Services Coordinator
+    evidence: [risk-register, impact-assessment]
+    assurance: [third-party-assessment, regulator-review, public-disclosure]
+    assurance_note: >
+      Audited every year under Art. 37 (methodology in Delegated Regulation 2024/436,
+      Art. 13); supporting documents go to the Commission or Digital Services
+      Coordinator on request; a report of the results is published under Art. 42(4).
+    applies_from: 2023-08-25
+    maps_to: [eu-ai-act#art-55, eu-ai-act#art-9, iso-iec-42001#cl-6-1-2, nist-ai-rmf#map]
+    source: https://eur-lex.europa.eu/legal-content/EN/TXT/HTML/?uri=CELEX:32022R2065#art_34
+    last_verified: 2026-09-27
+    verified_against: official
+    note: >
+      Applies four months after each designation; 25 Aug 2023 is the date for the first
+      designated services. Our reading on generative AI: Art. 34 does not name it, but
+      generative AI features are part of the "service and its related systems, including
+      algorithmic systems", and the Commission treats them so in C/2024/3014. ChatGPT was
+      designated a VLOSE on 31 Aug 2026 and must comply by January 2027. The link to AI
+      Act Art. 55 reflects AI Act recital 118: GPAI models embedded in VLOPs and VLOSEs
+      are covered by this risk framework.
+  - id: art-35
+    ref: Art. 35
+    title: Mitigation of systemic risks, including testing and adapting algorithmic systems
+    kind: obligation
+    category: risk-management
+    roles: [service-provider]
+    scope: Very large online platforms and search engines designated under Art. 33
+    risks: [fundamental-rights, misinformation, manipulation, child-safety, health-safety]
+    summary: >
+      Put in place reasonable, proportionate and effective mitigation measures tailored
+      to the systemic risks identified under Art. 34, with particular consideration of
+      their impact on fundamental rights. Measures may include adapting service design
+      and interfaces, terms and conditions, content moderation and ad systems; testing
+      and adapting algorithmic systems, including recommender systems; reinforcing
+      internal processes, testing, documentation and supervision for detecting systemic
+      risk; protecting minors; and making generated or manipulated images, audio or video
+      that falsely appear authentic distinguishable through prominent markings, with a
+      way for users to flag such content.
+    controls:
+      - Risk treatment plan linking each assessed systemic risk to mitigation measures, with the reasons where a listed measure is not applied
+      - Testing of recommender and other algorithmic systems, with changes tracked against risk indicators
+      - Prominent labelling of deepfakes and other generated or manipulated media on the interface, plus a user flagging tool
+      - Fundamental-rights impact review of each mitigation measure
+    evidence: [risk-register, test-reports, content-marking, policy]
+    assurance: [third-party-assessment, public-disclosure]
+    assurance_note: >
+      Audited every year under Art. 37 (Delegated Regulation 2024/436, Art. 14);
+      mitigation measures are published under Art. 42(4)(b).
+    applies_from: 2023-08-25
+    maps_to: [iso-iec-42001#cl-6-1-3, nist-ai-rmf#manage]
+    source: https://eur-lex.europa.eu/legal-content/EN/TXT/HTML/?uri=CELEX:32022R2065#art_35
+    last_verified: 2026-09-27
+    verified_against: official
+    note: >
+      The measures in Art. 35(1)(a)-(k) are options "where applicable", not a checklist;
+      the duty is for the mix to be reasonable, proportionate and effective. The
+      Commission's Art. 35(3) guidelines on elections (C/2024/3014) recommend specific
+      generative AI measures, such as labelling AI content, keeping labels when content
+      is re-shared and external red-teaming of generative AI systems.
+  - id: art-37
+    ref: Art. 37(1)-(3)
+    title: Annual independent audit by an independent, qualified auditor
+    kind: obligation
+    category: conformity-assessment
+    roles: [service-provider, organisation]
+    scope: >
+      Very large online platforms and search engines designated under Art. 33
+      (service-provider); the organisations that audit them (organisation)
+    risks: [accountability]
+    summary: >
+      At least once a year and at their own expense, VLOPs and VLOSEs are audited for
+      compliance with all Chapter III due-diligence obligations and with commitments under
+      codes of conduct and crisis protocols. The provider must cooperate, give the auditor
+      access to all relevant data and premises and answer questions, and must not hamper
+      or unduly influence the audit. Auditors must be independent and free of conflicts
+      of interest: no non-audit services on the audited matters to the provider or
+      connected entities in the 12 months before the audit or the 12 months after it; no
+      more than 10 consecutive years auditing the same provider; no fees contingent on
+      the result. They must also show proven expertise in risk management, technical
+      competence, objectivity and professional ethics.
+    controls:
+      - Auditor selection procedure that checks independence, rotation, fee and competence conditions before appointment
+      - Access protocol giving the auditor data, systems, premises and staff interviews
+      - Compliance function organises and supervises the audit (Art. 41(3)(c))
+    evidence: [audit-report]
+    assurance: [third-party-assessment]
+    assurance_note: >
+      Independent audit to a reasonable level of assurance (Delegated Regulation
+      2024/436, Art. 3). The role vocabulary has no specific VLOP or auditor role:
+      `service-provider` stands for the platform or search engine and `organisation`
+      for the auditing organisation.
+    applies_from: 2023-08-25
+    maps_to: [iso-iec-42001#cert]
+    source: https://eur-lex.europa.eu/legal-content/EN/TXT/HTML/?uri=CELEX:32022R2065#art_37
+    last_verified: 2026-09-27
+    verified_against: official
+    note: >
+      The link to ISO/IEC 42001 certification is loose: both are independent assurance
+      over a governance and risk regime, but a DSA audit is a mandatory compliance audit
+      of legal obligations with a graded opinion, not voluntary certification of a
+      management system. Our reading: the first audit covers the year starting four months
+      after designation and its report is due within a year of that start (Delegated
+      Regulation 2024/436, Art. 3(3)), so late Aug 2024 for the first designated services.
+  - id: art-37-report
+    ref: Art. 37(4)-(6)
+    title: Audit report with a graded opinion, and the audit implementation report
+    kind: obligation
+    category: conformity-assessment
+    roles: [service-provider, organisation]
+    scope: >
+      Very large online platforms and search engines designated under Art. 33
+      (service-provider); the organisations that audit them (organisation)
+    risks: [accountability]
+    summary: >
+      The auditor writes a substantiated report for each audit: the provider and period
+      covered, the auditor, a declaration of interests, the elements audited and the
+      methodology, the main findings, the third parties consulted, and an audit opinion
+      of "positive", "positive with comments" or "negative". Where the opinion is not
+      positive, the report gives operational recommendations and a timeframe; where
+      elements could not be audited, it explains why. A provider receiving a report that
+      is not positive must, within one month, adopt an audit implementation report setting
+      out the measures taken, justifying any recommendation it does not implement and the
+      alternative measures it took instead.
+    controls:
+      - Tracking of every operational recommendation to closure, with owners and deadlines
+      - Audit implementation report adopted within one month of receiving a report that is not positive
+      - Confidential and non-confidential versions of both reports prepared for publication
+    evidence: [audit-report]
+    assurance: [third-party-assessment, regulator-notification, public-disclosure]
+    assurance_note: >
+      Both reports go to the Digital Services Coordinator and the Commission and are
+      published within three months of receiving the audit report (Art. 42(4)).
+      Templates are in Annexes I and II of Delegated Regulation 2024/436.
+    applies_from: 2023-08-25
+    maps_to: [iso-iec-42001#cert]
+    source: https://eur-lex.europa.eu/legal-content/EN/TXT/HTML/?uri=CELEX:32022R2065#art_37
+    last_verified: 2026-09-27
+    verified_against: official
+    note: >
+      Loose link to ISO/IEC 42001 certification, as for art-37. Delegated Regulation
+      2024/436, Art. 8 defines when each grade of opinion applies.
+  - id: art-27-38
+    ref: Arts 27 and 38
+    title: Recommender system transparency and a non-profiling option
+    kind: obligation
+    category: transparency
+    roles: [service-provider]
+    scope: >
+      Art. 27: all online platforms that use recommender systems. Art. 38: very large
+      online platforms and search engines designated under Art. 33
+    risks: [opacity, manipulation, privacy]
+    summary: >
+      Online platforms set out in their terms and conditions, in plain language, the main
+      parameters of their recommender systems (at least the most significant criteria and
+      why they matter) and any options users have to change them. Where there are several
+      options, users must be able to select and change their preferred option at any time,
+      directly from the part of the interface where content is ranked. VLOPs and VLOSEs
+      must also offer, for each recommender system, at least one option not based on
+      profiling as defined in the GDPR.
+    controls:
+      - Plain-language description of recommender parameters in the terms and conditions, kept in sync with ranking changes
+      - In-feed control to switch ranking options, including a non-profiling feed for VLOPs and VLOSEs
+    evidence: [user-notice, policy]
+    assurance: [third-party-assessment]
+    assurance_note: Arts 27 and 38 are in Chapter III, so they are covered by the Art. 37 audit for VLOPs and VLOSEs.
+    applies_from: 2024-02-17
+    source: https://eur-lex.europa.eu/legal-content/EN/TXT/HTML/?uri=CELEX:32022R2065#art_38
+    last_verified: 2026-09-27
+    verified_against: official
+    note: >
+      For all online platforms, Art. 27 applies from 17 Feb 2024. For VLOPs and VLOSEs,
+      both articles apply four months after designation if that is earlier (Art. 92),
+      so from 25 Aug 2023 for the first designated services. Our reading: Art. 38 applies
+      to recommender systems on VLOSEs too, although Art. 27 itself is addressed only to
+      online platforms.
+  - id: art-40
+    ref: Art. 40
+    title: Data access for regulators and vetted researchers
+    kind: obligation
+    category: transparency
+    roles: [service-provider]
+    scope: Very large online platforms and search engines designated under Art. 33
+    risks: [opacity, accountability]
+    summary: >
+      On reasoned request, give the Digital Services Coordinator of establishment or the
+      Commission access to data needed to monitor compliance, and explain the design,
+      logic, functioning and testing of algorithmic systems, including recommender
+      systems. On a reasoned request from the Digital Services Coordinator, give vetted
+      researchers (independent of commercial interests, with disclosed funding, adequate
+      data security and a commitment to publish results) access to data for research on
+      systemic risks and the effectiveness of mitigation measures, through suitable
+      interfaces such as databases or APIs. Publicly accessible data, including real-time
+      data where technically possible, must be made available without undue delay to
+      researchers meeting most of the same conditions.
+    controls:
+      - Documented explanations of algorithmic and recommender system design, logic and testing, ready for regulator requests
+      - Researcher data-access process and interfaces, with the 15-day route to ask for an amended request
+      - Public-data access tooling for eligible researchers
+    evidence: [technical-documentation, policy]
+    assurance: [regulator-review]
+    applies_from: 2023-08-25
+    source: https://eur-lex.europa.eu/legal-content/EN/TXT/HTML/?uri=CELEX:32022R2065#art_40
+    last_verified: 2026-09-27
+    verified_against: official
+    note: >
+      Category is `transparency` because the vocabulary has no data-access category; our
+      reading. Technical conditions for sharing data with vetted researchers are in
+      Commission Delegated Regulation (EU) 2025/2050 of 1 Jul 2025 (OJ 9 Oct 2025), under
+      Art. 40(13); it is not yet an entry in this register.
+  - id: art-41
+    ref: Art. 41
+    title: Independent compliance function and management-body accountability
+    kind: obligation
+    category: governance
+    roles: [service-provider]
+    scope: Very large online platforms and search engines designated under Art. 33
+    risks: [accountability]
+    summary: >
+      Establish a compliance function independent from operational functions, with one
+      or more qualified compliance officers and a head who is an independent senior
+      manager reporting directly to the management body and who cannot be removed without
+      its approval. Compliance officers cooperate with regulators, make sure systemic risks
+      are identified and mitigated, organise and supervise the independent audit, advise
+      staff and monitor compliance. The management body approves and reviews, at least
+      yearly, the strategies and policies for managing systemic risks, and devotes enough
+      time and resources to risk management.
+    controls:
+      - Compliance function charter with independence, reporting line and removal protections for its head
+      - Head of compliance notified to the Digital Services Coordinator and the Commission
+      - Annual management-body approval of systemic risk strategies and policies, minuted
+    evidence: [policy, management-review]
+    assurance: [third-party-assessment, regulator-notification]
+    assurance_note: >
+      The auditor evaluates how compliance officers and the management body performed
+      under Art. 41 (Delegated Regulation 2024/436, Arts 13(2)(a)(iii) and 14(2)(a)(iii)).
+    applies_from: 2023-08-25
+    maps_to: [iso-iec-42001#cl-5, nist-ai-rmf#govern]
+    source: https://eur-lex.europa.eu/legal-content/EN/TXT/HTML/?uri=CELEX:32022R2065#art_41
+    last_verified: 2026-09-27
+    verified_against: official
+  - id: art-42
+    ref: Art. 42
+    title: Transparency reporting, including publication of risk assessment and audit reports
+    kind: obligation
+    category: transparency
+    roles: [service-provider]
+    scope: Very large online platforms and search engines designated under Art. 33
+    risks: [opacity, accountability]
+    summary: >
+      Publish content moderation transparency reports every six months (the first within
+      two months of obligations applying), with extra detail for VLOPs on moderation
+      staff by language and on accuracy indicators, and user numbers per Member State.
+      Send to the Digital Services Coordinator and the Commission on completion, and
+      publish within three months of receiving each audit report: the risk assessment
+      results, the mitigation measures, the audit report, the audit implementation report
+      and, where applicable, information on consultations supporting the risk assessment.
+      Confidential or security-sensitive information may be removed from the public
+      versions if the complete reports and the reasons go to the regulators.
+    controls:
+      - Six-monthly transparency report calendar
+      - Annual publication pack (risk assessment, mitigation, audit and implementation reports) released within three months of the audit report
+      - Documented redaction decisions, with full versions and reasons sent to regulators
+    evidence: [transparency-report, audit-report, risk-register]
+    assurance: [public-disclosure, regulator-notification]
+    applies_from: 2023-08-25
+    maps_to: [us-ca-sb53#transparency-report]
+    source: https://eur-lex.europa.eu/legal-content/EN/TXT/HTML/?uri=CELEX:32022R2065#art_42
+    last_verified: 2026-09-27
+    verified_against: official
+    note: >
+      Transparency reports follow Art. 15 (templates in Commission Implementing Regulation
+      (EU) 2024/2835; only its title was checked). Our reading of the timing: for the
+      first designated services, first audit reports were due by late Aug 2024 and the
+      Art. 42(4) publication pack three months after receipt.
