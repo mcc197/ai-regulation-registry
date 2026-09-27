@@ -68,14 +68,23 @@ requirements:
     summary: >
       Providers and deployers take measures to support the AI literacy of staff and
       others who operate or use AI systems on their behalf, taking account of their
-      knowledge, the context of use and the people affected.
+      knowledge, the context of use and the people affected. They do not have to
+      guarantee any particular level of literacy for any individual.
     controls:
       - Role-based AI training programme for staff who build, buy or operate AI
       - Record who has been trained and on what
     evidence: [training-records, policy]
     assurance: [self-assessment]
     applies_from: 2025-02-02
-    note: Softened by Regulation (EU) 2026/1744 from "ensure a sufficient level" to "take measures to support".
+    source: https://eur-lex.europa.eu/legal-content/EN/TXT/HTML/?uri=CELEX:32026R1744#art_1
+    last_verified: 2026-09-27
+    verified_against: official
+    note: >
+      Article replaced by Regulation (EU) 2026/1744, Art. 1(5), in force 27 Jul 2026. The
+      original duty (from 2 Feb 2025) was to take measures to ensure, to their best
+      extent, a sufficient level of AI literacy; it is now to take measures to support
+      its development. The new Art. 4(2)-(3) add support from the Commission, Member
+      States and the Board.
   - id: art-5
     ref: Art. 5
     title: Prohibited AI practices
@@ -95,23 +104,71 @@ requirements:
     evidence: [policy, risk-register]
     assurance: [self-assessment]
     applies_from: 2025-02-02
+    source: https://eur-lex.europa.eu/legal-content/EN/TXT/HTML/?uri=CELEX:32024R1689#art_5
+    last_verified: 2026-09-27
+    verified_against: official
+    note: The two practices added by Regulation (EU) 2026/1744 are recorded separately (art-5-1-ba-bb).
   - id: art-5-1-ba-bb
-    ref: Art. 5(1)(ba)-(bb)
+    ref: Art. 5(1)(ba)-(bb), 5(1a)-(1b)
     title: Ban on AI generating non-consensual intimate imagery and CSAM
     kind: prohibition
     category: prohibited-practice
     roles: [provider, deployer]
     risks: [child-safety, privacy, fundamental-rights]
     summary: >
-      Adds two prohibited practices: AI systems that generate non-consensual intimate
-      imagery of identifiable people, and AI systems that generate child sexual abuse
-      material.
+      Adds two prohibited practices: AI systems that generate or manipulate realistic
+      intimate or sexually explicit imagery of an identifiable person without their
+      explicit consent, and AI systems that generate or manipulate child sexual abuse
+      material. Placing such a system on the market is banned where this is its intended
+      purpose, or where it can readily and reproducibly produce such material and lacks
+      reasonable safeguards to prevent it and to correct misuse. Use is banned where the
+      deployer uses the system for that purpose.
     controls:
-      - Output safeguards and abuse monitoring for image and video generation
+      - Output safeguards that reliably block intimate-imagery and CSAM generation, tested against foreseeable misuse
+      - Abuse monitoring with a route to correct observed or reported misuse
+      - Acceptable use terms prohibiting such generation
     evidence: [policy, test-reports]
     assurance: [self-assessment]
     applies_from: 2026-12-02
-    note: Added by Regulation (EU) 2026/1744.
+    source: https://eur-lex.europa.eu/legal-content/EN/TXT/HTML/?uri=CELEX:32026R1744#art_1
+    last_verified: 2026-09-27
+    verified_against: official
+    note: >
+      Added by Regulation (EU) 2026/1744, Art. 1(7); applies from 2 Dec 2026 under the
+      amended Art. 113(a). Corrected on 2026-09-27: the summary now covers manipulation
+      as well as generation, and the conditions in Art. 5(1a) that limit when placing on
+      the market or use is banned.
+  - id: art-6-4
+    ref: Art. 6(3)-(4)
+    title: Documenting a "not high-risk" assessment for an Annex III system
+    kind: obligation
+    category: technical-documentation
+    roles: [provider]
+    scope: Annex III systems the provider considers not high-risk
+    risks: [accountability, fundamental-rights]
+    summary: >
+      An Annex III system is not high-risk if it poses no significant risk of harm, for
+      example because it only performs a narrow procedural or preparatory task, improves
+      a completed human activity, or detects decision patterns without replacing human
+      review. Systems that profile people are always high-risk. A provider relying on
+      this must document the assessment before placing the system on the market,
+      register the system (Art. 49(2)) and hand the assessment to national authorities
+      on request.
+    controls:
+      - Classification procedure that records which Art. 6(3) condition applies and why
+      - Profiling check before any system is treated as not high-risk
+      - Review of the assessment when the intended purpose changes
+    evidence: [technical-documentation, registration-entry]
+    assurance: [self-assessment, regulator-registration, regulator-review]
+    assurance_note: The documented assessment must be provided to national competent authorities on request.
+    applies_from: 2027-12-02
+    source: https://eur-lex.europa.eu/legal-content/EN/TXT/HTML/?uri=CELEX:32024R1689#art_6
+    last_verified: 2026-09-27
+    verified_against: official
+    note: >
+      Added on 2026-09-27. Chapter III Section 1 applies to Annex III systems from
+      2 Dec 2027 (Art. 113(c) as amended by 2026/1744). Recital 64 of 2026/1744 confirms
+      the documentation duty stays while the registration content is slimmed down.
   - id: art-9
     ref: Art. 9
     title: Risk management system
@@ -135,6 +192,9 @@ requirements:
     assurance_note: Checked as part of the conformity assessment in Art. 43.
     applies_from: 2027-12-02
     maps_to: [iso-iec-42001#cl-6-1-2, iso-iec-42001#cl-6-1-3, nist-ai-rmf#map, nist-ai-rmf#measure, nist-ai-rmf#manage]
+    source: https://eur-lex.europa.eu/legal-content/EN/TXT/HTML/?uri=CELEX:32024R1689#art_9
+    last_verified: 2026-09-27
+    verified_against: official
     note: Annex III systems from 2 Dec 2027; AI in Annex I products from 2 Aug 2028.
   - id: art-10
     ref: Art. 10
@@ -153,11 +213,18 @@ requirements:
     controls:
       - Data sheets recording origin, purpose, preparation and known gaps
       - Bias examination and mitigation, with documented results
-      - Data quality checks for relevance, representativeness and errors
+      - Data quality checks for relevant, representative and error-free data
     evidence: [data-documentation, test-reports]
     assurance: [self-assessment, third-party-assessment]
     applies_from: 2027-12-02
     maps_to: [iso-iec-42001#a-7]
+    source: https://eur-lex.europa.eu/legal-content/EN/TXT/HTML/?uri=CELEX:32024R1689#art_10
+    last_verified: 2026-09-27
+    verified_against: official
+    note: >
+      Annex III systems from 2 Dec 2027; AI in Annex I products from 2 Aug 2028.
+      Regulation (EU) 2026/1744 deleted Art. 10(5) and moved the rules on processing
+      special categories of personal data for bias detection into a new Art. 4a.
   - id: art-11
     ref: Art. 11 and Annex IV
     title: Technical documentation
@@ -178,6 +245,13 @@ requirements:
     assurance_note: Must be available to national authorities on request.
     applies_from: 2027-12-02
     maps_to: [iso-iec-42001#a-6]
+    source: https://eur-lex.europa.eu/legal-content/EN/TXT/HTML/?uri=CELEX:32024R1689#art_11
+    last_verified: 2026-09-27
+    verified_against: official
+    note: >
+      Annex III systems from 2 Dec 2027; AI in Annex I products from 2 Aug 2028.
+      Regulation (EU) 2026/1744 extends the simplified documentation form to small
+      mid-cap enterprises as well as SMEs.
   - id: art-12
     ref: Arts. 12 and 19
     title: Record-keeping and automatic logs
@@ -198,6 +272,10 @@ requirements:
     assurance: [self-assessment, third-party-assessment]
     applies_from: 2027-12-02
     maps_to: [iso-iec-42001#a-6]
+    source: https://eur-lex.europa.eu/legal-content/EN/TXT/HTML/?uri=CELEX:32024R1689#art_12
+    last_verified: 2026-09-27
+    verified_against: official
+    note: Annex III systems from 2 Dec 2027; AI in Annex I products from 2 Aug 2028.
   - id: art-13
     ref: Art. 13
     title: Transparency and instructions for use
@@ -217,6 +295,10 @@ requirements:
     assurance: [self-assessment, third-party-assessment]
     applies_from: 2027-12-02
     maps_to: [iso-iec-42001#a-8]
+    source: https://eur-lex.europa.eu/legal-content/EN/TXT/HTML/?uri=CELEX:32024R1689#art_13
+    last_verified: 2026-09-27
+    verified_against: official
+    note: Annex III systems from 2 Dec 2027; AI in Annex I products from 2 Aug 2028.
   - id: art-14
     ref: Art. 14
     title: Human oversight
@@ -237,6 +319,13 @@ requirements:
     assurance: [self-assessment, third-party-assessment]
     applies_from: 2027-12-02
     maps_to: [nist-ai-rmf#manage]
+    source: https://eur-lex.europa.eu/legal-content/EN/TXT/HTML/?uri=CELEX:32024R1689#art_14
+    last_verified: 2026-09-27
+    verified_against: official
+    note: >
+      Annex III systems from 2 Dec 2027; AI in Annex I products from 2 Aug 2028. The
+      two-person check can be waived for law enforcement, migration, border control or
+      asylum where Union or national law considers it disproportionate.
   - id: art-15
     ref: Art. 15
     title: Accuracy, robustness and cybersecurity
@@ -258,6 +347,13 @@ requirements:
     assurance: [self-assessment, third-party-assessment]
     applies_from: 2027-12-02
     maps_to: [nist-ai-rmf#measure]
+    source: https://eur-lex.europa.eu/legal-content/EN/TXT/HTML/?uri=CELEX:32024R1689#art_15
+    last_verified: 2026-09-27
+    verified_against: official
+    note: >
+      Annex III systems from 2 Dec 2027; AI in Annex I products from 2 Aug 2028. Under
+      the new Art. 42(3) added by 2026/1744, systems that meet the Cyber Resilience Act
+      conditions are deemed to meet the Art. 15 cybersecurity requirements.
   - id: art-17
     ref: Art. 17
     title: Quality management system
@@ -277,6 +373,14 @@ requirements:
     assurance: [self-assessment, third-party-assessment]
     applies_from: 2027-12-02
     maps_to: [iso-iec-42001#cl-4, iso-iec-42001#cl-5, iso-iec-42001#cl-8, iso-iec-42001#cl-10]
+    source: https://eur-lex.europa.eu/legal-content/EN/TXT/HTML/?uri=CELEX:32024R1689#art_17
+    last_verified: 2026-09-27
+    verified_against: official
+    note: >
+      Annex III systems from 2 Dec 2027; AI in Annex I products from 2 Aug 2028.
+      Regulation (EU) 2026/1744 names SMEs and small mid-caps in the proportionality
+      rule (Art. 17(2)) and lets some SMEs meet parts of the QMS in a simplified way
+      (Art. 63(1)).
   - id: art-18
     ref: Art. 18
     title: Keeping documentation for ten years
@@ -292,6 +396,36 @@ requirements:
     evidence: [technical-documentation, quality-manual, conformity-declaration]
     assurance: [regulator-review]
     applies_from: 2027-12-02
+    source: https://eur-lex.europa.eu/legal-content/EN/TXT/HTML/?uri=CELEX:32024R1689#art_18
+    last_verified: 2026-09-27
+    verified_against: official
+    note: Annex III systems from 2 Dec 2027; AI in Annex I products from 2 Aug 2028.
+  - id: art-20
+    ref: Art. 20
+    title: Corrective actions and duty of information
+    kind: obligation
+    category: post-market-monitoring
+    roles: [provider]
+    scope: High-risk AI systems
+    risks: [health-safety, fundamental-rights, reliability]
+    summary: >
+      A provider that has reason to think a high-risk system it has placed on the market
+      does not conform must immediately bring it into conformity, withdraw, disable or
+      recall it, and tell distributors and, where relevant, deployers, importers and its
+      authorised representative. Where the system presents a risk, the provider
+      investigates the causes and informs the market surveillance authority and any
+      notified body that certified it.
+    controls:
+      - Non-conformity and recall procedure with named decision-makers
+      - Customer and distributor notification list kept current
+      - Root-cause investigation record for each case
+    evidence: [monitoring-plan, incident-report]
+    assurance: [regulator-notification]
+    applies_from: 2027-12-02
+    source: https://eur-lex.europa.eu/legal-content/EN/TXT/HTML/?uri=CELEX:32024R1689#art_20
+    last_verified: 2026-09-27
+    verified_against: official
+    note: Added on 2026-09-27. Annex III systems from 2 Dec 2027; AI in Annex I products from 2 Aug 2028.
   - id: art-22
     ref: Art. 22
     title: Authorised representative for non-EU providers
@@ -307,6 +441,44 @@ requirements:
     evidence: [policy]
     assurance: [none]
     applies_from: 2027-12-02
+    source: https://eur-lex.europa.eu/legal-content/EN/TXT/HTML/?uri=CELEX:32024R1689#art_22
+    last_verified: 2026-09-27
+    verified_against: official
+    note: Annex III systems from 2 Dec 2027; AI in Annex I products from 2 Aug 2028.
+  - id: art-25
+    ref: Art. 25
+    title: Responsibilities along the AI value chain
+    kind: obligation
+    category: third-party-management
+    roles: [provider, importer, distributor, deployer]
+    scope: High-risk AI systems
+    risks: [accountability]
+    summary: >
+      A distributor, importer, deployer or other party becomes the provider, with all
+      provider duties, if it puts its name or trademark on a high-risk system, makes a
+      substantial modification, or changes a system's intended purpose so that it becomes
+      high-risk. The original provider must then cooperate with the new one (documentation,
+      known limitations and failure modes, and technical access for testing), unless it
+      clearly excluded use as a high-risk system. Providers and their suppliers of AI
+      systems, models, tools and components must agree in writing the information and
+      access the provider needs to comply; free and open-source suppliers are exempt
+      unless they supply a general-purpose AI model.
+    controls:
+      - Change control that checks whether a modification or new purpose makes the business the provider
+      - Supplier contracts that set out documentation, access and support for compliance
+      - Clear statement in terms of use where a system must not be used as high-risk
+    evidence: [policy, technical-documentation]
+    assurance: [self-assessment]
+    applies_from: 2027-12-02
+    maps_to: [iso-iec-42001#a-10]
+    source: https://eur-lex.europa.eu/legal-content/EN/TXT/HTML/?uri=CELEX:32024R1689#art_25
+    last_verified: 2026-09-27
+    verified_against: official
+    note: >
+      Added on 2026-09-27. Art. 25(2) and (4) as replaced by Regulation (EU) 2026/1744,
+      Art. 1(12), which spells out the cooperation duty and adds AI models to the written
+      agreement; breaches of Art. 25(2) and (4) are now fineable under Art. 99(4)(da).
+      Annex III systems from 2 Dec 2027; AI in Annex I products from 2 Aug 2028.
   - id: art-26
     ref: Art. 26
     title: Obligations of deployers of high-risk AI
@@ -324,12 +496,19 @@ requirements:
     controls:
       - Named oversight owners with training and authority
       - Operational monitoring and an escalation route to the provider
+      - Suspend use and alert the provider and authority when a risk is found
       - Log retention of at least six months
       - Worker and affected-person notices
     evidence: [oversight-records, logs, user-notice, training-records]
     assurance: [self-assessment]
     applies_from: 2027-12-02
     maps_to: [iso-iec-42001#a-9]
+    source: https://eur-lex.europa.eu/legal-content/EN/TXT/HTML/?uri=CELEX:32024R1689#art_26
+    last_verified: 2026-09-27
+    verified_against: official
+    note: >
+      Annex III systems from 2 Dec 2027; AI in Annex I products from 2 Aug 2028. Not
+      amended by Regulation (EU) 2026/1744.
   - id: art-27
     ref: Art. 27
     title: Fundamental rights impact assessment
@@ -338,8 +517,8 @@ requirements:
     roles: [deployer]
     scope: >
       Public bodies and private bodies providing public services that deploy Annex III
-      systems, and deployers of credit-scoring and life or health insurance pricing
-      systems
+      systems (except critical infrastructure, point 2), and deployers of credit-scoring
+      and life or health insurance pricing systems
     risks: [fundamental-rights, discrimination]
     summary: >
       Before first use, assess the impact on fundamental rights: the processes the
@@ -347,12 +526,21 @@ requirements:
       harm, human oversight measures and what happens if risks materialise. Notify the
       market surveillance authority of the results.
     controls:
-      - FRIA template (the AI Office publishes one) completed before first use
+      - FRIA completed before first use, using the AI Office questionnaire template
+      - Cross-reference the GDPR data protection impact assessment where it already covers an element
       - Update when relevant factors change
     evidence: [impact-assessment]
     assurance: [regulator-notification]
     applies_from: 2027-12-02
     maps_to: [iso-iec-42001#cl-6-1-4, iso-iec-42001#a-5]
+    source: https://eur-lex.europa.eu/legal-content/EN/TXT/HTML/?uri=CELEX:32024R1689#art_27
+    last_verified: 2026-09-27
+    verified_against: official
+    note: >
+      Corrected on 2026-09-27: scope now excludes Annex III point 2 (critical
+      infrastructure), as Art. 27(1) does; controls updated for Art. 27(4)-(5) as
+      replaced by Regulation (EU) 2026/1744 (questionnaire template, possibly as an
+      automated tool, and cross-references to the DPIA).
   - id: art-43
     ref: Art. 43
     title: Conformity assessment
@@ -374,9 +562,23 @@ requirements:
     assurance_note: >
       Third-party assessment by a notified body for biometric systems (Annex III point
       1) where standards are not fully applied, and for Annex I products where the
-      sectoral law requires it.
+      sectoral law requires it. For biometric systems used by law enforcement, migration
+      or EU bodies, the market surveillance authority acts as the notified body. For
+      systems under the AI Office's exclusive competence (Art. 75(1e)), third-party
+      assessments run through the AI Office.
     applies_from: 2027-12-02
     maps_to: [iso-iec-42001#cert]
+    source: https://eur-lex.europa.eu/legal-content/EN/TXT/HTML/?uri=CELEX:32024R1689#art_43
+    last_verified: 2026-09-27
+    verified_against: official
+    note: >
+      Art. 43(3) replaced by Regulation (EU) 2026/1744: the sectoral route now also
+      covers the Art. 17 QMS, AI does not by itself force a third-party route, and
+      sectoral notified bodies must apply for designation by 28 Jan 2028. Art. 43 sits in
+      Chapter III Section 5, which Art. 113(c) does not defer, so it formally applies
+      from 2 Aug 2026; the date here is when it bites in practice, once systems are
+      high-risk under Art. 6 (Annex III from 2 Dec 2027, Annex I from 2 Aug 2028). This is
+      our reading.
   - id: art-47-48
     ref: Arts. 47 and 48
     title: EU declaration of conformity and CE marking
@@ -392,6 +594,13 @@ requirements:
     evidence: [conformity-declaration]
     assurance: [self-assessment]
     applies_from: 2027-12-02
+    source: https://eur-lex.europa.eu/legal-content/EN/TXT/HTML/?uri=CELEX:32024R1689#art_47
+    last_verified: 2026-09-27
+    verified_against: official
+    note: >
+      Chapter III Section 5 is not deferred by Art. 113(c), so formally applies from
+      2 Aug 2026; in practice it bites once systems are high-risk under Art. 6 (Annex III
+      from 2 Dec 2027, Annex I from 2 Aug 2028). This is our reading.
   - id: art-49
     ref: Art. 49
     title: Registration in the EU database
@@ -403,11 +612,23 @@ requirements:
     summary: >
       Providers register Annex III high-risk systems in the EU database before placing
       them on the market (critical infrastructure systems are registered nationally).
-      Public-authority deployers register their use. Providers who conclude an Annex III
-      system is not high-risk also register that assessment.
+      Public-authority deployers register their use. Providers who conclude under
+      Art. 6(3) that an Annex III system is not high-risk also register themselves and
+      the system, stating the condition they rely on.
     evidence: [registration-entry]
     assurance: [regulator-registration]
     applies_from: 2027-12-02
+    source: https://eur-lex.europa.eu/legal-content/EN/TXT/HTML/?uri=CELEX:32024R1689#art_49
+    last_verified: 2026-09-27
+    verified_against: official
+    note: >
+      Corrected on 2026-09-27: providers relying on Art. 6(3) register the system, not
+      the assessment itself. Regulation (EU) 2026/1744 deleted Annex VIII Section B
+      points 7 and 9, so the registration no longer includes a summary of the grounds;
+      the assessment is documented under Art. 6(4) and given to authorities on request.
+      Art. 49 is not deferred by Art. 113(c) and formally applies from 2 Aug 2026; in
+      practice it bites once Art. 6 applies (2 Dec 2027 for Annex III). This is our
+      reading.
   - id: art-50-providers
     ref: Art. 50(1)-(2)
     title: Transparency for AI interactions and machine-readable marking
@@ -427,7 +648,12 @@ requirements:
     assurance: [self-assessment]
     applies_from: 2026-08-02
     maps_to: [nist-ai-600-1#provenance]
-    note: For systems on the market before 2 Aug 2026, the Art. 50(2) marking duty applies from 2 Dec 2026.
+    source: https://eur-lex.europa.eu/legal-content/EN/TXT/HTML/?uri=CELEX:32024R1689#art_50
+    last_verified: 2026-09-27
+    verified_against: official
+    note: >
+      For systems on the market before 2 Aug 2026, the Art. 50(2) marking duty applies
+      from 2 Dec 2026 (Art. 111(4), added by Regulation (EU) 2026/1744).
   - id: art-50-deployers
     ref: Art. 50(3)-(4)
     title: Disclosure of deepfakes, emotion recognition and AI-written public text
@@ -443,6 +669,9 @@ requirements:
     evidence: [user-notice]
     assurance: [self-assessment]
     applies_from: 2026-08-02
+    source: https://eur-lex.europa.eu/legal-content/EN/TXT/HTML/?uri=CELEX:32024R1689#art_50
+    last_verified: 2026-09-27
+    verified_against: official
   - id: art-53
     ref: Art. 53
     title: Obligations of general-purpose AI model providers
@@ -465,6 +694,9 @@ requirements:
     assurance_note: The AI Office supervises; following the GPAI Code of Practice can demonstrate compliance.
     applies_from: 2025-08-02
     maps_to: [eu-gpai-code-of-practice#transparency, eu-gpai-code-of-practice#copyright]
+    source: https://eur-lex.europa.eu/legal-content/EN/TXT/HTML/?uri=CELEX:32024R1689#art_53
+    last_verified: 2026-09-27
+    verified_against: official
     note: Models placed on the market before 2 Aug 2025 must comply by 2 Aug 2027.
   - id: art-55
     ref: Art. 55
@@ -476,8 +708,9 @@ requirements:
     summary: >
       Evaluate the model with state-of-the-art protocols including adversarial testing,
       assess and mitigate systemic risks at EU level, track and report serious
-      incidents to the AI Office and national authorities without undue delay, and
-      ensure adequate cybersecurity for the model and its infrastructure.
+      incidents without undue delay to the AI Office and, as appropriate, national
+      authorities, and ensure adequate cybersecurity for the model and its
+      infrastructure.
     controls:
       - Model evaluations and red-teaming before and after release
       - Systemic risk assessment and mitigation plan
@@ -487,6 +720,13 @@ requirements:
     assurance: [regulator-notification, regulator-review]
     applies_from: 2025-08-02
     maps_to: [eu-gpai-code-of-practice#safety-security, us-ca-sb53#frontier-framework]
+    source: https://eur-lex.europa.eu/legal-content/EN/TXT/HTML/?uri=CELEX:32024R1689#art_55
+    last_verified: 2026-09-27
+    verified_against: official
+    note: >
+      Corrected on 2026-09-27: incident reports go to national authorities only "as
+      appropriate", not always. Models placed on the market before 2 Aug 2025 must comply
+      by 2 Aug 2027 (Art. 111(3)).
   - id: art-72
     ref: Art. 72
     title: Post-market monitoring
@@ -503,6 +743,15 @@ requirements:
     assurance: [self-assessment, third-party-assessment]
     applies_from: 2027-12-02
     maps_to: [iso-iec-42001#cl-9-1]
+    source: https://eur-lex.europa.eu/legal-content/EN/TXT/HTML/?uri=CELEX:32024R1689#art_72
+    last_verified: 2026-09-27
+    verified_against: official
+    note: >
+      Art. 72(3) replaced by Regulation (EU) 2026/1744: the mandatory template by
+      implementing act is gone; the Commission publishes guidance with a voluntary
+      template by 2 Sep 2027. Chapter IX is not deferred by Art. 113(c) and formally
+      applies from 2 Aug 2026; in practice it bites once systems are high-risk under
+      Art. 6 (Annex III from 2 Dec 2027, Annex I from 2 Aug 2028). This is our reading.
   - id: art-73
     ref: Art. 73
     title: Reporting serious incidents
@@ -523,13 +772,24 @@ requirements:
     assurance: [regulator-notification]
     applies_from: 2027-12-02
     maps_to: [nist-ai-600-1#incident-disclosure, us-ca-sb53#incident-reporting]
+    source: https://eur-lex.europa.eu/legal-content/EN/TXT/HTML/?uri=CELEX:32024R1689#art_73
+    last_verified: 2026-09-27
+    verified_against: official
+    note: >
+      Not amended by Regulation (EU) 2026/1744, but its new Art. 75(1a) sends reports for
+      systems under the AI Office's exclusive competence to the AI Office. Chapter IX is
+      not deferred by Art. 113(c) and formally applies from 2 Aug 2026; in practice it
+      bites once systems are high-risk under Art. 6 (Annex III from 2 Dec 2027, Annex I
+      from 2 Aug 2028). This is our reading.
   - id: art-86
     ref: Art. 86
     title: Right to explanation of individual decisions
     kind: right
     category: individual-rights
     roles: [affected-person, deployer]
-    scope: Decisions based on Annex III high-risk systems with legal or similarly significant effects
+    scope: >
+      Decisions based on Annex III high-risk systems (except critical infrastructure,
+      point 2) with legal or similarly significant adverse effects
     risks: [opacity, fundamental-rights]
     summary: >
       A person subject to such a decision can obtain from the deployer a clear and
@@ -539,4 +799,12 @@ requirements:
       - Process for answering explanation requests
     evidence: [user-notice]
     assurance: [none]
-    note: Check whether the Omnibus deferral of high-risk dates also moves this.
+    applies_from: 2027-12-02
+    source: https://eur-lex.europa.eu/legal-content/EN/TXT/HTML/?uri=CELEX:32024R1689#art_86
+    last_verified: 2026-09-27
+    verified_against: official
+    note: >
+      Corrected on 2026-09-27: scope now excludes Annex III point 2, and applies_from is
+      set. Regulation (EU) 2026/1744 does not amend Art. 86 or its date. Chapter IX
+      formally applies from 2 Aug 2026, but the right depends on Annex III systems being
+      high-risk under Art. 6(2), which applies from 2 Dec 2027. This is our reading.

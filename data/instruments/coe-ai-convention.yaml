@@ -51,6 +51,9 @@ requirements:
       the context and risks, including identification of AI-generated content.
     evidence: [policy]
     assurance: [none]
+    source: https://eur-lex.europa.eu/legal-content/EN/TXT/HTML/?uri=CELEX:22026A01081#art_8
+    last_verified: 2026-09-27
+    verified_against: official
   - id: art-14-15
     ref: Arts. 14 and 15
     title: Remedies and procedural safeguards
@@ -59,12 +62,25 @@ requirements:
     roles: [state, affected-person]
     risks: [fundamental-rights, opacity]
     summary: >
-      Parties ensure accessible and effective remedies for human rights violations
-      resulting from AI, documentation that can be given to affected people, a
-      possibility to lodge complaints, and notice to people that they are interacting
-      with an AI system rather than a human.
+      To the extent their international obligations and domestic law require, Parties
+      ensure accessible and effective remedies for human rights violations resulting
+      from AI. This includes documenting information about systems that can significantly
+      affect human rights, sharing it with authorised bodies and, where appropriate,
+      with affected people so they can contest decisions, and a way to complain to
+      competent authorities. Where an AI system significantly affects human rights,
+      procedural safeguards must be available. Parties also seek to ensure, as fits the
+      context, that people are told they are interacting with an AI system rather than
+      a human.
     evidence: [user-notice]
     assurance: [none]
+    source: https://eur-lex.europa.eu/legal-content/EN/TXT/HTML/?uri=CELEX:22026A01081#art_14
+    last_verified: 2026-09-27
+    verified_against: official
+    note: >
+      Corrected on 2026-09-27: added the qualifiers in the text (remedies to the extent
+      required, information shared "where appropriate"). The AI-interaction notice in
+      Art. 15(2) is a "seek to ensure" duty, not an absolute one. Added the Art. 15(1)
+      procedural safeguards.
   - id: art-16
     ref: Art. 16
     title: Risk and impact management framework
@@ -74,9 +90,18 @@ requirements:
     risks: [fundamental-rights]
     summary: >
       Parties adopt measures to identify, assess, prevent and mitigate risks to human
-      rights, democracy and the rule of law across the AI lifecycle, considering
-      severity and probability, with documentation, monitoring and testing, and the
-      option of bans or moratoria.
+      rights, democracy and the rule of law across the AI lifecycle. The measures take
+      account of context, severity and probability and the views of affected
+      stakeholders, and include monitoring, documentation and, where appropriate,
+      testing before first use and after significant changes. Adverse impacts must be
+      addressed, and Parties must assess whether some uses need a ban or moratorium.
     evidence: [impact-assessment, risk-register]
     assurance: [none]
     maps_to: [eu-ai-act#art-27]
+    source: https://eur-lex.europa.eu/legal-content/EN/TXT/HTML/?uri=CELEX:22026A01081#art_16
+    last_verified: 2026-09-27
+    verified_against: official
+    note: >
+      Corrected on 2026-09-27: Art. 16(4) requires Parties to assess the need for bans or
+      moratoria (not just leave it as an option). Added stakeholder input, testing on
+      significant modification, and the Art. 16(3) duty to address adverse impacts.
