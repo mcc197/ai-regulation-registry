@@ -1,0 +1,87 @@
+id: pren-18283
+title: "Artificial Intelligence — Concepts, measures and requirements for managing bias in AI systems"
+short_title: prEN 18283
+type: standard
+binding: false
+jurisdiction: EU
+issuer: CEN-CENELEC JTC 21
+official_id: prEN 18283 (work item JT021036)
+url: "https://standards.cencenelec.eu/ords/f?p=205:110:::::FSP_PROJECT,FSP_LANG_ID:80353,25&cs=1A0A0C0DBC7B012D69EA9AAAF8D5DFDA3"
+topics: [algorithmic-discrimination, high-risk, risk-management]
+summary: >
+  Draft European standard on assessing and treating bias in AI systems, covering both
+  data bias and system or model bias from algorithmic factors, in the context of the EU
+  AI Act. Requested by the Commission (M/593, amended by M/613) to support the data and
+  data governance requirements (Art. 10). Still a draft in Sept 2026: approved for
+  CEN Enquiry, not yet published or cited in the Official Journal.
+milestones:
+  - {date: 2024-08-21, event: proposed, scope: "Work item registered in the CEN-CENELEC JTC 21 work programme"}
+relations:
+  - {type: supports, target: eu-ai-act}
+sources:
+  - {url: "https://standards.cencenelec.eu/ords/f?p=205:110:::::FSP_PROJECT,FSP_LANG_ID:80353,25&cs=1A0A0C0DBC7B012D69EA9AAAF8D5DFDA3", label: CEN-CENELEC project record, kind: official, watch: true}
+  - {url: "https://standards.cencenelec.eu/ords/f?p=205:22:::::FSP_ORG_ID,FSP_LANG_ID:2916257,25&cs=114251C6C0B684FBBC069923513BF6348", label: CEN-CENELEC JTC 21 work programme, kind: official}
+  - {url: "https://iss.rs/en/project/show/iss:proj:112335", label: "Institute for Standardization of Serbia, national project for prEN 18283 (stage dates)", kind: official}
+  - {url: "https://www.cencenelec.eu/news-events/news/2026/newsletter/ots-73-etuc/", label: "CEN-CENELEC newsletter, European standards supporting the AI Act (27 May 2026)", kind: official}
+  - {url: "https://genorma.com/en/standards/pren-18283", label: Genorma, kind: secondary}
+last_verified: 2026-09-27
+verified_against: official
+review_notes: >
+  Checked on 2026-09-27. The CEN-CENELEC project record gives the title, work item
+  JT021036, scope, legal act 2024/1689, mandates M/593 and M/613 and "Citation expected"
+  for the OJEU, with status "Under Approval". The JTC 21 work programme lists an initial
+  date of 2024-08-21, a current stage dated 2026-09-24, the next stage on 2026-10-08 and
+  a forecast voting date of 2027-03-03. The Serbian national standards body (ISS), which
+  mirrors CEN stages, shows stage 30.99 (committee draft approved for registration as an
+  enquiry draft) on 2026-09-24 and next stage 40.10 (enquiry) on 2026-10-08. Our
+  reading: the draft has been cleared for CEN Enquiry, which is due to open about
+  8 Oct 2026, and is neither published nor cited in the OJ, so it gives no presumption of
+  conformity. A CEN-CENELEC newsletter says a working draft was circulated in March 2026
+  for a five-week consultation; a secondary tracker gives 27 Mar 2026 as the close of
+  comments. Forecast dates are not recorded as milestones; add the Enquiry, ratification
+  and publication dates when they happen. No official preview or table of contents is
+  public, so the requirements below go no further than the official scope.
+requirements:
+  - id: bias-assessment
+    ref: Scope
+    title: Assess bias in AI systems, in data and in models
+    kind: control
+    category: data-governance
+    roles: [provider, deployer]
+    scope: AI systems in the context of the EU AI Act; primarily high-risk systems (Art. 10)
+    risks: [discrimination, fundamental-rights]
+    summary: >
+      Assess bias in AI systems using defined concepts and measures, covering data bias
+      in any data used to build or assess the system and system or model bias that can
+      come from algorithmic factors such as design choices.
+    evidence: [data-documentation, test-reports]
+    assurance: [self-assessment]
+    maps_to: [eu-ai-act#art-10, iso-iec-42001#a-7]
+    source: "https://standards.cencenelec.eu/ords/f?p=205:110:::::FSP_PROJECT,FSP_LANG_ID:80353,25&cs=1A0A0C0DBC7B012D69EA9AAAF8D5DFDA3"
+    last_verified: 2026-09-27
+    verified_against: official
+    note: >
+      Checked against the official scope on the CEN-CENELEC project record only; the
+      draft text is not public. Which measures and thresholds it sets, and the evidence
+      it expects, are our reading and need checking once the Enquiry draft is available.
+  - id: bias-treatment
+    ref: Scope
+    title: Treat bias that the provider or deployer does not want
+    kind: control
+    category: risk-management
+    roles: [provider, deployer]
+    scope: AI systems in the context of the EU AI Act; primarily high-risk systems (Art. 10)
+    risks: [discrimination, fundamental-rights]
+    summary: >
+      Treat (mitigate) bias that is unwanted by the AI provider or deployer according to
+      their specification of the AI system.
+    evidence: [risk-register, test-reports]
+    assurance: [self-assessment]
+    maps_to: [eu-ai-act#art-10, eu-ai-act#art-9]
+    source: "https://standards.cencenelec.eu/ords/f?p=205:110:::::FSP_PROJECT,FSP_LANG_ID:80353,25&cs=1A0A0C0DBC7B012D69EA9AAAF8D5DFDA3"
+    last_verified: 2026-09-27
+    verified_against: official
+    note: >
+      Checked against the official scope at scope level only. Tagging it risk-management
+      and mapping it to Art. 9 is our reading, since bias treatment feeds the risk
+      management system; the draft's own structure is not public.

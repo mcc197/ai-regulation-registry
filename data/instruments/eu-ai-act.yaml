@@ -42,6 +42,8 @@ milestones:
 relations:
   - {type: amended_by, target: eu-ai-omnibus}
   - {type: implemented_by, target: eu-gpai-code-of-practice}
+  - {type: supported_by, target: en-18286}
+  - {type: supported_by, target: pren-18283}
   - {type: references, target: eu-dsa}
 sources:
   - {url: "https://eur-lex.europa.eu/eli/reg/2024/1689/oj", label: EUR-Lex (original text), kind: official, watch: true}
