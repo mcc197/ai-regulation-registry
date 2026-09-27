@@ -156,14 +156,12 @@ ORDER BY m.date;
    by role: provider, deployer, importer), crosswalks between standards and laws
    (for example ISO/IEC 42001 clauses to AI Act Art. 9–15), and embeddings over
    provision text for semantic search.
-4. **Later:** notifications ("tell me when anything tagged `gpai` changes") via the
-   same ntfy, email and webhook notifiers the rail-alert app already uses.
+4. **Later:** notifications ("tell me when anything tagged `gpai` changes") via
+   ntfy, email or webhooks (the notifiers from rail-alert-system can be reused).
 
 ## 7. Open decisions
 
-- **Home:** this prototype sits in its own folder so it can be moved to a dedicated
-  repo with `git subtree split --prefix ai-regulation-registry`. A separate repo is
-  recommended once it grows.
+- **Home:** this repository (moved out of rail-alert-system).
 - **Licence of content:** summaries are our own words. Link to official texts; don't
   copy standards text (ISO/IEC text is copyrighted).
 - **Depth vs breadth:** provision-level modelling is expensive to maintain. Do it for

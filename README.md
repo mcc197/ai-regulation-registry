@@ -5,12 +5,9 @@ frameworks, which you can query from the command line or with SQL. See
 [DESIGN.md](DESIGN.md) for the data model, how the registry stays current, and the
 roadmap.
 
-This folder is separate from Rail Alert and doesn't depend on it.
-
 ## Try it
 
 ```bash
-cd ai-regulation-registry
 pip install -r requirements.txt
 
 python -m airegs applies-on 2027-01-01 -j US --binding   # what has effect then
