@@ -7,6 +7,23 @@ must be verified when each entry is added.
 
 ## Tier 1: independent audit and assurance regimes
 
+**Done on 2026-09-27.** All eight were added as `iso-iec-42006`, `iso-iec-42005`,
+`en-18286`, `pren-18283`, `us-ca-ccpa-admt-regs`, `us-nyc-ll144`, `eu-dsa` (with
+`eu-dsa-audit-delegated-regulation`) and `us-ny-raise-act`. Open items:
+
+- EN 18286: 3 requirements unverified until the final text's numbering can be
+  checked. It is published (DAV 22 Jul 2026) but not yet cited in the OJ, so there
+  is no presumption of conformity yet. Watch for the citation.
+- prEN 18283 is still a draft (CEN Enquiry from 24 Sep 2026). Update at each stage.
+- NYC LL144: the six-month posting period for audit summaries is from a secondary
+  source (the DCWP rule page was blocked).
+- Other JTC 21 drafts (risk management, logging, trustworthiness, cybersecurity)
+  are not yet added.
+- Vocabulary gaps noted while adding: no specific role for very large online
+  platforms or for auditors and certification bodies (`service-provider` and
+  `organisation` stand in).
+
+
 | Instrument | Why | Assurance angle |
 |---|---|---|
 | **ISO/IEC 42006:2025** (published 7 Jul 2025) | Requirements for bodies that audit and certify ISO/IEC 42001 | Defines what a credible 42001 certification audit looks like |
