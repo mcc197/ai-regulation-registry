@@ -1,0 +1,47 @@
+id: eu-ai-act
+title: Regulation laying down harmonised rules on artificial intelligence (Artificial Intelligence Act)
+short_title: EU AI Act
+type: legislation
+binding: true
+jurisdiction: EU
+issuer: European Parliament and Council of the EU
+official_id: Regulation (EU) 2024/1689
+url: https://eur-lex.europa.eu/eli/reg/2024/1689/oj
+topics: [risk-based, high-risk, prohibited-practices, gpai, transparency, content-labelling, ai-literacy, governance]
+summary: >
+  Risk-based EU framework for AI. It bans certain practices, sets requirements for
+  high-risk systems and their providers and deployers, sets transparency duties for
+  some systems and AI-generated content, and sets obligations for general-purpose AI
+  models. Application is phased, and the Digital Omnibus on AI (2026/1744) moved the
+  high-risk dates.
+milestones:
+  - {date: 2021-04-21, event: proposed, scope: Commission proposal COM(2021) 206}
+  - {date: 2024-06-13, event: signed}
+  - {date: 2024-07-12, event: published, scope: Official Journal}
+  - {date: 2024-08-01, event: entry_into_force}
+  - {date: 2025-02-02, event: applies, scope: "General provisions incl. AI literacy (Art. 4) and prohibited practices (Art. 5)"}
+  - {date: 2025-08-02, event: applies, scope: "General-purpose AI model obligations, governance, penalties, notified bodies"}
+  - {date: 2026-07-27, event: amended, scope: "Digital Omnibus on AI in force: high-risk dates deferred, AI literacy duty softened"}
+  - {date: 2026-08-02, event: applies, scope: "General application, incl. Art. 50 transparency obligations"}
+  - date: 2026-12-02
+    event: applies
+    scope: "Art. 50(2) machine-readable marking of AI-generated content, for systems placed on the market before 2 Aug 2026"
+    note: Grace period added by Regulation (EU) 2026/1744
+  - date: 2027-12-02
+    event: applies
+    scope: "High-risk obligations for stand-alone Annex III systems"
+    note: Was 2 Aug 2026 before Regulation (EU) 2026/1744
+  - date: 2028-08-02
+    event: applies
+    scope: "High-risk obligations for AI in products regulated under Annex I"
+    note: Was 2 Aug 2027 before Regulation (EU) 2026/1744
+relations:
+  - {type: amended_by, target: eu-ai-omnibus}
+  - {type: implemented_by, target: eu-gpai-code-of-practice}
+sources:
+  - {url: "https://eur-lex.europa.eu/eli/reg/2024/1689/oj", label: EUR-Lex (original text), kind: official, watch: true}
+  - {url: "https://www.gibsondunn.com/eu-ai-act-omnibus-agreement-postponed-high-risk-deadlines-and-other-key-changes/", label: Gibson Dunn on the Omnibus dates, kind: secondary}
+last_verified: 2026-09-27
+review_notes: >
+  Post-Omnibus dates checked against secondary sources only. Confirm them against the
+  consolidated text on EUR-Lex once it is published.

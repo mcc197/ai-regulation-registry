@@ -1,0 +1,27 @@
+id: us-co-sb24-205
+title: Consumer Protections for Artificial Intelligence (Colorado AI Act)
+short_title: Colorado AI Act (SB 24-205)
+type: legislation
+binding: true
+jurisdiction: US-CO
+issuer: Colorado General Assembly
+official_id: SB 24-205
+url: https://leg.colorado.gov/bills/sb24-205
+topics: [high-risk, algorithmic-discrimination, automated-decisions, consumer-protection]
+summary: >
+  First US state law on high-risk AI. It imposed a duty of care against algorithmic
+  discrimination, risk-management programmes and impact assessments on developers and
+  deployers. Its start was delayed and it never took effect. SB 26-189 replaced it.
+milestones:
+  - {date: 2024-05-17, event: signed, scope: "Signed; originally to apply from 1 Feb 2026"}
+  - {date: 2025-08-28, event: amended, scope: "SB 25B-004 moved the start date to 30 Jun 2026"}
+  - date: 2026-05-14
+    event: superseded
+    scope: Repealed and replaced by SB 26-189
+    note: A federal court had paused enforcement on 27 Apr 2026
+relations:
+  - {type: superseded_by, target: us-co-sb26-189}
+sources:
+  - {url: "https://leg.colorado.gov/bills/sb24-205", label: Colorado General Assembly, kind: official}
+  - {url: "https://www.akingump.com/en/insights/ai-law-and-regulation-tracker/colorado-postpones-implementation-of-colorado-ai-act-sb-24-205", label: Akin (2025 delay), kind: secondary}
+last_verified: 2026-09-27

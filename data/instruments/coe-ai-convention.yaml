@@ -1,0 +1,22 @@
+id: coe-ai-convention
+title: Council of Europe Framework Convention on Artificial Intelligence and Human Rights, Democracy and the Rule of Law
+short_title: CoE AI Convention
+type: treaty
+binding: true
+jurisdiction: COE
+issuer: Council of Europe
+official_id: CETS No. 225
+url: https://www.coe.int/en/web/conventions/full-list?module=treaty-detail&treatynum=225
+topics: [human-rights, governance, public-sector]
+summary: >
+  First binding international treaty on AI. Parties must ensure that activities across
+  the AI lifecycle are consistent with human rights, democracy and the rule of law.
+  Open to non-member states.
+milestones:
+  - {date: 2024-05-17, event: adopted, scope: Committee of Ministers}
+  - {date: 2024-09-05, event: signed, scope: Opened for signature}
+sources:
+  - {url: "https://www.coe.int/en/web/conventions/full-list?module=treaty-detail&treatynum=225", label: CoE Treaty Office (signatures and ratifications), kind: official, watch: true}
+review_notes: >
+  Entry into force depends on ratifications; check the Treaty Office page and add the
+  date once it is known.

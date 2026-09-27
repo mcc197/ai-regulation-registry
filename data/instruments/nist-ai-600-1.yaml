@@ -1,0 +1,20 @@
+id: nist-ai-600-1
+title: "Artificial Intelligence Risk Management Framework: Generative Artificial Intelligence Profile"
+short_title: NIST GenAI Profile
+type: framework
+binding: false
+jurisdiction: US
+issuer: National Institute of Standards and Technology
+official_id: NIST AI 600-1
+url: https://doi.org/10.6028/NIST.AI.600-1
+topics: [generative-ai, risk-management]
+summary: >
+  Profile of the AI RMF for generative AI. It lists risks specific to or made worse by
+  generative AI, and suggests actions for each.
+milestones:
+  - {date: 2024-07-26, event: published}
+relations:
+  - {type: supports, target: nist-ai-rmf}
+sources:
+  - {url: "https://doi.org/10.6028/NIST.AI.600-1", label: NIST publication, kind: official}
+review_notes: Seeded from background knowledge; verify against the source.

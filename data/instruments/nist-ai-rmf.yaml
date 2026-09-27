@@ -1,0 +1,20 @@
+id: nist-ai-rmf
+title: Artificial Intelligence Risk Management Framework (AI RMF 1.0)
+short_title: NIST AI RMF
+type: framework
+binding: false
+jurisdiction: US
+issuer: National Institute of Standards and Technology
+official_id: NIST AI 100-1
+url: https://doi.org/10.6028/NIST.AI.100-1
+topics: [risk-management, governance]
+summary: >
+  Voluntary framework for managing AI risk, organised around four functions: Govern,
+  Map, Measure and Manage. Profiles and a companion playbook extend it.
+milestones:
+  - {date: 2023-01-26, event: published}
+relations:
+  - {type: supported_by, target: nist-ai-600-1}
+sources:
+  - {url: "https://www.nist.gov/itl/ai-risk-management-framework", label: NIST, kind: official, watch: true}
+review_notes: Seeded from background knowledge; verify against the source.

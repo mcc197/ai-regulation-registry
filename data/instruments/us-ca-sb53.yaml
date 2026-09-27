@@ -1,0 +1,20 @@
+id: us-ca-sb53
+title: Transparency in Frontier Artificial Intelligence Act
+short_title: California SB 53 (TFAIA)
+type: legislation
+binding: true
+jurisdiction: US-CA
+issuer: California State Legislature
+official_id: SB 53 (2025)
+url: https://leginfo.legislature.ca.gov/faces/billNavClient.xhtml?bill_id=202520260SB53
+topics: [frontier-models, transparency, safety-incidents]
+summary: >
+  Requires large developers of frontier models to publish a frontier AI framework and
+  transparency reports, report critical safety incidents to the state, and protect
+  whistleblowers.
+milestones:
+  - {date: 2025-09-29, event: signed}
+  - {date: 2026-01-01, event: applies}
+sources:
+  - {url: "https://leginfo.legislature.ca.gov/faces/billNavClient.xhtml?bill_id=202520260SB53", label: California Legislative Information, kind: official, watch: true}
+review_notes: Seeded from background knowledge; verify against the source.

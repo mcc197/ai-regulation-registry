@@ -1,0 +1,20 @@
+id: cn-genai-interim-measures
+title: Interim Measures for the Management of Generative Artificial Intelligence Services
+short_title: China GenAI Interim Measures
+type: regulation
+binding: true
+jurisdiction: CN
+issuer: Cyberspace Administration of China and six other agencies
+url: https://www.cac.gov.cn/2023-07/13/c_1690898327029107.htm
+topics: [generative-ai, content-labelling, governance]
+summary: >
+  Rules for generative AI services offered to the public in China: content
+  requirements, training-data duties, labelling, security assessment and algorithm
+  filing.
+milestones:
+  - {date: 2023-07-10, event: adopted}
+  - {date: 2023-07-13, event: published}
+  - {date: 2023-08-15, event: applies}
+sources:
+  - {url: "https://www.cac.gov.cn/2023-07/13/c_1690898327029107.htm", label: CAC notice, kind: official, watch: true}
+review_notes: Seeded from background knowledge; verify against the source.

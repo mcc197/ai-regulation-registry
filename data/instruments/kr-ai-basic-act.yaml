@@ -1,0 +1,22 @@
+id: kr-ai-basic-act
+title: Framework Act on the Development of Artificial Intelligence and Establishment of Trust
+short_title: Korea AI Basic Act
+type: legislation
+binding: true
+jurisdiction: KR
+issuer: National Assembly of the Republic of Korea
+url: https://www.law.go.kr/
+topics: [high-risk, generative-ai, transparency, innovation, governance]
+summary: >
+  Korea's comprehensive AI law. It sets national AI governance and promotion measures,
+  adds duties for "high-impact" AI and generative AI (including notice and labelling),
+  and requires some foreign providers to appoint a domestic representative.
+milestones:
+  - {date: 2024-12-26, event: adopted, scope: Passed by the National Assembly}
+  - {date: 2025-01-21, event: published, scope: Promulgated}
+  - {date: 2026-01-22, event: applies}
+sources:
+  - {url: "https://www.law.go.kr/", label: "Korean Law Information Center (search the Act's title)", kind: official}
+review_notes: >
+  Seeded from background knowledge; verify against the source. Add a deep link to the
+  statute and track the Enforcement Decree separately.

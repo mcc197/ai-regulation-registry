@@ -1,0 +1,25 @@
+id: us-co-sb26-189
+title: Automated Decision-Making Technology
+short_title: Colorado ADMT Act (SB 26-189)
+type: legislation
+binding: true
+jurisdiction: US-CO
+issuer: Colorado General Assembly
+official_id: SB 26-189
+url: https://leg.colorado.gov/bills/sb26-189
+topics: [automated-decisions, consumer-protection, employment, transparency]
+summary: >
+  Replaces the Colorado AI Act with a narrower regime for automated decision-making
+  technology (ADMT) used in consequential decisions. It requires a notice before use
+  and a disclosure after an adverse outcome, and gives consumers limited rights. It
+  drops the earlier duty of care, risk-management programme and impact assessments.
+milestones:
+  - {date: 2026-05-14, event: signed}
+  - {date: 2026-05-14, event: entry_into_force, scope: Sections effective on signature}
+  - {date: 2027-01-01, event: applies, scope: "Consequential decisions made on or after this date"}
+relations:
+  - {type: supersedes, target: us-co-sb24-205}
+sources:
+  - {url: "https://leg.colorado.gov/bills/sb26-189", label: Colorado General Assembly, kind: official, watch: true}
+  - {url: "https://www.nortonrosefulbright.com/en-us/knowledge/publications/18733d31/colorado-enacts-revised-ai-law", label: Norton Rose Fulbright, kind: secondary}
+last_verified: 2026-09-27

@@ -1,0 +1,31 @@
+id: eu-ai-omnibus
+title: Digital Omnibus on AI (amending Regulation (EU) 2024/1689)
+short_title: EU Digital Omnibus on AI
+type: legislation
+binding: true
+jurisdiction: EU
+issuer: European Parliament and Council of the EU
+official_id: Regulation (EU) 2026/1744
+url: https://eur-lex.europa.eu/eli/reg/2026/1744/oj
+topics: [high-risk, transparency, content-labelling, ai-literacy]
+summary: >
+  Amends the EU AI Act. It defers high-risk obligations to 2 December 2027 (Annex III)
+  and 2 August 2028 (Annex I), gives existing systems until 2 December 2026 to meet the
+  Art. 50(2) content-marking duty, and changes the Art. 4 AI literacy duty from
+  ensuring a sufficient level to taking measures to support it.
+milestones:
+  - {date: 2025-11-19, event: proposed, scope: Commission proposal}
+  - {date: 2026-05-06, event: adopted, scope: Provisional political agreement in trilogue}
+  - {date: 2026-06-29, event: adopted, scope: Final approval by the Council}
+  - {date: 2026-07-24, event: published, scope: Official Journal}
+  - {date: 2026-07-27, event: entry_into_force}
+relations:
+  - {type: amends, target: eu-ai-act}
+sources:
+  - {url: "https://www.consilium.europa.eu/en/press/press-releases/2026/06/29/artificial-intelligence-council-gives-final-green-light-to-simplify-and-streamline-rules/", label: Council press release, kind: official}
+  - {url: "https://eur-lex.europa.eu/eli/reg/2026/1744/oj", label: EUR-Lex, kind: official, watch: true}
+  - {url: "https://www.whitecase.com/insight-alert/eu-ai-omnibus-enters-force-amending-ai-act", label: White & Case, kind: secondary}
+last_verified: 2026-09-27
+review_notes: >
+  The EUR-Lex URL follows the ELI pattern and has not been opened. The Parliament
+  plenary vote date is not recorded yet.
