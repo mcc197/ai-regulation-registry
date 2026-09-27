@@ -25,3 +25,4 @@ sources:
   - {url: "https://leg.colorado.gov/bills/sb24-205", label: Colorado General Assembly, kind: official}
   - {url: "https://www.akingump.com/en/insights/ai-law-and-regulation-tracker/colorado-postpones-implementation-of-colorado-ai-act-sb-24-205", label: Akin (2025 delay), kind: secondary}
 last_verified: 2026-09-27
+verified_against: secondary

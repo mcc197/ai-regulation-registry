@@ -26,6 +26,7 @@ sources:
   - {url: "https://eur-lex.europa.eu/eli/reg/2026/1744/oj", label: EUR-Lex, kind: official, watch: true}
   - {url: "https://www.whitecase.com/insight-alert/eu-ai-omnibus-enters-force-amending-ai-act", label: White & Case, kind: secondary}
 last_verified: 2026-09-27
+verified_against: secondary
 review_notes: >
   The EUR-Lex URL follows the ELI pattern and has not been opened. The Parliament
   plenary vote date is not recorded yet.

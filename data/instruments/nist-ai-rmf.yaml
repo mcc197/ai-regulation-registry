@@ -17,4 +17,11 @@ relations:
   - {type: supported_by, target: nist-ai-600-1}
 sources:
   - {url: "https://www.nist.gov/itl/ai-risk-management-framework", label: NIST, kind: official, watch: true}
-review_notes: Seeded from background knowledge; verify against the source.
+  - {url: "https://nvlpubs.nist.gov/nistpubs/ai/nist.ai.100-1.pdf", label: NIST AI 100-1 (PDF), kind: official}
+  - {url: "https://www.gibsondunn.com/nist-releases-first-version-of-ai-risk-management-framework/", label: Gibson Dunn, kind: secondary}
+last_verified: 2026-09-27
+verified_against: secondary
+review_notes: >
+  Release date checked against secondary sources. The official page could not be
+  opened from the verification environment. No newer version (1.1 or 2.0) was found as
+  of Sept 2026.

@@ -15,4 +15,12 @@ milestones:
   - {date: 2023-12-18, event: published}
 sources:
   - {url: "https://www.iso.org/standard/81230.html", label: ISO catalogue, kind: official, watch: true}
-review_notes: Seeded from background knowledge; confirm the exact publication day (December 2023).
+  - {url: "https://webstore.iec.ch/en/publication/90574", label: IEC webstore, kind: official}
+  - {url: "https://www.dataguidance.com/news/international-iso-publishes-isoiec-420012023-ai", label: DataGuidance, kind: secondary}
+last_verified: 2026-09-27
+verified_against: secondary
+review_notes: >
+  Publication date (18 Dec 2023) checked against secondary sources. The official page
+  could not be opened from the verification environment. Still the only edition as of
+  Sept 2026. The European adoption, EN ISO/IEC 42001:2026, has the same text. ISO/IEC
+  42006 (July 2025, requirements for bodies certifying 42001) could get its own entry.

@@ -70,6 +70,7 @@ class Instrument:
     relations: list[dict] = field(default_factory=list)
     provisions: list[dict] = field(default_factory=list)
     last_verified: dt.date | None = None
+    verified_against: str | None = None  # "official" or "secondary"
     review_notes: str | None = None
 
     @property
@@ -137,6 +138,11 @@ def parse(raw: dict, where: str) -> Instrument:
     fields = {**raw, "milestones": milestones}
     if raw.get("last_verified") is not None:
         fields["last_verified"] = _as_date(raw["last_verified"], f"{where}: last_verified")
+        if raw.get("verified_against") not in SOURCE_KINDS:
+            raise ValidationError(
+                f"{where}: last_verified needs verified_against: {' or '.join(sorted(SOURCE_KINDS))}")
+    elif raw.get("verified_against") is not None:
+        raise ValidationError(f"{where}: verified_against needs last_verified")
     for key in ("topics", "relations", "provisions"):
         fields[key] = raw.get(key) or []
     return Instrument(**fields)

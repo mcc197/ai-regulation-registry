@@ -10,11 +10,19 @@ topics: [gpai, frontier-models, transparency, safety-incidents]
 summary: >
   Voluntary code with chapters on transparency, copyright, and safety and security.
   Providers of general-purpose AI models can sign it to show they comply with
-  Arts. 53 and 55 of the AI Act.
+  Arts. 53 and 55 of the AI Act. The safety and security chapter applies only to
+  models with systemic risk. On 1 August 2025 the Commission and the AI Board
+  confirmed that the Code is an adequate voluntary tool for showing compliance.
 milestones:
   - {date: 2025-07-10, event: published}
 relations:
   - {type: implements, target: eu-ai-act}
 sources:
   - {url: "https://digital-strategy.ec.europa.eu/en/policies/contents-code-gpai", label: European Commission, kind: official, watch: true}
-review_notes: Seeded from background knowledge; verify against the source.
+  - {url: "https://digital-strategy.ec.europa.eu/en/library/commission-opinion-assessment-general-purpose-ai-code-practice", label: Commission opinion on the adequacy of the Code, kind: official}
+  - {url: "https://www.globalpolicywatch.com/2025/07/ai-office-publishes-final-version-of-the-code-of-practice-for-general-purpose-ai-models/", label: Covington (Global Policy Watch), kind: secondary}
+last_verified: 2026-09-27
+verified_against: secondary
+review_notes: >
+  Publication date and the 1 Aug 2025 adequacy confirmation checked against secondary
+  sources. The official page could not be opened from the verification environment.

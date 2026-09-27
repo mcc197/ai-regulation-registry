@@ -42,6 +42,7 @@ sources:
   - {url: "https://eur-lex.europa.eu/eli/reg/2024/1689/oj", label: EUR-Lex (original text), kind: official, watch: true}
   - {url: "https://www.gibsondunn.com/eu-ai-act-omnibus-agreement-postponed-high-risk-deadlines-and-other-key-changes/", label: Gibson Dunn on the Omnibus dates, kind: secondary}
 last_verified: 2026-09-27
+verified_against: secondary
 review_notes: >
   Post-Omnibus dates checked against secondary sources only. Confirm them against the
   consolidated text on EUR-Lex once it is published.

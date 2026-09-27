@@ -115,14 +115,16 @@ def cmd_show(instruments, args):
     print("\nSources:")
     for s in i.sources:
         print(f"   [{s['kind']}] {s.get('label') or ''} {s['url']}")
-    print(f"\nLast verified: {i.last_verified or 'never'}")
+    against = f" (against {i.verified_against} sources)" if i.verified_against else ""
+    print(f"\nLast verified: {i.last_verified or 'never'}{against}")
     if i.review_notes:
         print(f"Review notes: {i.review_notes.strip()}")
 
 
 def cmd_stale(instruments, args):
     cutoff = args.today - dt.timedelta(days=args.days)
-    stale = [i for i in instruments if i.last_verified is None or i.last_verified < cutoff]
+    stale = [i for i in instruments if i.last_verified is None or i.last_verified < cutoff
+             or (args.official and i.verified_against != "official")]
 
     def next_milestone(i):
         future = [m["date"] for m in i.milestones if m["date"] >= args.today]
@@ -133,7 +135,8 @@ def cmd_stale(instruments, args):
     for i in sorted(stale, key=lambda i: (next_milestone(i), i.id)):
         nxt = next_milestone(i)
         nxt_s = f"next milestone {nxt}" if nxt != dt.date.max else "no upcoming milestone"
-        print(f"{i.id:32} verified {i.last_verified or 'never':10}  {nxt_s}")
+        against = f"({i.verified_against})" if i.verified_against else ""
+        print(f"{i.id:32} verified {str(i.last_verified or 'never'):10} {against:12} {nxt_s}")
 
 
 def cmd_watch(instruments, args):
@@ -187,6 +190,8 @@ def main(argv=None) -> int:
     sp = sub.add_parser("stale", help="entries due for re-verification")
     sp.add_argument("--days", type=int, default=90)
     sp.add_argument("--today", type=_date, default=today)
+    sp.add_argument("--official", action="store_true",
+                    help="also list entries verified only against secondary sources")
     sp.set_defaults(fn=cmd_stale)
 
     sp = sub.add_parser("watch", help="check watched sources for changes (exit 3 if any changed)")

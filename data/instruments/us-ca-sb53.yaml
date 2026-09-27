@@ -9,12 +9,23 @@ official_id: SB 53 (2025)
 url: https://leginfo.legislature.ca.gov/faces/billNavClient.xhtml?bill_id=202520260SB53
 topics: [frontier-models, transparency, safety-incidents]
 summary: >
-  Requires large developers of frontier models to publish a frontier AI framework and
-  transparency reports, report critical safety incidents to the state, and protect
-  whistleblowers.
+  Requires large developers of frontier models (trained with more than 10^26
+  operations) to publish a frontier AI framework and transparency reports, report
+  critical safety incidents to the state, and protect whistleblowers. The Attorney
+  General enforces it, with civil penalties of up to $1 million per violation.
 milestones:
   - {date: 2025-09-29, event: signed}
   - {date: 2026-01-01, event: applies}
 sources:
   - {url: "https://leginfo.legislature.ca.gov/faces/billNavClient.xhtml?bill_id=202520260SB53", label: California Legislative Information, kind: official, watch: true}
-review_notes: Seeded from background knowledge; verify against the source.
+  - {url: "https://www.wilmerhale.com/en/insights/blogs/wilmerhale-privacy-and-cybersecurity-law/20251001-transparency-in-frontier-artificial-intelligence-act-sb-53-california-requires-new-standardized-ai-safety-disclosures", label: WilmerHale, kind: secondary}
+  - {url: "https://www.kslaw.com/news-and-insights/new-state-ai-laws-are-effective-on-january-1-2026-but-a-new-executive-order-signals-disruption", label: King & Spalding (Dec 2025 executive order), kind: secondary}
+last_verified: 2026-09-27
+verified_against: secondary
+review_notes: >
+  Dates and scope checked against secondary sources. The official page could not be
+  opened from the verification environment. Watch federal preemption: a 11 Dec 2025
+  executive order directs the Attorney General to challenge state AI laws, but as of
+  late Aug 2026 no statute or court had preempted or paused SB 53. The $500M revenue
+  threshold for "large" developers comes from background knowledge and is not yet
+  checked.

@@ -116,3 +116,20 @@ def test_watch_records_fetch_errors(registry, tmp_path):
         raise OSError("offline")
     (r,) = watch.check([registry["nist-ai-rmf"]], tmp_path / "w.json", boom)
     assert r["status"] == "error" and "offline" in r["error"]
+
+
+def test_verified_against_is_required_with_last_verified():
+    with pytest.raises(ValidationError, match="needs verified_against"):
+        parse(minimal(last_verified="2026-01-01"), "x.yaml")
+    with pytest.raises(ValidationError, match="needs last_verified"):
+        parse(minimal(verified_against="official"), "x.yaml")
+    ok = parse(minimal(last_verified="2026-01-01", verified_against="official"), "x.yaml")
+    assert ok.verified_against == "official"
+
+
+def test_stale_official_lists_secondary_only_checks(capsys):
+    cli.main(["stale", "--today", "2026-09-27"])
+    assert "Everything verified" in capsys.readouterr().out
+    cli.main(["stale", "--today", "2026-09-27", "--official"])
+    out = capsys.readouterr().out
+    assert "eu-ai-act" in out and "(secondary)" in out
