@@ -57,3 +57,486 @@ review_notes: >
   2 Dec 2026 milestone for the new prohibitions, which was missing. Not recorded as a
   milestone: 2026/1744 also makes Arts 102 to 110 (amendments to other Union acts)
   apply from 27 Jul 2026. No consolidated text was checked.
+requirements:
+  - id: art-4
+    ref: Art. 4
+    title: AI literacy
+    kind: obligation
+    category: ai-literacy
+    roles: [provider, deployer]
+    risks: [reliability, accountability]
+    summary: >
+      Providers and deployers take measures to support the AI literacy of staff and
+      others who operate or use AI systems on their behalf, taking account of their
+      knowledge, the context of use and the people affected.
+    controls:
+      - Role-based AI training programme for staff who build, buy or operate AI
+      - Record who has been trained and on what
+    evidence: [training-records, policy]
+    assurance: [self-assessment]
+    applies_from: 2025-02-02
+    note: Softened by Regulation (EU) 2026/1744 from "ensure a sufficient level" to "take measures to support".
+  - id: art-5
+    ref: Art. 5
+    title: Prohibited AI practices
+    kind: prohibition
+    category: prohibited-practice
+    roles: [provider, deployer]
+    risks: [manipulation, fundamental-rights, discrimination, privacy]
+    summary: >
+      Bans placing on the market or using AI for harmful manipulation, exploiting
+      vulnerabilities, social scoring, predicting crime from profiling alone, untargeted
+      scraping of facial images, emotion recognition at work or school, biometric
+      categorisation by sensitive traits, and (with narrow exceptions) real-time remote
+      biometric identification in public by police.
+    controls:
+      - Screen every AI use case against the prohibited list before build or purchase
+      - Keep a record of the screening decision
+    evidence: [policy, risk-register]
+    assurance: [self-assessment]
+    applies_from: 2025-02-02
+  - id: art-5-1-ba-bb
+    ref: Art. 5(1)(ba)-(bb)
+    title: Ban on AI generating non-consensual intimate imagery and CSAM
+    kind: prohibition
+    category: prohibited-practice
+    roles: [provider, deployer]
+    risks: [child-safety, privacy, fundamental-rights]
+    summary: >
+      Adds two prohibited practices: AI systems that generate non-consensual intimate
+      imagery of identifiable people, and AI systems that generate child sexual abuse
+      material.
+    controls:
+      - Output safeguards and abuse monitoring for image and video generation
+    evidence: [policy, test-reports]
+    assurance: [self-assessment]
+    applies_from: 2026-12-02
+    note: Added by Regulation (EU) 2026/1744.
+  - id: art-9
+    ref: Art. 9
+    title: Risk management system
+    kind: obligation
+    category: risk-management
+    roles: [provider]
+    scope: High-risk AI systems
+    risks: [health-safety, fundamental-rights, discrimination]
+    summary: >
+      A continuous, documented risk management process across the whole lifecycle:
+      identify and analyse known and foreseeable risks, estimate risks under intended
+      use and foreseeable misuse, adopt risk-management measures, and test the system
+      to find the most appropriate measures. Residual risk must be acceptable.
+    controls:
+      - Lifecycle risk management procedure with named owners
+      - Risk register covering intended use and reasonably foreseeable misuse
+      - Testing against defined metrics and probabilistic thresholds before release
+      - Consideration of effects on children and other vulnerable groups
+    evidence: [risk-register, test-reports, technical-documentation]
+    assurance: [self-assessment, third-party-assessment]
+    assurance_note: Checked as part of the conformity assessment in Art. 43.
+    applies_from: 2027-12-02
+    maps_to: [iso-iec-42001#cl-6-1-2, iso-iec-42001#cl-6-1-3, nist-ai-rmf#map, nist-ai-rmf#measure, nist-ai-rmf#manage]
+    note: Annex III systems from 2 Dec 2027; AI in Annex I products from 2 Aug 2028.
+  - id: art-10
+    ref: Art. 10
+    title: Data and data governance
+    kind: obligation
+    category: data-governance
+    roles: [provider]
+    scope: High-risk AI systems trained with data
+    risks: [discrimination, reliability, privacy]
+    summary: >
+      Training, validation and testing data must follow documented data-governance
+      practices: design choices, collection and origin, preparation, assumptions,
+      availability and suitability, and examination and mitigation of possible biases.
+      Data should be relevant, sufficiently representative and as free of errors as
+      possible.
+    controls:
+      - Data sheets recording origin, purpose, preparation and known gaps
+      - Bias examination and mitigation, with documented results
+      - Data quality checks for relevance, representativeness and errors
+    evidence: [data-documentation, test-reports]
+    assurance: [self-assessment, third-party-assessment]
+    applies_from: 2027-12-02
+    maps_to: [iso-iec-42001#a-7]
+  - id: art-11
+    ref: Art. 11 and Annex IV
+    title: Technical documentation
+    kind: obligation
+    category: technical-documentation
+    roles: [provider]
+    scope: High-risk AI systems
+    risks: [accountability, opacity]
+    summary: >
+      Draw up technical documentation before the system is placed on the market and
+      keep it up to date. It must show how the system meets the requirements, covering
+      at least the elements in Annex IV (description, development process, monitoring,
+      risk management, changes, standards applied, declaration of conformity).
+    controls:
+      - Annex IV documentation template maintained under version control
+    evidence: [technical-documentation]
+    assurance: [self-assessment, third-party-assessment, regulator-review]
+    assurance_note: Must be available to national authorities on request.
+    applies_from: 2027-12-02
+    maps_to: [iso-iec-42001#a-6]
+  - id: art-12
+    ref: Arts. 12 and 19
+    title: Record-keeping and automatic logs
+    kind: obligation
+    category: record-keeping
+    roles: [provider]
+    scope: High-risk AI systems
+    risks: [accountability, opacity]
+    summary: >
+      High-risk systems must technically allow automatic recording of events (logs)
+      over their lifetime, to identify risks, support post-market monitoring and
+      monitor operation. Providers keep the logs under their control for at least six
+      months.
+    controls:
+      - Event logging built into the system by design
+      - Log retention of at least six months, longer where other law requires
+    evidence: [logs]
+    assurance: [self-assessment, third-party-assessment]
+    applies_from: 2027-12-02
+    maps_to: [iso-iec-42001#a-6]
+  - id: art-13
+    ref: Art. 13
+    title: Transparency and instructions for use
+    kind: obligation
+    category: transparency
+    roles: [provider]
+    scope: High-risk AI systems
+    risks: [opacity, reliability]
+    summary: >
+      Design systems so deployers can interpret their output and use them properly,
+      and supply instructions for use covering the provider's identity, the system's
+      purpose, accuracy and robustness levels, known risks, human oversight measures,
+      expected lifetime and how to collect logs.
+    controls:
+      - Instructions for use reviewed against the Art. 13(3) checklist
+    evidence: [instructions-for-use]
+    assurance: [self-assessment, third-party-assessment]
+    applies_from: 2027-12-02
+    maps_to: [iso-iec-42001#a-8]
+  - id: art-14
+    ref: Art. 14
+    title: Human oversight
+    kind: obligation
+    category: human-oversight
+    roles: [provider]
+    scope: High-risk AI systems
+    risks: [health-safety, fundamental-rights, reliability]
+    summary: >
+      Design systems so people can oversee them effectively while in use: understand
+      capabilities and limits, watch for automation bias, interpret output, and decide
+      not to use, override or stop the system. Remote biometric identification needs
+      verification by two people before action is taken.
+    controls:
+      - Oversight measures built in or specified for the deployer
+      - Stop or override function
+    evidence: [technical-documentation, instructions-for-use]
+    assurance: [self-assessment, third-party-assessment]
+    applies_from: 2027-12-02
+    maps_to: [nist-ai-rmf#manage]
+  - id: art-15
+    ref: Art. 15
+    title: Accuracy, robustness and cybersecurity
+    kind: obligation
+    category: accuracy-robustness-security
+    roles: [provider]
+    scope: High-risk AI systems
+    risks: [security, reliability, health-safety]
+    summary: >
+      Achieve appropriate levels of accuracy, robustness and cybersecurity throughout
+      the lifecycle, declare accuracy metrics in the instructions for use, and protect
+      against AI-specific attacks such as data poisoning, model poisoning, adversarial
+      examples and confidentiality attacks.
+    controls:
+      - Declared accuracy metrics with test evidence
+      - Resilience testing, fallback plans and feedback-loop controls
+      - Security testing for AI-specific attacks
+    evidence: [test-reports, technical-documentation]
+    assurance: [self-assessment, third-party-assessment]
+    applies_from: 2027-12-02
+    maps_to: [nist-ai-rmf#measure]
+  - id: art-17
+    ref: Art. 17
+    title: Quality management system
+    kind: obligation
+    category: quality-management
+    roles: [provider]
+    scope: High-risk AI systems
+    risks: [accountability]
+    summary: >
+      Put in place a documented quality management system covering compliance
+      strategy, design and development controls, testing, data management, risk
+      management, post-market monitoring, incident reporting, communication with
+      authorities, record-keeping, resources and an accountability framework.
+    controls:
+      - Documented QMS proportionate to the size of the organisation
+    evidence: [quality-manual, policy]
+    assurance: [self-assessment, third-party-assessment]
+    applies_from: 2027-12-02
+    maps_to: [iso-iec-42001#cl-4, iso-iec-42001#cl-5, iso-iec-42001#cl-8, iso-iec-42001#cl-10]
+  - id: art-18
+    ref: Art. 18
+    title: Keeping documentation for ten years
+    kind: obligation
+    category: record-keeping
+    roles: [provider]
+    scope: High-risk AI systems
+    risks: [accountability]
+    summary: >
+      Keep the technical documentation, QMS documentation, approved changes, notified
+      body decisions and the EU declaration of conformity available to national
+      authorities for ten years after the system is placed on the market.
+    evidence: [technical-documentation, quality-manual, conformity-declaration]
+    assurance: [regulator-review]
+    applies_from: 2027-12-02
+  - id: art-22
+    ref: Art. 22
+    title: Authorised representative for non-EU providers
+    kind: obligation
+    category: representation
+    roles: [provider]
+    scope: Providers of high-risk AI systems established outside the EU
+    risks: [accountability]
+    summary: >
+      Before making a high-risk system available in the EU, a provider established
+      outside the EU appoints, by written mandate, an authorised representative in the
+      EU who can hand documentation to authorities and cooperate with them.
+    evidence: [policy]
+    assurance: [none]
+    applies_from: 2027-12-02
+  - id: art-26
+    ref: Art. 26
+    title: Obligations of deployers of high-risk AI
+    kind: obligation
+    category: human-oversight
+    roles: [deployer]
+    scope: High-risk AI systems
+    risks: [fundamental-rights, reliability, accountability]
+    summary: >
+      Use the system according to its instructions, assign competent people to human
+      oversight, make sure input data under their control is relevant, monitor
+      operation and report risks and serious incidents, keep logs under their control
+      for at least six months, inform workers before workplace use, and tell people
+      when a high-risk system helps make decisions about them.
+    controls:
+      - Named oversight owners with training and authority
+      - Operational monitoring and an escalation route to the provider
+      - Log retention of at least six months
+      - Worker and affected-person notices
+    evidence: [oversight-records, logs, user-notice, training-records]
+    assurance: [self-assessment]
+    applies_from: 2027-12-02
+    maps_to: [iso-iec-42001#a-9]
+  - id: art-27
+    ref: Art. 27
+    title: Fundamental rights impact assessment
+    kind: obligation
+    category: impact-assessment
+    roles: [deployer]
+    scope: >
+      Public bodies and private bodies providing public services that deploy Annex III
+      systems, and deployers of credit-scoring and life or health insurance pricing
+      systems
+    risks: [fundamental-rights, discrimination]
+    summary: >
+      Before first use, assess the impact on fundamental rights: the processes the
+      system is used in, how long and how often, the groups affected, specific risks of
+      harm, human oversight measures and what happens if risks materialise. Notify the
+      market surveillance authority of the results.
+    controls:
+      - FRIA template (the AI Office publishes one) completed before first use
+      - Update when relevant factors change
+    evidence: [impact-assessment]
+    assurance: [regulator-notification]
+    applies_from: 2027-12-02
+    maps_to: [iso-iec-42001#cl-6-1-4, iso-iec-42001#a-5]
+  - id: art-43
+    ref: Art. 43
+    title: Conformity assessment
+    kind: obligation
+    category: conformity-assessment
+    roles: [provider]
+    scope: High-risk AI systems
+    risks: [accountability]
+    summary: >
+      Before placing a high-risk system on the market, complete a conformity assessment.
+      Most Annex III systems use internal control (Annex VI). Biometric systems use a
+      notified body (Annex VII) unless harmonised standards or common specifications
+      are fully applied. AI in Annex I products follows the product's own sectoral
+      procedure. A substantial modification triggers a new assessment.
+    controls:
+      - Conformity assessment plan per system, including which route applies
+    evidence: [technical-documentation, quality-manual, certificate]
+    assurance: [self-assessment, third-party-assessment]
+    assurance_note: >
+      Third-party assessment by a notified body for biometric systems (Annex III point
+      1) where standards are not fully applied, and for Annex I products where the
+      sectoral law requires it.
+    applies_from: 2027-12-02
+    maps_to: [iso-iec-42001#cert]
+  - id: art-47-48
+    ref: Arts. 47 and 48
+    title: EU declaration of conformity and CE marking
+    kind: obligation
+    category: conformity-assessment
+    roles: [provider]
+    scope: High-risk AI systems
+    risks: [accountability]
+    summary: >
+      Draw up a written, signed EU declaration of conformity for each high-risk system,
+      keep it for ten years, and affix the CE marking (digitally for digital-only
+      systems).
+    evidence: [conformity-declaration]
+    assurance: [self-assessment]
+    applies_from: 2027-12-02
+  - id: art-49
+    ref: Art. 49
+    title: Registration in the EU database
+    kind: obligation
+    category: registration
+    roles: [provider, deployer]
+    scope: Annex III high-risk systems; deployers that are public authorities
+    risks: [accountability, opacity]
+    summary: >
+      Providers register Annex III high-risk systems in the EU database before placing
+      them on the market (critical infrastructure systems are registered nationally).
+      Public-authority deployers register their use. Providers who conclude an Annex III
+      system is not high-risk also register that assessment.
+    evidence: [registration-entry]
+    assurance: [regulator-registration]
+    applies_from: 2027-12-02
+  - id: art-50-providers
+    ref: Art. 50(1)-(2)
+    title: Transparency for AI interactions and machine-readable marking
+    kind: obligation
+    category: content-labelling
+    roles: [provider]
+    risks: [manipulation, misinformation]
+    summary: >
+      Design AI systems that interact with people so they are told they are dealing
+      with AI, unless obvious. Providers of systems generating synthetic audio, image,
+      video or text mark outputs in a machine-readable format so they are detectable as
+      AI-generated.
+    controls:
+      - AI interaction disclosure in the user interface
+      - Watermarking or metadata on generated content, with detection support
+    evidence: [user-notice, content-marking]
+    assurance: [self-assessment]
+    applies_from: 2026-08-02
+    maps_to: [nist-ai-600-1#provenance]
+    note: For systems on the market before 2 Aug 2026, the Art. 50(2) marking duty applies from 2 Dec 2026.
+  - id: art-50-deployers
+    ref: Art. 50(3)-(4)
+    title: Disclosure of deepfakes, emotion recognition and AI-written public text
+    kind: obligation
+    category: transparency
+    roles: [deployer]
+    risks: [manipulation, misinformation, privacy]
+    summary: >
+      Deployers tell people exposed to emotion recognition or biometric categorisation,
+      disclose deepfakes as artificially generated or manipulated, and disclose
+      AI-generated text published to inform the public on matters of public interest
+      unless it has had human editorial review.
+    evidence: [user-notice]
+    assurance: [self-assessment]
+    applies_from: 2026-08-02
+  - id: art-53
+    ref: Art. 53
+    title: Obligations of general-purpose AI model providers
+    kind: obligation
+    category: technical-documentation
+    roles: [gpai-provider]
+    risks: [opacity, ip-copyright]
+    summary: >
+      Keep technical documentation of the model for the AI Office and national
+      authorities, give downstream providers the information they need, put in place a
+      copyright policy that respects text-and-data-mining opt-outs, and publish a
+      sufficiently detailed summary of training content using the AI Office template.
+      Open-source models are exempt from the first two unless they have systemic risk.
+    controls:
+      - Model documentation (the GPAI Code of Practice provides a form)
+      - Copyright policy honouring machine-readable opt-outs
+      - Public training-content summary
+    evidence: [technical-documentation, copyright-policy, training-data-summary]
+    assurance: [regulator-review, public-disclosure]
+    assurance_note: The AI Office supervises; following the GPAI Code of Practice can demonstrate compliance.
+    applies_from: 2025-08-02
+    maps_to: [eu-gpai-code-of-practice#transparency, eu-gpai-code-of-practice#copyright]
+    note: Models placed on the market before 2 Aug 2025 must comply by 2 Aug 2027.
+  - id: art-55
+    ref: Art. 55
+    title: Obligations for general-purpose AI models with systemic risk
+    kind: obligation
+    category: testing-evaluation
+    roles: [gpai-systemic-provider]
+    risks: [catastrophic, security]
+    summary: >
+      Evaluate the model with state-of-the-art protocols including adversarial testing,
+      assess and mitigate systemic risks at EU level, track and report serious
+      incidents to the AI Office and national authorities without undue delay, and
+      ensure adequate cybersecurity for the model and its infrastructure.
+    controls:
+      - Model evaluations and red-teaming before and after release
+      - Systemic risk assessment and mitigation plan
+      - Serious incident tracking and reporting
+      - Security controls for model weights and infrastructure
+    evidence: [test-reports, risk-register, incident-report]
+    assurance: [regulator-notification, regulator-review]
+    applies_from: 2025-08-02
+    maps_to: [eu-gpai-code-of-practice#safety-security, us-ca-sb53#frontier-framework]
+  - id: art-72
+    ref: Art. 72
+    title: Post-market monitoring
+    kind: obligation
+    category: post-market-monitoring
+    roles: [provider]
+    scope: High-risk AI systems
+    risks: [reliability, health-safety]
+    summary: >
+      Establish and document a post-market monitoring system that actively collects and
+      analyses performance data over the system's lifetime, based on a post-market
+      monitoring plan that forms part of the technical documentation.
+    evidence: [monitoring-plan]
+    assurance: [self-assessment, third-party-assessment]
+    applies_from: 2027-12-02
+    maps_to: [iso-iec-42001#cl-9-1]
+  - id: art-73
+    ref: Art. 73
+    title: Reporting serious incidents
+    kind: obligation
+    category: incident-reporting
+    roles: [provider]
+    scope: High-risk AI systems
+    risks: [health-safety, fundamental-rights]
+    summary: >
+      Report serious incidents to the market surveillance authority as soon as a causal
+      link is established or reasonably likely, and within 15 days at the latest; within
+      2 days for widespread infringements or serious disruption of critical
+      infrastructure; within 10 days in the event of a death. Then investigate and take
+      corrective action.
+    controls:
+      - Incident classification and escalation procedure with reporting clocks
+    evidence: [incident-report]
+    assurance: [regulator-notification]
+    applies_from: 2027-12-02
+    maps_to: [nist-ai-600-1#incident-disclosure, us-ca-sb53#incident-reporting]
+  - id: art-86
+    ref: Art. 86
+    title: Right to explanation of individual decisions
+    kind: right
+    category: individual-rights
+    roles: [affected-person, deployer]
+    scope: Decisions based on Annex III high-risk systems with legal or similarly significant effects
+    risks: [opacity, fundamental-rights]
+    summary: >
+      A person subject to such a decision can obtain from the deployer a clear and
+      meaningful explanation of the role the AI system played and the main elements of
+      the decision.
+    controls:
+      - Process for answering explanation requests
+    evidence: [user-notice]
+    assurance: [none]
+    note: Check whether the Omnibus deferral of high-risk dates also moves this.

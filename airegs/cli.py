@@ -8,7 +8,11 @@ import sqlite3
 import sys
 from pathlib import Path
 
+import json
+
 from . import build as build_mod
+from . import query
+from . import requirements as vocab
 from . import watch as watch_mod
 from .schema import ValidationError, load
 
@@ -17,8 +21,9 @@ DATA_DIR = ROOT / "data" / "instruments"
 DB_PATH = ROOT / "build" / "registry.db"
 WATCH_STATE = ROOT / "state" / "watch.json"
 
-# Statuses under which an instrument has legal or practical effect.
-LIVE = {"published", "entry_into_force", "applies", "amended"}
+LIVE = query.LIVE
+EXPLORER_TEMPLATE = ROOT / "explorer" / "template.html"
+EXPLORER_OUT = ROOT / "build" / "explorer.html"
 
 
 def _date(s: str) -> dt.date:
@@ -130,6 +135,15 @@ def cmd_stale(instruments, args):
         future = [m["date"] for m in i.milestones if m["date"] >= args.today]
         return min(future) if future else dt.date.max
 
+    if args.requirements:
+        pending = [r for i in instruments for r in i.requirements
+                   if r.last_verified is None or r.last_verified < cutoff
+                   or (args.official and r.verified_against != "official")]
+        for r in pending:
+            print(f"{r.key:40} verified {str(r.last_verified or 'never'):10} "
+                  f"{('(' + r.verified_against + ')') if r.verified_against else ''}")
+        print(f"{len(pending)} requirement(s) due for verification")
+        return
     if not stale:
         print(f"Everything verified since {cutoff}.")
     for i in sorted(stale, key=lambda i: (next_milestone(i), i.id)):
@@ -137,6 +151,81 @@ def cmd_stale(instruments, args):
         nxt_s = f"next milestone {nxt}" if nxt != dt.date.max else "no upcoming milestone"
         against = f"({i.verified_against})" if i.verified_against else ""
         print(f"{i.id:32} verified {str(i.last_verified or 'never'):10} {against:12} {nxt_s}")
+
+
+def _wrap(text, indent="      ", width=88):
+    import textwrap
+    return textwrap.fill(" ".join(text.split()), width, initial_indent=indent,
+                         subsequent_indent=indent)
+
+
+def cmd_obligations(instruments, args):
+    hits = query.find(
+        instruments, role=args.role, category=args.category, risk=args.risk,
+        evidence=args.evidence, assurance=args.assurance, kind=args.kind,
+        jurisdiction=args.jurisdiction, text=args.text, on=args.on, binding=args.binding)
+    if args.json:
+        data = query.export(instruments, args.today)
+        keep = {r.key for _, r in hits}
+        print(json.dumps([r for r in data["requirements"] if r["key"] in keep], indent=2))
+        return
+    if not hits:
+        print("No requirements match.")
+        return
+    for inst, r in hits:
+        when = f"from {r.applies_from}" if r.applies_from else ""
+        print(f"{r.key}  [{inst.jurisdiction}] {inst.name} {r.ref}: {r.title}  {when}".rstrip())
+        print(f"      {r.kind} · {vocab.CATEGORIES[r.category]} · roles: {', '.join(r.roles)}")
+        if args.detail:
+            if r.scope:
+                print(_wrap(f"Scope: {r.scope}"))
+            print(_wrap(r.summary))
+            for c in r.controls:
+                print(f"      - {c}")
+            if r.evidence:
+                print(f"      Evidence: {', '.join(vocab.EVIDENCE[e] for e in r.evidence)}")
+            if r.assurance:
+                print(f"      Assurance: {', '.join(vocab.ASSURANCE[a] for a in r.assurance)}")
+            if r.assurance_note:
+                print(_wrap(r.assurance_note))
+            if r.note:
+                print(_wrap(f"Note: {r.note}"))
+            print()
+    print(f"{len(hits)} requirement(s)")
+
+
+def cmd_crosswalk(instruments, args):
+    links = vocab.crosswalk(instruments)
+    by_key = {r.key: (i, r) for i in instruments for r in i.requirements}
+    if args.key not in by_key:
+        sys.exit(f"No requirement {args.key!r}. Keys look like eu-ai-act#art-9.")
+    inst, r = by_key[args.key]
+    print(f"{inst.name} {r.ref}: {r.title}")
+    linked = sorted(links.get(args.key, ()))
+    if not linked:
+        print("  No crosswalk links yet.")
+    for k in linked:
+        li, lr = by_key[k]
+        print(f"  <-> {k:40} {li.name} {lr.ref}: {lr.title}")
+
+
+def cmd_export(instruments, args):
+    data = query.export(instruments, args.today)
+    out = Path(args.out)
+    out.parent.mkdir(parents=True, exist_ok=True)
+    out.write_text(json.dumps(data, indent=1, ensure_ascii=False))
+    print(f"Wrote {out} ({len(data['instruments'])} instruments, "
+          f"{len(data['requirements'])} requirements)")
+
+
+def cmd_explorer(instruments, args):
+    data = query.export(instruments, args.today)
+    blob = json.dumps(data, ensure_ascii=False, separators=(",", ":")).replace("</", "<\\/")
+    html = EXPLORER_TEMPLATE.read_text().replace("/*REGISTRY_DATA*/null", blob, 1)
+    out = Path(args.out)
+    out.parent.mkdir(parents=True, exist_ok=True)
+    out.write_text(html)
+    print(f"Wrote {out}")
 
 
 def cmd_watch(instruments, args):
@@ -192,7 +281,38 @@ def main(argv=None) -> int:
     sp.add_argument("--today", type=_date, default=today)
     sp.add_argument("--official", action="store_true",
                     help="also list entries verified only against secondary sources")
+    sp.add_argument("--requirements", action="store_true",
+                    help="list requirements instead of instruments")
     sp.set_defaults(fn=cmd_stale)
+
+    sp = sub.add_parser("obligations", help="filter requirements across instruments")
+    sp.add_argument("text", nargs="?", help="words that must all appear")
+    add_filters(sp)
+    sp.add_argument("--role", action="append", choices=sorted(vocab.ROLES))
+    sp.add_argument("--category", action="append", choices=sorted(vocab.CATEGORIES))
+    sp.add_argument("--risk", action="append", choices=sorted(vocab.RISKS))
+    sp.add_argument("--evidence", action="append", choices=sorted(vocab.EVIDENCE))
+    sp.add_argument("--assurance", action="append", choices=sorted(vocab.ASSURANCE))
+    sp.add_argument("--kind", action="append", choices=sorted(vocab.KINDS))
+    sp.add_argument("--on", type=_date, help="only requirements that apply on this date")
+    sp.add_argument("--detail", "-d", action="store_true", help="show summaries and controls")
+    sp.add_argument("--json", action="store_true")
+    sp.add_argument("--today", type=_date, default=today)
+    sp.set_defaults(fn=cmd_obligations)
+
+    sp = sub.add_parser("crosswalk", help="requirements linked to one requirement")
+    sp.add_argument("key", help="e.g. eu-ai-act#art-9")
+    sp.set_defaults(fn=cmd_crosswalk)
+
+    sp = sub.add_parser("export", help="write the registry as JSON")
+    sp.add_argument("--out", default=str(ROOT / "build" / "registry.json"))
+    sp.add_argument("--today", type=_date, default=today)
+    sp.set_defaults(fn=cmd_export)
+
+    sp = sub.add_parser("explorer", help="build the explorer web page")
+    sp.add_argument("--out", default=str(EXPLORER_OUT))
+    sp.add_argument("--today", type=_date, default=today)
+    sp.set_defaults(fn=cmd_explorer)
 
     sp = sub.add_parser("watch", help="check watched sources for changes (exit 3 if any changed)")
     sp.add_argument("--state", default=str(WATCH_STATE))

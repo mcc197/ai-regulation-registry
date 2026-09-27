@@ -27,3 +27,61 @@ review_notes: >
   No newer version has been published, but NIST says the AI RMF 1.0 is being revised
   under the White House AI Action Plan. Watch for a new version. doi.org was blocked by
   the network policy, so the DOI link itself was not opened.
+requirements:
+  - id: govern
+    ref: GOVERN function
+    title: Govern
+    kind: recommendation
+    category: governance
+    roles: [organisation]
+    risks: [accountability]
+    summary: >
+      A culture of risk management: policies, processes and accountability structures,
+      workforce diversity and competence, engagement with affected parties, and
+      management of third-party and supply-chain risk. It applies across the other
+      three functions.
+    evidence: [policy, training-records]
+    assurance: [self-assessment]
+    maps_to: [iso-iec-42001#cl-5, iso-iec-42001#a-10]
+  - id: map
+    ref: MAP function
+    title: Map
+    kind: recommendation
+    category: risk-management
+    roles: [organisation]
+    risks: [health-safety, fundamental-rights, discrimination]
+    summary: >
+      Establish the context of an AI system: intended purposes, users and settings,
+      categorisation, capabilities and limits, and the potential impacts on
+      individuals, communities and organisations.
+    evidence: [risk-register, impact-assessment]
+    assurance: [self-assessment]
+    maps_to: [iso-iec-42001#cl-6-1-4]
+  - id: measure
+    ref: MEASURE function
+    title: Measure
+    kind: recommendation
+    category: testing-evaluation
+    roles: [organisation]
+    risks: [reliability, discrimination, security]
+    summary: >
+      Use quantitative and qualitative methods to analyse, assess, benchmark and monitor
+      AI risks and trustworthiness characteristics, including independent assessment
+      and tracking of risks over time.
+    evidence: [test-reports]
+    assurance: [self-assessment, third-party-assessment]
+    assurance_note: The framework encourages independent assessors and red teams where appropriate.
+  - id: manage
+    ref: MANAGE function
+    title: Manage
+    kind: recommendation
+    category: risk-management
+    roles: [organisation]
+    risks: [health-safety, fundamental-rights]
+    summary: >
+      Prioritise and act on mapped and measured risks: treatment plans, resources,
+      responses to incidents, decommissioning, and monitoring of third-party
+      components and post-deployment performance.
+    evidence: [risk-register, incident-report, monitoring-plan]
+    assurance: [self-assessment]
+    maps_to: [iso-iec-42001#cl-6-1-3]

@@ -26,3 +26,58 @@ review_notes: >
   Checked on 2026-09-27 against the NIST AI RMF page (released 26 Jul 2024) and the
   PDF (dated July 2024; DOI 10.6028/NIST.AI.600-1; lists 12 GAI risks). doi.org was
   blocked by the network policy, so the DOI link itself was not opened.
+requirements:
+  - id: governance
+    ref: Governance
+    title: Governance of generative AI
+    kind: recommendation
+    category: governance
+    roles: [organisation]
+    risks: [accountability]
+    summary: >
+      Adapt governance for generative AI: acceptable-use policies, oversight of
+      third-party models and data, and clear accountability for content the system
+      produces.
+    evidence: [policy]
+    assurance: [self-assessment]
+    maps_to: [nist-ai-rmf#govern]
+  - id: pre-deployment-testing
+    ref: Pre-deployment testing
+    title: Pre-deployment testing and red-teaming
+    kind: recommendation
+    category: testing-evaluation
+    roles: [organisation]
+    risks: [security, misinformation, catastrophic]
+    summary: >
+      Test generative AI systems before release against the profile's risks, with
+      structured evaluation, red-teaming (including external red teams where
+      appropriate) and field testing.
+    evidence: [test-reports]
+    assurance: [self-assessment, third-party-assessment]
+    maps_to: [nist-ai-rmf#measure]
+  - id: provenance
+    ref: Content provenance
+    title: Content provenance
+    kind: recommendation
+    category: content-labelling
+    roles: [organisation]
+    risks: [misinformation, manipulation]
+    summary: >
+      Track the origin and history of generated content with techniques such as
+      watermarking, metadata and provenance records, and test how well they work.
+    evidence: [content-marking]
+    assurance: [self-assessment]
+  - id: incident-disclosure
+    ref: Incident disclosure
+    title: Incident disclosure
+    kind: recommendation
+    category: incident-reporting
+    roles: [organisation]
+    risks: [accountability]
+    summary: >
+      Document and disclose AI incidents, keep records that allow incidents to be traced
+      and analysed, and share information with affected parties and, where
+      appropriate, regulators.
+    evidence: [incident-report, logs]
+    assurance: [public-disclosure]
+    maps_to: [nist-ai-rmf#manage]

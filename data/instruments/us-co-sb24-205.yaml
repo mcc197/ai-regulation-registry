@@ -45,3 +45,37 @@ review_notes: >
   shows the act effective 17 May 2024 and the statute text sets no later start than
   30 Jun 2026. The federal court pause of 27 Apr 2026 (D. Colo., xAI's suit) is still
   from secondary sources: the docket is on PACER, which needs a login.
+requirements:
+  - id: developer-duties
+    ref: C.R.S. 6-1-1702
+    title: Developer duty of care and documentation
+    kind: obligation
+    category: technical-documentation
+    roles: [developer]
+    scope: High-risk AI systems
+    risks: [discrimination]
+    summary: >
+      Use reasonable care to protect consumers from known or foreseeable algorithmic
+      discrimination, give deployers documentation about the system's uses, data,
+      limitations and evaluations, and publish a statement of the high-risk systems the
+      developer offers.
+    evidence: [technical-documentation, transparency-report]
+    assurance: [public-disclosure]
+    applies_from: 2026-06-30
+    note: Enforcement paused by a federal court (Apr 2026); replaced by SB 26-189 from 1 Jan 2027.
+  - id: deployer-duties
+    ref: C.R.S. 6-1-1703
+    title: Deployer risk management and impact assessments
+    kind: obligation
+    category: impact-assessment
+    roles: [deployer]
+    scope: High-risk AI systems
+    risks: [discrimination]
+    summary: >
+      Maintain a risk management policy and programme, complete an impact assessment at
+      least yearly and after substantial changes, notify consumers of consequential
+      decisions, and give them a way to correct data and appeal adverse decisions.
+    evidence: [impact-assessment, policy, user-notice]
+    assurance: [self-assessment]
+    applies_from: 2026-06-30
+    note: Enforcement paused by a federal court (Apr 2026); replaced by SB 26-189 from 1 Jan 2027.

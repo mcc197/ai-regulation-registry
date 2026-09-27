@@ -48,3 +48,96 @@ review_notes: >
   has been announced. Added the amendment by Act No. 21311 (20 Jan 2026); a further
   amendment by Act No. 21065 (1 Oct 2025, Government Organization Act) only renamed an
   agency. Replaced the law.go.kr homepage link with a deep link to the statute.
+requirements:
+  - id: art-31
+    ref: Art. 31
+    title: Transparency and labelling of generative and high-impact AI
+    kind: obligation
+    category: content-labelling
+    roles: [service-provider]
+    risks: [manipulation, misinformation]
+    summary: >
+      Tell users in advance when a product or service uses high-impact or generative
+      AI, label generative AI outputs as AI-generated, and clearly disclose synthetic
+      content that is hard to tell apart from reality, such as deepfakes.
+    evidence: [user-notice, content-marking]
+    assurance: [regulator-review]
+    applies_from: 2026-01-22
+    note: Article numbering drafted from translations; confirm against the enacted text.
+  - id: art-32
+    ref: Art. 32
+    title: Safety duties for high-compute AI
+    kind: obligation
+    category: risk-management
+    roles: [service-provider]
+    scope: AI systems trained above the compute threshold set by decree
+    risks: [catastrophic, health-safety]
+    summary: >
+      Identify, assess and mitigate risks across the lifecycle, set up monitoring and
+      response to safety incidents, and submit the results to the Minister of Science
+      and ICT.
+    evidence: [risk-register, incident-report]
+    assurance: [regulator-notification]
+    applies_from: 2026-01-22
+  - id: art-33
+    ref: Art. 33
+    title: Determining whether AI is high-impact
+    kind: obligation
+    category: risk-management
+    roles: [service-provider]
+    risks: [fundamental-rights, health-safety]
+    summary: >
+      Review in advance whether an AI system is high-impact (significant effects on
+      life, physical safety or fundamental rights in listed areas); the operator may
+      ask the Ministry to confirm.
+    evidence: [risk-register]
+    assurance: [self-assessment, regulator-review]
+    applies_from: 2026-01-22
+  - id: art-34
+    ref: Art. 34
+    title: Duties of high-impact AI operators
+    kind: obligation
+    category: risk-management
+    roles: [service-provider]
+    scope: High-impact AI
+    risks: [fundamental-rights, health-safety, opacity]
+    summary: >
+      Put in place a risk management plan, explain results and the main criteria and
+      training data as far as technically feasible, protect users, ensure human
+      management and supervision, and keep documents showing these measures.
+    evidence: [risk-register, technical-documentation, oversight-records, user-notice]
+    assurance: [self-assessment]
+    applies_from: 2026-01-22
+    maps_to: [eu-ai-act#art-9, eu-ai-act#art-14]
+  - id: art-35
+    ref: Art. 35
+    title: Fundamental rights impact assessment for high-impact AI
+    kind: recommendation
+    category: impact-assessment
+    roles: [service-provider]
+    scope: High-impact AI
+    risks: [fundamental-rights]
+    summary: >
+      Operators should make efforts to assess the impact of high-impact AI on people's
+      fundamental rights in advance. Public procurement is to prefer products that have
+      had such an assessment.
+    evidence: [impact-assessment]
+    assurance: [self-assessment]
+    applies_from: 2026-01-22
+    maps_to: [eu-ai-act#art-27]
+  - id: art-36
+    ref: Art. 36
+    title: Domestic representative for foreign operators
+    kind: obligation
+    category: representation
+    roles: [service-provider]
+    scope: Foreign operators above user or revenue thresholds set by decree
+    risks: [accountability]
+    summary: >
+      Operators without an address or place of business in Korea that meet the
+      thresholds must designate a domestic representative in writing and report it to
+      the Minister.
+    evidence: [registration-entry]
+    assurance: [regulator-notification]
+    applies_from: 2026-01-22
+    maps_to: [eu-ai-act#art-22]

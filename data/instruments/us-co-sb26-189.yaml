@@ -37,3 +37,36 @@ review_notes: >
   summary matches the enacted bill summary (point-of-interaction notice, post-adverse
   outcome disclosure, correction and human review rights; no duty of care or impact
   assessments in the new text).
+requirements:
+  - id: pre-use-notice
+    ref: SB 26-189
+    title: Notice before using covered ADMT in consequential decisions
+    kind: obligation
+    category: transparency
+    roles: [deployer]
+    scope: Covered automated decision-making technology used for consequential decisions
+    risks: [opacity, discrimination]
+    summary: >
+      Before covered ADMT is used to make or substantially support a consequential
+      decision about a consumer (such as employment, credit, housing, insurance,
+      education or health care), tell the consumer it will be used.
+    evidence: [user-notice]
+    assurance: [none]
+    applies_from: 2027-01-01
+    note: Drafted from secondary summaries; confirm the exact trigger and content of the notice.
+  - id: adverse-outcome-disclosure
+    ref: SB 26-189
+    title: Disclosure after an adverse outcome
+    kind: obligation
+    category: individual-rights
+    roles: [deployer, affected-person]
+    scope: Adverse consequential decisions involving covered ADMT
+    risks: [opacity, discrimination]
+    summary: >
+      After an adverse consequential decision involving covered ADMT, give the consumer
+      a disclosure about the decision and explain the rights available to them under
+      the Act.
+    evidence: [user-notice]
+    assurance: [none]
+    applies_from: 2027-01-01
+    note: Drafted from secondary summaries; confirm which consumer rights (for example correction or review) apply.

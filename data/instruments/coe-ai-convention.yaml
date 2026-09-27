@@ -38,3 +38,45 @@ review_notes: >
   Decision (EU) 2026/1080 of 21 Apr 2026 approving it for the EU. Still from secondary
   sources: the 17 May 2024 adoption date and the full list of signatories. Add the
   entry-into-force date when the fifth consent lands.
+requirements:
+  - id: art-8
+    ref: Art. 8
+    title: Transparency and oversight
+    kind: obligation
+    category: transparency
+    roles: [state]
+    risks: [opacity]
+    summary: >
+      Parties adopt or maintain measures ensuring transparency and oversight suited to
+      the context and risks, including identification of AI-generated content.
+    evidence: [policy]
+    assurance: [none]
+  - id: art-14-15
+    ref: Arts. 14 and 15
+    title: Remedies and procedural safeguards
+    kind: obligation
+    category: individual-rights
+    roles: [state, affected-person]
+    risks: [fundamental-rights, opacity]
+    summary: >
+      Parties ensure accessible and effective remedies for human rights violations
+      resulting from AI, documentation that can be given to affected people, a
+      possibility to lodge complaints, and notice to people that they are interacting
+      with an AI system rather than a human.
+    evidence: [user-notice]
+    assurance: [none]
+  - id: art-16
+    ref: Art. 16
+    title: Risk and impact management framework
+    kind: obligation
+    category: impact-assessment
+    roles: [state]
+    risks: [fundamental-rights]
+    summary: >
+      Parties adopt measures to identify, assess, prevent and mitigate risks to human
+      rights, democracy and the rule of law across the AI lifecycle, considering
+      severity and probability, with documentation, monitoring and testing, and the
+      option of bans or moratoria.
+    evidence: [impact-assessment, risk-register]
+    assurance: [none]
+    maps_to: [eu-ai-act#art-27]

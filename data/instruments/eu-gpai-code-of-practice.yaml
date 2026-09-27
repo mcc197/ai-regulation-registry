@@ -28,3 +28,45 @@ review_notes: >
   2026-09-27. Publication on 10 Jul 2025, the three chapters and their links to
   Arts 53 and 55, and the 1 Aug 2025 adequacy confirmation by the Commission and the
   AI Board all match.
+requirements:
+  - id: transparency
+    ref: Transparency chapter
+    title: Model documentation
+    kind: recommendation
+    category: technical-documentation
+    roles: [gpai-provider]
+    risks: [opacity]
+    summary: >
+      Keep up-to-date model documentation (the chapter supplies a Model Documentation
+      Form) and provide it to the AI Office and downstream providers on request.
+    evidence: [technical-documentation]
+    assurance: [regulator-review]
+  - id: copyright
+    ref: Copyright chapter
+    title: Copyright policy and opt-out compliance
+    kind: recommendation
+    category: copyright
+    roles: [gpai-provider]
+    risks: [ip-copyright]
+    summary: >
+      Adopt and maintain a copyright policy, crawl only lawfully accessible content,
+      respect machine-readable opt-outs such as robots.txt, reduce infringing outputs,
+      and provide a point of contact for rightsholder complaints.
+    evidence: [copyright-policy]
+    assurance: [self-assessment]
+  - id: safety-security
+    ref: Safety and security chapter
+    title: Safety and security framework for systemic-risk models
+    kind: recommendation
+    category: risk-management
+    roles: [gpai-systemic-provider]
+    risks: [catastrophic, security]
+    summary: >
+      Adopt a safety and security framework, identify and analyse systemic risks, run
+      model evaluations, set risk acceptance criteria, apply safety and security
+      mitigations, report serious incidents, and document all of this in model reports
+      for the AI Office.
+    evidence: [transparency-report, test-reports, incident-report, risk-register]
+    assurance: [regulator-notification, third-party-assessment]
+    assurance_note: Includes involving independent external evaluators in some cases.
+    maps_to: [us-ca-sb53#frontier-framework]

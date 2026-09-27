@@ -33,3 +33,99 @@ review_notes: >
   agreement; the order is dated 10 Jul 2023, was posted on 13 Jul 2023 and takes
   effect on 15 Aug 2023 (Art. 24). The adoption date was corrected from 10 Jul 2023.
   Summary checked against Arts 2, 4, 7, 12 and 17.
+requirements:
+  - id: art-7
+    ref: Art. 7
+    title: Lawful training data
+    kind: obligation
+    category: data-governance
+    roles: [service-provider]
+    risks: [ip-copyright, privacy, reliability]
+    summary: >
+      Pre-training and optimisation data must come from lawful sources, must not
+      infringe intellectual property, needs consent or another legal basis for personal
+      information, and should be made more truthful, accurate, objective and diverse.
+    evidence: [data-documentation]
+    assurance: [regulator-review]
+    applies_from: 2023-08-15
+  - id: art-8
+    ref: Art. 8
+    title: Data annotation rules
+    kind: obligation
+    category: data-governance
+    roles: [service-provider]
+    risks: [reliability]
+    summary: >
+      Where data is annotated, set clear, specific and workable annotation rules, check
+      annotation quality by sampling, and train annotators.
+    evidence: [data-documentation, training-records]
+    assurance: [self-assessment]
+    applies_from: 2023-08-15
+  - id: art-9
+    ref: Art. 9
+    title: Provider responsibility and service agreements
+    kind: obligation
+    category: governance
+    roles: [service-provider]
+    risks: [accountability, privacy]
+    summary: >
+      Providers bear responsibility as producers of online content and as personal
+      information handlers, and sign service agreements with users that set out rights
+      and obligations.
+    evidence: [policy]
+    assurance: [none]
+    applies_from: 2023-08-15
+  - id: art-12
+    ref: Art. 12
+    title: Labelling generated content
+    kind: obligation
+    category: content-labelling
+    roles: [service-provider]
+    risks: [misinformation, manipulation]
+    summary: >
+      Label generated images, video and other content as required by the Deep Synthesis
+      Provisions. The 2025 Labelling Measures add detailed explicit and implicit
+      labelling rules.
+    evidence: [content-marking]
+    assurance: [regulator-review]
+    applies_from: 2023-08-15
+    maps_to: [eu-ai-act#art-50-providers]
+  - id: art-14
+    ref: Art. 14
+    title: Handling illegal content
+    kind: obligation
+    category: post-market-monitoring
+    roles: [service-provider]
+    risks: [misinformation, security]
+    summary: >
+      On finding illegal content, stop its generation and transmission, remove it,
+      rectify the model through optimisation training, and report to the authorities.
+    evidence: [incident-report]
+    assurance: [regulator-notification]
+    applies_from: 2023-08-15
+  - id: art-15
+    ref: Art. 15
+    title: Complaints and reports mechanism
+    kind: obligation
+    category: individual-rights
+    roles: [service-provider]
+    risks: [accountability]
+    summary: Set up a convenient complaint and reporting channel, publish how it works and the expected response time, and handle complaints promptly.
+    evidence: [policy]
+    assurance: [none]
+    applies_from: 2023-08-15
+  - id: art-17
+    ref: Art. 17
+    title: Security assessment and algorithm filing
+    kind: obligation
+    category: registration
+    roles: [service-provider]
+    scope: Services with public-opinion attributes or social mobilisation capacity
+    risks: [misinformation, security]
+    summary: >
+      Carry out a security assessment under national rules and complete algorithm
+      filing, including changes and deregistration, under the Algorithm Recommendation
+      Provisions.
+    evidence: [registration-entry]
+    assurance: [regulator-registration, regulator-review]
+    applies_from: 2023-08-15

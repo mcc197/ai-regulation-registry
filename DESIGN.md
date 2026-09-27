@@ -67,10 +67,29 @@ Instrument ──< Milestone        (dated lifecycle events: proposed, adopted, 
 | `topics` | Controlled vocabulary (see `airegs/schema.py`), used for filtering. |
 | `summary` | Two or three neutral sentences. No legal advice. |
 | `milestones[]` | `{date, event, scope?, note?}`. `event` comes from a fixed lifecycle vocabulary. |
-| `provisions[]` | Optional `{ref, title, applies_to[], applies_from}`. Fill these in only where people need them. |
+| `requirements[]` | What the instrument asks of whom. See below. |
 | `relations[]` | `{type, target}`, validated so that the target exists. |
 | `sources[]` | `{url, label, kind: official\|secondary}`. At least one is required. |
 | `last_verified`, `review_notes` | Provenance and anything uncertain. |
+
+### Requirements (the obligations layer)
+
+Each instrument can list `requirements`: one duty, prohibition, right, or recommended
+control per entry. Every tag comes from a controlled vocabulary in
+`airegs/requirements.py`, so the same question can be asked across laws and standards.
+
+| Field | Answers |
+|---|---|
+| `ref`, `title`, `kind` | Which article or clause, and whether it is binding, a prohibition, a right, or voluntary |
+| `category` | What sort of duty: risk management, logging, incident reporting, conformity assessment… |
+| `roles`, `scope` | Who it binds (provider, deployer, frontier developer…) and when (high-risk only…) |
+| `risks` | The harms it addresses (discrimination, security, catastrophic…) |
+| `controls` | The processes and controls a reader would expect to see in place, in our words |
+| `evidence` | The audit trail it produces: logs, risk register, technical file, incident reports… |
+| `assurance`, `assurance_note` | How compliance is shown: self-assessment, internal audit, independent assessment, certification, regulator filing or review, public disclosure |
+| `applies_from` | When this requirement starts, if different from the instrument |
+| `maps_to` | Crosswalk to other requirements (for example EU AI Act Art. 9 to ISO/IEC 42001 6.1.2). Stored one way, queried both ways. These are our informal mappings, not official ones. |
+| `last_verified`, `verified_against` | As for instruments. New requirements start unverified and show as such everywhere. |
 
 ### Milestone events and derived status
 
@@ -131,10 +150,11 @@ scheduled jobs are described here but not switched on.
 
 | Interface | Use |
 |---|---|
-| `airegs` CLI | `applies-on`, `upcoming`, `search`, `show`, `relations`, `stale` |
+| `airegs` CLI | `applies-on`, `upcoming`, `search`, `show`, `stale`, `obligations`, `crosswalk`, `export`, `explorer` |
 | SQL on `build/registry.db` | Ad-hoc analysis. Tables: `instruments`, `milestones`, `relations`, `sources`, `topics`, plus FTS5 `instruments_fts`. |
 | [Datasette](https://datasette.io) on the same file | Free web UI, JSON API and CSV export, no code |
-| MCP server (next step) | Exposes `search`, `applies_on`, `upcoming` and `show` as tools, so Claude or another assistant can answer questions from the registry, with citations, instead of from memory |
+| Explorer page (`airegs explorer`) | Filters by role, duty type, risk, evidence, assurance and date, plus an Ask box where Claude answers from the register with citations |
+| MCP server (later) | Exposes `search`, `applies_on`, `upcoming` and `show` as tools, so Claude or another assistant can answer questions from the registry, with citations, instead of from memory |
 
 Example SQL: everything taking effect in the next six months:
 

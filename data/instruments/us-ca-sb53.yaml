@@ -38,3 +38,89 @@ review_notes: >
   developers, not only large ones. Watch federal preemption: an 11 Dec 2025 executive
   order directs the Attorney General to challenge state AI laws, but as of late Aug
   2026 no statute or court had preempted or paused SB 53 (secondary sources).
+requirements:
+  - id: frontier-framework
+    ref: Bus. & Prof. Code s. 22757.12(a)
+    title: Frontier AI framework
+    kind: obligation
+    category: risk-management
+    roles: [large-frontier-developer]
+    risks: [catastrophic, security]
+    summary: >
+      Write, follow and publish a frontier AI framework explaining how the developer
+      applies standards and best practice, assesses and mitigates catastrophic risk
+      (including through third-party assessments), secures unreleased model weights,
+      responds to critical safety incidents and governs all of this internally. Review
+      it at least once a year.
+    controls:
+      - Published framework reviewed annually, with changes published within 30 days
+      - Catastrophic-risk thresholds and mitigations
+      - Security of unreleased model weights
+    evidence: [transparency-report, policy]
+    assurance: [public-disclosure, third-party-assessment]
+    assurance_note: The framework must describe the use of third parties to assess catastrophic risk.
+    applies_from: 2026-01-01
+    maps_to: [eu-gpai-code-of-practice#safety-security]
+  - id: transparency-report
+    ref: Bus. & Prof. Code s. 22757.12(c)
+    title: Transparency report before deployment
+    kind: obligation
+    category: transparency
+    roles: [frontier-developer, large-frontier-developer]
+    risks: [opacity, catastrophic]
+    summary: >
+      Before or when deploying a new or substantially modified frontier model, publish
+      a transparency report (website, contact route, release date, languages,
+      modalities, intended uses and restrictions). Large frontier developers add
+      summaries of catastrophic-risk assessments, their results and the involvement of
+      any third-party evaluators.
+    evidence: [transparency-report]
+    assurance: [public-disclosure]
+    applies_from: 2026-01-01
+  - id: internal-use-summaries
+    ref: Bus. & Prof. Code s. 22757.12(d)
+    title: Summaries of catastrophic-risk assessments from internal use
+    kind: obligation
+    category: incident-reporting
+    roles: [large-frontier-developer]
+    risks: [catastrophic]
+    summary: >
+      Send the Office of Emergency Services a summary of any assessment of catastrophic
+      risk resulting from internal use of frontier models, every three months or on
+      another reasonable schedule agreed with the Office.
+    evidence: [incident-report]
+    assurance: [regulator-notification]
+    applies_from: 2026-01-01
+  - id: incident-reporting
+    ref: Bus. & Prof. Code s. 22757.13
+    title: Critical safety incident reporting
+    kind: obligation
+    category: incident-reporting
+    roles: [frontier-developer, large-frontier-developer]
+    risks: [catastrophic, health-safety]
+    summary: >
+      Report critical safety incidents to the Office of Emergency Services within 15
+      days of discovery. Where an incident poses an imminent risk of death or serious
+      physical injury, tell an appropriate authority within 24 hours.
+    controls:
+      - Incident triage with 24-hour and 15-day reporting clocks
+    evidence: [incident-report]
+    assurance: [regulator-notification]
+    applies_from: 2026-01-01
+    maps_to: [nist-ai-600-1#incident-disclosure]
+  - id: whistleblowers
+    ref: Lab. Code s. 1107 et seq.
+    title: Whistleblower protections
+    kind: obligation
+    category: whistleblowing
+    roles: [frontier-developer, large-frontier-developer]
+    risks: [catastrophic, accountability]
+    summary: >
+      Developers may not prevent or retaliate against covered employees who disclose
+      information about catastrophic risks or violations to authorities. Large frontier
+      developers must also provide an anonymous internal reporting process with regular
+      updates to the reporter.
+    evidence: [policy]
+    assurance: [none]
+    applies_from: 2026-01-01
+    note: Section references drafted from the chaptered text summary; confirm on leginfo.

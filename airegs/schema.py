@@ -8,6 +8,8 @@ from pathlib import Path
 
 import yaml
 
+from .requirements import Requirement, check_crosswalk, parse_requirements
+
 TYPES = {
     "legislation", "regulation", "treaty", "executive_order",
     "standard", "framework", "code_of_practice", "guidance",
@@ -68,7 +70,7 @@ class Instrument:
     url: str | None = None
     topics: list[str] = field(default_factory=list)
     relations: list[dict] = field(default_factory=list)
-    provisions: list[dict] = field(default_factory=list)
+    requirements: list[Requirement] = field(default_factory=list)
     last_verified: dt.date | None = None
     verified_against: str | None = None  # "official" or "secondary"
     review_notes: str | None = None
@@ -143,8 +145,10 @@ def parse(raw: dict, where: str) -> Instrument:
                 f"{where}: last_verified needs verified_against: {' or '.join(sorted(SOURCE_KINDS))}")
     elif raw.get("verified_against") is not None:
         raise ValidationError(f"{where}: verified_against needs last_verified")
-    for key in ("topics", "relations", "provisions"):
+    for key in ("topics", "relations"):
         fields[key] = raw.get(key) or []
+    fields["requirements"] = parse_requirements(
+        raw.get("requirements"), raw["id"], where, _as_date, ValidationError)
     return Instrument(**fields)
 
 
@@ -168,4 +172,5 @@ def load(data_dir: Path) -> list[Instrument]:
             if not any(t["type"] == inverse and t["target"] == inst.id for t in target.relations):
                 raise ValidationError(
                     f"{inst.id}: {r['type']} {target.id}, but {target.id} lacks {inverse} {inst.id}")
+    check_crosswalk(instruments, ValidationError)
     return instruments
