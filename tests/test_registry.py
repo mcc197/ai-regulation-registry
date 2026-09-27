@@ -127,10 +127,17 @@ def test_verified_against_is_required_with_last_verified():
     assert ok.verified_against == "official"
 
 
-def test_stale_official_lists_secondary_only_checks(capsys, registry):
-    cli.main(["stale", "--today", "2026-09-27"])
+def test_stale_official_lists_secondary_only_checks(capsys, tmp_path):
+    fresh = {"last_verified": "2026-09-01"}
+    entries = [
+        minimal(id="checked-official", verified_against="official", **fresh),
+        minimal(id="checked-secondary", verified_against="secondary", **fresh),
+    ]
+    for raw in entries:
+        (tmp_path / f"{raw['id']}.yaml").write_text(yaml.safe_dump(raw))
+    args = ["--data", str(tmp_path), "stale", "--today", "2026-09-27"]
+    cli.main(args)
     assert "Everything verified" in capsys.readouterr().out
-    cli.main(["stale", "--today", "2026-09-27", "--official"])
+    cli.main(args + ["--official"])
     listed = {line.split()[0] for line in capsys.readouterr().out.splitlines() if line.strip()}
-    secondary = {i.id for i in registry.values() if i.verified_against == "secondary"}
-    assert secondary and listed == secondary
+    assert listed == {"checked-secondary"}
