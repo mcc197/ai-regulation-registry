@@ -24,6 +24,7 @@ WATCH_STATE = ROOT / "state" / "watch.json"
 LIVE = query.LIVE
 EXPLORER_TEMPLATE = ROOT / "explorer" / "template.html"
 EXPLORER_OUT = ROOT / "build" / "explorer.html"
+APP_DIR = ROOT / "app"
 
 
 def _date(s: str) -> dt.date:
@@ -218,14 +219,73 @@ def cmd_export(instruments, args):
           f"{len(data['requirements'])} requirements)")
 
 
+APP_HEAD = """<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover">
+<meta name="theme-color" content="#1E5D57">
+<meta name="apple-mobile-web-app-capable" content="yes">
+<meta name="mobile-web-app-capable" content="yes">
+<meta name="apple-mobile-web-app-title" content="AI Register">
+<meta name="apple-mobile-web-app-status-bar-style" content="default">
+<link rel="manifest" href="manifest.webmanifest">
+<link rel="icon" href="icon-192.png" type="image/png">
+<link rel="apple-touch-icon" href="apple-touch-icon.png">
+<style>
+:root{color-scheme:light;padding-top:env(safe-area-inset-top,0px);padding-bottom:env(safe-area-inset-bottom,0px)}
+body{margin:0}img{max-width:100%}[hidden]{display:none!important}
+</style>
+</head>
+<body>
+"""
+
+APP_TAIL = """
+<script>
+if ("serviceWorker" in navigator) {
+  window.addEventListener("load", () => navigator.serviceWorker.register("sw.js").catch(() => {}));
+}
+</script>
+</body>
+</html>
+"""
+
+
+def _app_document(fragment: str) -> str:
+    """Wrap the page fragment as a standalone, installable document."""
+    return APP_HEAD + fragment + APP_TAIL
+
+
 def cmd_explorer(instruments, args):
     data = query.export(instruments, args.today)
     blob = json.dumps(data, ensure_ascii=False, separators=(",", ":")).replace("</", "<\\/")
     html = EXPLORER_TEMPLATE.read_text().replace("/*REGISTRY_DATA*/null", blob, 1)
+    if args.app:
+        html = _app_document(html.replace('/*APP_MODE*/"artifact"', '"app"', 1))
     out = Path(args.out)
     out.parent.mkdir(parents=True, exist_ok=True)
     out.write_text(html)
     print(f"Wrote {out}")
+
+
+def cmd_site(instruments, args):
+    """Build the installable phone app into a folder ready for static hosting."""
+    import hashlib
+    import shutil
+    out = Path(args.out)
+    out.mkdir(parents=True, exist_ok=True)
+    args.app = True
+    args.out = str(out / "index.html")
+    cmd_explorer(instruments, args)
+    for f in APP_DIR.iterdir():
+        if f.is_file():
+            shutil.copy2(f, out / f.name)
+    # A new cache name for every build, so installed apps pick up new data.
+    build_id = hashlib.sha256((out / "index.html").read_bytes()).hexdigest()[:12]
+    sw = out / "sw.js"
+    sw.write_text(sw.read_text().replace("__BUILD_ID__", build_id))
+    (out / ".nojekyll").write_text("")
+    print(f"Built app in {out} (build {build_id})")
 
 
 def cmd_watch(instruments, args):
@@ -311,8 +371,15 @@ def main(argv=None) -> int:
 
     sp = sub.add_parser("explorer", help="build the explorer web page")
     sp.add_argument("--out", default=str(EXPLORER_OUT))
+    sp.add_argument("--app", action="store_true",
+                    help="build the standalone phone app page (no Ask tab) instead of the artifact")
     sp.add_argument("--today", type=_date, default=today)
     sp.set_defaults(fn=cmd_explorer)
+
+    sp = sub.add_parser("site", help="build the installable phone app for static hosting")
+    sp.add_argument("--out", default=str(ROOT / "build" / "site"))
+    sp.add_argument("--today", type=_date, default=today)
+    sp.set_defaults(fn=cmd_site)
 
     sp = sub.add_parser("watch", help="check watched sources for changes (exit 3 if any changed)")
     sp.add_argument("--state", default=str(WATCH_STATE))
