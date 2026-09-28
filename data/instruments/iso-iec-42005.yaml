@@ -1,0 +1,178 @@
+id: iso-iec-42005
+title: "Information technology — Artificial intelligence (AI) — AI system impact assessment"
+short_title: ISO/IEC 42005
+type: standard
+binding: false
+jurisdiction: INTL
+issuer: ISO/IEC JTC 1/SC 42
+official_id: ISO/IEC 42005:2025
+url: https://webstore.iec.ch/en/publication/107659
+topics: [risk-management, human-rights, management-system, governance]
+summary: >
+  Guidance for organisations that develop, provide or use AI systems on assessing the
+  impacts of an AI system on individuals, groups and society: when and how to carry
+  out an assessment across the life cycle, what to document, and how to fit the
+  process into AI risk management and an ISO/IEC 42001 management system.
+milestones:
+  - {date: 2025-05-28, event: published, scope: "Edition 1.0"}
+relations:
+  - {type: supports, target: iso-iec-42001}
+sources:
+  - {url: "https://webstore.iec.ch/en/publication/107659", label: IEC webstore (abstract, publication date and preview with table of contents), kind: official, watch: true}
+last_verified: 2026-09-27
+verified_against: official
+review_notes: >
+  Title, scope, edition 1.0 and publication date checked on 2026-09-27 against the IEC
+  webstore page and its official preview (table of contents, introduction, scope and
+  definitions). The IEC gives 2025-05-28 as the publication date; secondary sources
+  that say "April 2025" were not borne out, and the iso.org page blocked the
+  verification environment with a bot check, so the ISO catalogue date was not checked.
+  The document gives guidance, not requirements, so its entries are tagged
+  "recommendation". Not in the CEN-CENELEC JTC 21 work programme or published list as of
+  2026-09-27 (no European adoption found).
+requirements:
+  - id: cl-5-1
+    ref: Clauses 5.1-5.3
+    title: Establish and document an AI system impact assessment process
+    kind: recommendation
+    category: impact-assessment
+    roles: [organisation]
+    risks: [fundamental-rights, discrimination]
+    summary: >
+      Develop and implement a documented process for AI system impact assessment and
+      integrate it with other organisational management processes, including AI risk
+      management and the AI management system.
+    evidence: [policy]
+    assurance: [internal-audit, certification]
+    assurance_note: Certification applies indirectly, where the process is used to meet ISO/IEC 42001 6.1.4 and is audited as part of the AIMS.
+    maps_to: [iso-iec-42001#cl-6-1-4, iso-iec-42001#a-5]
+    source: https://webstore.iec.ch/en/publication/107659
+    last_verified: 2026-09-27
+    verified_against: official
+    note: Clause titles 5.1-5.3 and the integration aim (from the scope) checked against the official preview.
+  - id: cl-5-4
+    ref: Clauses 5.4-5.7
+    title: Timing, scope, responsibilities and thresholds
+    kind: recommendation
+    category: impact-assessment
+    roles: [organisation]
+    risks: [fundamental-rights, discrimination]
+    summary: >
+      Decide when assessments are done and at which life-cycle stages, set the scope of
+      each assessment, allocate responsibilities, and establish thresholds for sensitive
+      uses, restricted uses and impact scales.
+    controls:
+      - Defined triggers and life-cycle points for (re)assessment
+      - Named owners for each assessment
+      - Criteria that flag sensitive or restricted uses
+    evidence: [policy, impact-assessment]
+    assurance: [internal-audit]
+    maps_to: [iso-iec-42001#cl-6-1-4, eu-ai-act#art-27]
+    source: https://webstore.iec.ch/en/publication/107659
+    last_verified: 2026-09-27
+    verified_against: official
+    note: >
+      Clause titles 5.4-5.7 checked against the official table of contents; the scope
+      confirms guidance on how and when to assess and at what life-cycle stages. The
+      content of the thresholds is not publicly visible.
+  - id: cl-5-8
+    ref: Clauses 5.8-5.11
+    title: Perform, analyse, record, report and approve the assessment
+    kind: recommendation
+    category: impact-assessment
+    roles: [organisation]
+    risks: [fundamental-rights, discrimination, privacy]
+    summary: >
+      Carry out the assessment, analyse its results, record and report them, and put
+      them through an approval process.
+    evidence: [impact-assessment]
+    assurance: [internal-audit]
+    maps_to: [iso-iec-42001#cl-8, eu-ai-act#art-27]
+    source: https://webstore.iec.ch/en/publication/107659
+    last_verified: 2026-09-27
+    verified_against: official
+    note: Clause titles 5.8-5.11 checked against the official table of contents at clause-title level.
+  - id: cl-5-12
+    ref: Clause 5.12
+    title: Monitoring and review of impact assessments
+    kind: recommendation
+    category: post-market-monitoring
+    roles: [organisation]
+    risks: [fundamental-rights, reliability]
+    summary: Monitor and review AI system impact assessments over time.
+    evidence: [impact-assessment, monitoring-plan]
+    assurance: [internal-audit]
+    maps_to: [iso-iec-42001#cl-9-1]
+    source: https://webstore.iec.ch/en/publication/107659
+    last_verified: 2026-09-27
+    verified_against: official
+    note: Clause title checked against the official table of contents; review frequency and triggers are not publicly visible.
+  - id: cl-6-3
+    ref: Clauses 6.1-6.6
+    title: Document the AI system, its data, models and deployment environment
+    kind: recommendation
+    category: technical-documentation
+    roles: [organisation]
+    risks: [opacity, reliability]
+    summary: >
+      The assessment record describes its scope; the AI system (description,
+      functionalities and capabilities, purpose, intended and unintended uses);
+      data information and data quality; the algorithms and models used and how they
+      were developed; and the deployment environment (geographical area, languages,
+      complexity and constraints).
+    evidence: [impact-assessment, technical-documentation, data-documentation]
+    assurance: [internal-audit]
+    maps_to: [iso-iec-42001#a-6, iso-iec-42001#a-7]
+    source: https://webstore.iec.ch/en/publication/107659
+    last_verified: 2026-09-27
+    verified_against: official
+    note: Sub-clauses 6.1-6.6.2 checked against the official table of contents at clause-title level.
+  - id: cl-6-7
+    ref: Clauses 6.7-6.9
+    title: Interested parties, foreseeable impacts and measures
+    kind: recommendation
+    category: impact-assessment
+    roles: [organisation]
+    risks: [fundamental-rights, discrimination, health-safety, privacy]
+    summary: >
+      Identify directly affected and other relevant interested parties; record actual
+      and reasonably foreseeable impacts, covering benefits and harms, AI system
+      failures and reasonably foreseeable misuse; and record the measures taken to
+      address harms and benefits. Annex C gives a harms and benefits taxonomy and
+      Annex E an example assessment template (both informative).
+    controls:
+      - Stakeholder mapping that separates directly affected groups from other interested parties
+      - Harms and benefits recorded per group, including failure and misuse scenarios
+      - Mitigation measures linked to each identified harm
+    evidence: [impact-assessment]
+    assurance: [internal-audit]
+    maps_to: [iso-iec-42001#a-5, eu-ai-act#art-27]
+    source: https://webstore.iec.ch/en/publication/107659
+    last_verified: 2026-09-27
+    verified_against: official
+    note: >
+      Sub-clauses 6.7-6.9 and Annexes C and E checked against the official table of
+      contents; the introduction names harmful, unfair or discriminatory outcomes,
+      environmental harm and workforce reductions among the concerns. The taxonomy and
+      template themselves are not publicly visible.
+  - id: annex-a
+    ref: Annexes A, B and D
+    title: Use with ISO/IEC 42001, ISO/IEC 23894 and other assessments
+    kind: recommendation
+    category: impact-assessment
+    roles: [organisation]
+    risks: [fundamental-rights, accountability]
+    summary: >
+      Informative guidance on using the impact assessment with ISO/IEC 42001 and ISO/IEC
+      23894, and on aligning it with other assessments the organisation already runs.
+    evidence: [impact-assessment]
+    assurance: [certification]
+    maps_to: [iso-iec-42001#cl-6-1-4, iso-iec-42001#a-5]
+    source: https://webstore.iec.ch/en/publication/107659
+    last_verified: 2026-09-27
+    verified_against: official
+    note: >
+      Annex titles checked against the official table of contents. Which other
+      assessments Annex D covers (for example privacy or human rights assessments) is
+      not publicly visible; our mapping to the EU AI Act FRIA sits on clauses 5 and 6,
+      not here.

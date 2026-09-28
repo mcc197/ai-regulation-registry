@@ -13,6 +13,10 @@ summary: >
   up, running and improving how an organisation governs the AI it develops or uses.
 milestones:
   - {date: 2023-12-18, event: published}
+relations:
+  - {type: supported_by, target: iso-iec-42006}
+  - {type: supported_by, target: iso-iec-42005}
+  - {type: referenced_by, target: en-18286}
 sources:
   - {url: "https://www.iso.org/standard/81230.html", label: ISO catalogue, kind: official, watch: true}
   - {url: "https://webstore.iec.ch/en/publication/90574", label: IEC webstore, kind: official}

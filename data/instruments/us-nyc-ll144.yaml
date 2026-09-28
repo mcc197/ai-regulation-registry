@@ -1,0 +1,196 @@
+id: us-nyc-ll144
+title: >-
+  Local Law 144 of 2021 on automated employment decision tools (N.Y.C. Admin. Code
+  ss. 20-870 to 20-874) and DCWP rules (6 RCNY ss. 5-300 to 5-304)
+short_title: NYC Local Law 144 (automated employment decision tools)
+type: legislation
+binding: true
+jurisdiction: US-NY
+issuer: New York City Council; NYC Department of Consumer and Worker Protection (rules)
+official_id: "Local Law 144 of 2021 (Int. 1894-2020); 6 RCNY Chapter 5, Subchapter T"
+url: https://legistar.council.nyc.gov/LegislationDetail.aspx?ID=4344524&GUID=B051915D-A9AC-451E-81F8-6596032FA3F9
+topics: [automated-decisions, employment, algorithmic-discrimination, transparency]
+summary: >
+  Employers and employment agencies may not use an automated employment decision tool
+  (AEDT) to screen candidates or employees for hiring or promotion in New York City
+  unless the tool has had an independent bias audit within the past year and a summary
+  of the results is published. Candidates and employees who live in the city must get
+  notice of the tool's use at least 10 business days in advance, including the
+  qualifications and characteristics it assesses. Information about the data used and
+  the data retention policy must be available. The Department of Consumer and Worker
+  Protection (DCWP) enforces it with civil penalties.
+milestones:
+  - {date: 2020-02-27, event: proposed, scope: "Int. 1894-2020 introduced in the City Council"}
+  - {date: 2021-11-10, event: adopted, scope: "Passed by the City Council"}
+  - {date: 2021-12-11, event: adopted, scope: "Enacted as Local Law 144 of 2021; it became law without the Mayor's signature", note: "Legistar records the bill as returned unsigned by the Mayor on 13 Dec 2021; the enactment date is 11 Dec 2021."}
+  - {date: 2023-01-01, event: entry_into_force, scope: Local Law 144 takes effect}
+  - {date: 2023-04-06, event: published, scope: "DCWP notice of adoption of final rules (6 RCNY ss. 5-300 to 5-304) published in the City Record"}
+  - {date: 2023-07-05, event: applies, scope: "DCWP begins enforcing the law and rules"}
+sources:
+  - {url: "https://legistar.council.nyc.gov/LegislationDetail.aspx?ID=4344524&GUID=B051915D-A9AC-451E-81F8-6596032FA3F9", label: "NYC Council Legistar, Int. 1894-2020 (text and history)", kind: official, watch: true}
+  - {url: "https://www.nyc.gov/site/dca/about/automated-employment-decision-tools.page", label: DCWP AEDT page, kind: official, watch: true}
+  - {url: "https://www.nyc.gov/assets/dca/downloads/pdf/about/DCWP-AEDT-FAQ.pdf", label: "DCWP, AEDT Frequently Asked Questions (29 Jun 2023)", kind: official}
+  - {url: "https://rules.cityofnewyork.us/rule/automated-employment-decision-tools-updated/", label: "NYC Rules, Automated Employment Decision Tools (Updated), final rule", kind: official}
+  - {url: "https://a856-cityrecord.nyc.gov/RequestDetail/20230330013", label: "City Record, DCWP notice of adoption (6 Apr 2023)", kind: official}
+  - {url: "https://www.osc.ny.gov/state-agencies/audits/2025/12/02/enforcement-local-law-144-automated-employment-decision-tools", label: "NY State Comptroller audit 2024-N-6 of DCWP enforcement (2 Dec 2025)", kind: official}
+  - {url: "https://www.duanemorris.com/alerts/enforcement_nyc_artificial_intelligence_bias_law_automated_employment_decision_tools_0623.html", label: Duane Morris (Jun 2023), kind: secondary}
+last_verified: 2026-09-27
+verified_against: official
+review_notes: >
+  Checked on 2026-09-27. Sources: the enacted text and history on Legistar, the DCWP
+  AEDT page (enforcement from 5 Jul 2023), DCWP's FAQ (which restates the rule's audit,
+  data, auditor-independence and notice requirements) and the City Record listing
+  (adopted rule published 6 Apr 2023). The rule text on rules.cityofnewyork.us and
+  American Legal was blocked from this environment, and the City Record attachment came
+  back empty. So rule details not in the FAQ, chiefly the duty to keep the audit summary
+  posted for six months after last use, come from a secondary source, and that
+  requirement is marked secondary. Later developments, checked up to Sept 2026: the
+  State Comptroller's audit of 2 Dec 2025 found DCWP's enforcement ineffective (two
+  complaints and one violation found in 32 website reviews, against at least 17 potential
+  violations found by the auditors) and recommended proactive enforcement. We found no
+  local law amending Admin. Code ss. 20-870 to 20-874, and no amended DCWP rule, through
+  Sept 2026. Our reading: the jurisdiction code is US-NY because the vocabulary has no
+  city-level code; the issuer covers both the Council (law) and DCWP (rules).
+requirements:
+  - id: bias-audit
+    ref: "N.Y.C. Admin. Code ss. 20-870, 20-871(a)(1); 6 RCNY ss. 5-300 to 5-302"
+    title: Independent bias audit within one year before use
+    kind: obligation
+    category: testing-evaluation
+    roles: [deployer]
+    scope: >
+      Employers and employment agencies using an AEDT "in the city" (the job is based
+      at least part-time in an NYC office, or is remote but tied to one, or the agency is
+      in NYC) to screen candidates who have applied for a specific position, or
+      employees for promotion. An AEDT is a computational process derived from machine
+      learning, statistical modelling, data analytics or AI that issues simplified output
+      (score, classification or recommendation) used to substantially assist or replace
+      discretionary decisions.
+    risks: [discrimination]
+    summary: >
+      Do not use an AEDT unless an independent auditor has done a bias audit of it no
+      more than one year before the use. The audit must at least calculate selection
+      rates (or scoring rates) and impact ratios by sex, by race/ethnicity and by
+      intersectional categories. The auditor must be objective and impartial. They are
+      not independent if they work for the employer or the tool's vendor, were involved
+      in using, developing or distributing the tool, or have a direct or material
+      indirect financial interest in the employer or vendor. The audit uses historical
+      data from real use of the tool, and may pool data from several employers if each
+      relying employer contributed its own data or is using the tool for the first time.
+      Test data is allowed only where historical data is insufficient. Imputed or
+      inferred demographics are not allowed. Categories under 2% of the data may be left
+      out of the calculations. The law does not require any specific action on the
+      results, but anti-discrimination law still applies.
+    controls:
+      - AEDT inventory with the date of each tool's latest bias audit and a block on use once it is more than a year old
+      - Auditor independence check covering employment, involvement with the tool and financial interests
+      - Supply of the employer's own historical data to the auditor, or a documented first-use basis for relying on a pooled audit
+      - Review of impact ratios with employment counsel under anti-discrimination law
+    evidence: [audit-report, test-reports, data-documentation]
+    assurance: [third-party-assessment]
+    assurance_note: >
+      Independent third-party audit, repeated every year. DCWP does not approve or list
+      auditors. A vendor may commission the audit, but the employer or agency remains
+      responsible. The audit is not filed with DCWP; its summary is published (see
+      audit-summary-publication). Penalties are up to $500 for a first violation, and
+      $500-$1,500 for each later one; each day of non-compliant use is a separate
+      violation.
+    applies_from: 2023-07-05
+    maps_to: [eu-ai-act#art-10]
+    source: https://www.nyc.gov/assets/dca/downloads/pdf/about/DCWP-AEDT-FAQ.pdf
+    last_verified: 2026-09-27
+    verified_against: official
+    note: >
+      Checked against the enacted text on Legistar and DCWP's FAQ, which restates the rule
+      (6 RCNY ss. 5-301 and 5-302). Our reading: the crosswalk to EU AI Act Art. 10 is
+      loose. Art. 10 asks the provider to examine data for bias, while this law asks the
+      employer to have an independent auditor test outcome disparities.
+  - id: audit-summary-publication
+    ref: "N.Y.C. Admin. Code s. 20-871(a)(2); 6 RCNY s. 5-303"
+    title: Publish a summary of the latest bias audit before use
+    kind: obligation
+    category: transparency
+    roles: [deployer]
+    scope: Employers and employment agencies using an AEDT in the city
+    risks: [discrimination, opacity]
+    summary: >
+      Before using the AEDT, publish on the employment section of the website (or through
+      an active link) a summary of the latest bias audit and the tool's distribution
+      date. The summary must give the date of the audit, the source and an explanation of
+      the data used (including why test data or limited data was used), the number of
+      people assessed in an unknown category, and, for every category, the number of
+      applicants or candidates, the selection or scoring rates and the impact ratios.
+      Keep it posted while the tool is in use and for at least six months after its last
+      use.
+    controls:
+      - Public AEDT audit summary page linked from careers pages
+      - Page kept live for six months after the tool is retired
+    evidence: [audit-report, transparency-report]
+    assurance: [public-disclosure]
+    applies_from: 2023-07-05
+    source: https://www.nyc.gov/assets/dca/downloads/pdf/about/DCWP-AEDT-FAQ.pdf
+    last_verified: 2026-09-27
+    verified_against: secondary
+    note: >
+      The summary contents are confirmed in DCWP's FAQ (official). The six-month
+      post-use posting period is in 6 RCNY s. 5-303 as reported by Duane Morris; the rule
+      text could not be retrieved from the official site from this environment, so this
+      requirement is marked secondary.
+  - id: candidate-notice
+    ref: "N.Y.C. Admin. Code s. 20-871(b)(1)-(2); 6 RCNY s. 5-304"
+    title: Notice to candidates and employees 10 business days before use
+    kind: obligation
+    category: transparency
+    roles: [deployer]
+    scope: Candidates and employees who live in New York City and are assessed by an AEDT
+    risks: [opacity, discrimination]
+    summary: >
+      At least 10 business days before using an AEDT, tell each candidate or employee
+      who lives in the city that an AEDT will be used to assess them. Tell them the job
+      qualifications and characteristics it will use, and how to request an alternative
+      selection process or a reasonable accommodation. Notice can be given in the job
+      posting or by mail or email. For applicants it can instead go on the employment
+      section of the website, and for promotion candidates in a written policy; neither
+      has to be position-specific.
+    controls:
+      - AEDT notice text in job postings or on the careers site, published at least 10 business days before first use
+      - Route for requesting an alternative selection process or accommodation
+    evidence: [user-notice]
+    assurance: [none]
+    assurance_note: Each failure to give a required notice is a separate violation; DCWP handles complaints and refers discrimination claims to the Commission on Human Rights.
+    applies_from: 2023-07-05
+    maps_to: [us-co-sb26-189#pre-use-notice, us-ca-ccpa-admt-regs#admt-pre-use-notice, eu-ai-act#art-26]
+    source: https://legistar.council.nyc.gov/LegislationDetail.aspx?ID=4344524&GUID=B051915D-A9AC-451E-81F8-6596032FA3F9
+    last_verified: 2026-09-27
+    verified_against: official
+    note: >
+      Our reading: the law says the notice must "allow a candidate to request an
+      alternative selection process or accommodation", but neither the law nor, per
+      DCWP's FAQ, the rule requires the employer to provide an alternative process. The
+      FAQ describes the notice as including instructions to request a reasonable
+      accommodation under other laws.
+  - id: data-retention-information
+    ref: "N.Y.C. Admin. Code s. 20-871(b)(3); 6 RCNY s. 5-304"
+    title: Information on data type, source and retention policy
+    kind: obligation
+    category: transparency
+    roles: [deployer]
+    scope: Candidates and employees assessed by an AEDT
+    risks: [privacy, opacity]
+    summary: >
+      Unless it is already on the website, make available on written request from a
+      candidate or employee information about the type of data collected for the AEDT,
+      its source, and the employer's or agency's data retention policy. Provide it within
+      30 days of the request. Information need not be disclosed where that would break
+      the law or interfere with a law enforcement investigation.
+    controls:
+      - Published AEDT data notice (data types, sources, retention policy) or a written-request process with a 30-day clock
+    evidence: [policy, user-notice]
+    assurance: [none]
+    applies_from: 2023-07-05
+    source: https://legistar.council.nyc.gov/LegislationDetail.aspx?ID=4344524&GUID=B051915D-A9AC-451E-81F8-6596032FA3F9
+    last_verified: 2026-09-27
+    verified_against: official
+    note: >
+      The law requires disclosure of the retention policy but sets no retention period of
+      its own for AEDT data.

@@ -1,0 +1,209 @@
+id: iso-iec-42006
+title: "Information technology — Artificial intelligence — Requirements for bodies providing audit and certification of artificial intelligence management systems"
+short_title: ISO/IEC 42006
+type: standard
+binding: false
+jurisdiction: INTL
+issuer: ISO/IEC JTC 1/SC 42
+official_id: ISO/IEC 42006:2025
+url: https://webstore.iec.ch/en/publication/108460
+topics: [management-system, governance]
+summary: >
+  Requirements, on top of ISO/IEC 17021-1, for certification bodies that audit and
+  certify AI management systems against ISO/IEC 42001. It covers impartiality,
+  auditor competence, audit planning and audit time, certification decisions,
+  surveillance and re-certification, and can serve as the criteria for accrediting
+  or peer-assessing those bodies.
+milestones:
+  - {date: 2025-07-07, event: published, scope: "Edition 1.0"}
+relations:
+  - {type: supports, target: iso-iec-42001}
+sources:
+  - {url: "https://webstore.iec.ch/en/publication/108460", label: IEC webstore (abstract, publication date and preview with table of contents), kind: official, watch: true}
+  - {url: "https://standards.cencenelec.eu/ords/f?p=205:110:::::FSP_PROJECT,FSP_LANG_ID:83986,25&cs=109D77120A76C652EE5B08E31A0C22D25", label: "CEN-CENELEC project page, prEN ISO/IEC 42006 (European adoption)", kind: official}
+last_verified: 2026-09-27
+verified_against: official
+review_notes: >
+  Title, scope, edition 1.0 and publication date (2025-07-07) checked on 2026-09-27
+  against the IEC webstore page and its official preview (foreword, table of contents,
+  introduction and scope). The iso.org page blocked the verification environment with a
+  bot check. European adoption: the CEN-CENELEC JTC 21 work programme lists prEN ISO/IEC
+  42006 (WI JT021057, identical to ISO/IEC 42006:2025) as "Under Enquiry" on 2026-09-27,
+  with a forecast voting date of 2026-12-31; not recorded as a milestone because it has
+  not happened yet. Our reading: the requirements below bind certification bodies, not
+  the organisations being certified, and are tagged with the generic role
+  "organisation" because the vocabulary has no certification-body role.
+requirements:
+  - id: cl-5
+    ref: Clause 5
+    title: Impartiality, conflicts of interest and liability of the certification body
+    kind: control
+    category: governance
+    roles: [organisation]
+    scope: Bodies auditing and certifying AI management systems against ISO/IEC 42001
+    risks: [accountability]
+    summary: >
+      General requirements that add to ISO/IEC 17021-1 on legal and contractual
+      matters, management of impartiality (including conflicts of interest) and
+      liability and financing of the certification body.
+    evidence: [policy]
+    assurance: [third-party-assessment]
+    assurance_note: The standard can be used as a criteria document for accreditation or peer assessment of certification bodies.
+    maps_to: [iso-iec-42001#cert]
+    source: https://webstore.iec.ch/en/publication/108460
+    last_verified: 2026-09-27
+    verified_against: official
+    note: >
+      Sub-clauses 5.1-5.3 checked against the official table of contents; the clause
+      text is not publicly visible, so the summary stays at clause-title level.
+  - id: cl-7-1
+    ref: Clauses 7.1-7.2
+    title: Competence of audit and certification personnel
+    kind: control
+    category: ai-literacy
+    roles: [organisation]
+    scope: Bodies auditing and certifying AI management systems against ISO/IEC 42001
+    risks: [reliability, accountability]
+    summary: >
+      Personnel involved in certification need generic and AI-specific technical
+      competence, and the body must be able to demonstrate their knowledge and
+      experience.
+    controls:
+      - Competence criteria for auditors and decision makers covering AI-specific technical areas
+      - Evaluation of each person's knowledge and experience before assignment
+    evidence: [training-records]
+    assurance: [third-party-assessment]
+    maps_to: [iso-iec-42001#cert]
+    source: https://webstore.iec.ch/en/publication/108460
+    last_verified: 2026-09-27
+    verified_against: official
+    note: >
+      Sub-clauses 7.1.1-7.1.3 (general, generic and specific technical competence) and
+      7.2.1-7.2.2 (demonstration of knowledge and experience) checked against the
+      official table of contents; the introduction says accreditation bodies and peer
+      assessors can use the document to assess minimum competence requirements. The
+      specific competence areas (7.1.3, several pages long) are not publicly visible.
+  - id: cl-7-3
+    ref: Clauses 7.3-7.5
+    title: External auditors and experts, personnel records and outsourcing
+    kind: control
+    category: third-party-management
+    roles: [organisation]
+    scope: Bodies auditing and certifying AI management systems against ISO/IEC 42001
+    risks: [accountability]
+    summary: >
+      Requirements on using individual external auditors and external technical
+      experts, keeping personnel records, and outsourcing certification activities.
+    evidence: [training-records, policy]
+    assurance: [third-party-assessment]
+    source: https://webstore.iec.ch/en/publication/108460
+    last_verified: 2026-09-27
+    verified_against: official
+    note: Checked against the official table of contents at clause-title level only.
+  - id: cl-8
+    ref: Clause 8
+    title: Public information, certification documents and confidentiality
+    kind: control
+    category: transparency
+    roles: [organisation]
+    scope: Bodies auditing and certifying AI management systems against ISO/IEC 42001
+    risks: [opacity, accountability]
+    summary: >
+      Information requirements: public information, AIMS certification documents,
+      reference to certification and use of marks, confidentiality (including access
+      to the client organisation's documentation) and information exchange between the
+      body and its clients. Annex C (informative) gives a template for a certification
+      document.
+    evidence: [certificate]
+    assurance: [third-party-assessment, public-disclosure]
+    maps_to: [iso-iec-42001#cert]
+    source: https://webstore.iec.ch/en/publication/108460
+    last_verified: 2026-09-27
+    verified_against: official
+    note: >
+      Sub-clauses 8.1-8.5 and Annex C checked against the official table of contents;
+      the scope says the document also gives customers information and confidence about
+      how certification was granted. What must appear on the certificate is not publicly
+      visible.
+  - id: cl-9-1
+    ref: Clause 9.1 and Annex A
+    title: Pre-certification, audit programme, scope and audit time
+    kind: control
+    category: conformity-assessment
+    roles: [organisation]
+    scope: Bodies auditing and certifying AI management systems against ISO/IEC 42001
+    risks: [reliability, accountability]
+    summary: >
+      Before certification, set the audit programme and the scope of certification,
+      determine audit time (normative Annex A, with worked examples in informative
+      Annex B), and handle multi-site sampling and combined audits of multiple
+      management systems.
+    evidence: [audit-report]
+    assurance: [certification, third-party-assessment]
+    maps_to: [iso-iec-42001#cert]
+    source: https://webstore.iec.ch/en/publication/108460
+    last_verified: 2026-09-27
+    verified_against: official
+    note: >
+      Sub-clauses 9.1.1-9.1.6 and the status of Annexes A (normative, audit time) and B
+      (informative, examples) checked against the official table of contents. The audit
+      time rules themselves are not publicly visible.
+  - id: cl-9-2
+    ref: Clauses 9.2-9.5
+    title: Audit planning, initial certification audit and certification decision
+    kind: control
+    category: conformity-assessment
+    roles: [organisation]
+    scope: Bodies auditing and certifying AI management systems against ISO/IEC 42001
+    risks: [reliability, accountability]
+    summary: >
+      Plan each audit (objectives, scope and criteria, audit team selection, audit plan,
+      use of remote audit), carry out the initial certification audit, conduct audits
+      and take the certification decision.
+    evidence: [audit-report, certificate]
+    assurance: [certification, third-party-assessment]
+    maps_to: [iso-iec-42001#cert]
+    source: https://webstore.iec.ch/en/publication/108460
+    last_verified: 2026-09-27
+    verified_against: official
+    note: Sub-clauses 9.2.1-9.2.4, 9.3.1-9.3.2, 9.4 and 9.5 checked against the official table of contents at clause-title level.
+  - id: cl-9-6
+    ref: Clauses 9.6-9.9
+    title: Surveillance, re-certification, special audits, suspension, appeals and complaints
+    kind: control
+    category: conformity-assessment
+    roles: [organisation]
+    scope: Bodies auditing and certifying AI management systems against ISO/IEC 42001
+    risks: [reliability, accountability]
+    summary: >
+      Maintain certification through surveillance activities, re-certification and
+      special audits; suspend, withdraw or reduce the scope of certification where
+      needed; handle appeals and complaints; and keep client records.
+    evidence: [audit-report, certificate]
+    assurance: [certification, third-party-assessment]
+    maps_to: [iso-iec-42001#cert]
+    source: https://webstore.iec.ch/en/publication/108460
+    last_verified: 2026-09-27
+    verified_against: official
+    note: >
+      Sub-clauses 9.6.1-9.6.5, 9.7, 9.8 and 9.9 checked against the official table of
+      contents. Surveillance frequency and triggers for special audits are not publicly
+      visible.
+  - id: cl-10
+    ref: Clause 10
+    title: Management system of the certification body
+    kind: control
+    category: quality-management
+    roles: [organisation]
+    scope: Bodies auditing and certifying AI management systems against ISO/IEC 42001
+    risks: [accountability]
+    summary: >
+      The certification body runs its own management system, either to general
+      management system requirements (Option A) or in accordance with ISO 9001
+      (Option B).
+    evidence: [quality-manual, audit-report, management-review]
+    assurance: [third-party-assessment]
+    source: https://webstore.iec.ch/en/publication/108460
+    last_verified: 2026-09-27
+    verified_against: official
+    note: Options A and B (10.1-10.3) checked against the official table of contents at clause-title level.

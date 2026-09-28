@@ -1,0 +1,286 @@
+id: en-18286
+title: "Artificial intelligence — Quality management system for EU AI Act regulatory purposes"
+short_title: EN 18286
+type: standard
+binding: false
+jurisdiction: EU
+issuer: CEN-CENELEC JTC 21
+official_id: EN 18286:2026
+url: "https://standards.cencenelec.eu/ords/f?cs=12A382BDB5385F509EBAA7CD4808AFBF3&p=CEN%3A110%3A%3A%3A%3A%3AFSP_PROJECT%2CFSP_ORG_ID%3A80556%2C2916257"
+topics: [management-system, high-risk, governance, risk-management]
+summary: >
+  European standard setting requirements and guidance for the quality management system
+  that providers of AI systems, chiefly high-risk AI systems, need under Art. 17 of the
+  EU AI Act. Developed under standardisation request M/593 (amended by M/613) as the
+  first standard in support of the AI Act. Published in July 2026; its reference had not
+  been cited in the Official Journal as of Sept 2026, so it does not yet give a
+  presumption of conformity under Art. 40.
+milestones:
+  - date: 2025-10-30
+    event: proposed
+    scope: "prEN 18286 submitted to CEN Enquiry (public comment)"
+    note: >
+      Enquiry start per the Commission's AI Act standardisation page; the BSI draft for
+      public comment (25/30521522 DC) is dated 30 Oct 2025 with comments due 23 Dec 2025.
+  - date: 2026-07-12
+    event: adopted
+    scope: "Date of ratification (DOR) by the CEN and CENELEC Technical Boards"
+    note: A CEN-CENELEC newsletter of 29 Jul 2026 says the standard was approved "in June"; CEN's project record gives the DOR as 12 Jul 2026, which we use.
+  - {date: 2026-07-22, event: published, scope: "Date of availability (DAV) of the EN"}
+relations:
+  - {type: supports, target: eu-ai-act}
+  - {type: references, target: iso-iec-42001}
+sources:
+  - {url: "https://standards.cencenelec.eu/ords/f?cs=12A382BDB5385F509EBAA7CD4808AFBF3&p=CEN%3A110%3A%3A%3A%3A%3AFSP_PROJECT%2CFSP_ORG_ID%3A80556%2C2916257", label: "CEN-CENELEC project record (status, DOR, DAV, OJEU citation status)", kind: official, watch: true}
+  - {url: "https://www.cencenelec.eu/news-events/news/2026/en-in-the-spotlight/2026-07-30-ai-quality-management/", label: "CEN-CENELEC, EN 18286 in the Spotlight (31 Jul 2026)", kind: official}
+  - {url: "https://www.cencenelec.eu/news-events/news/2026/newsletter/ots-75-anec/", label: "CEN-CENELEC newsletter, First Standard Approved under the AI Act (29 Jul 2026)", kind: official}
+  - {url: "https://www.cencenelec.eu/news-events/news/2025/brief-news/2025-10-23-ai-standardization/", label: "CEN-CENELEC, acceleration measures for JTC 21 standards (23 Oct 2025)", kind: official}
+  - {url: "https://digital-strategy.ec.europa.eu/en/policies/ai-act-standardisation", label: European Commission, Standardisation of the AI Act, kind: official, watch: true}
+  - {url: "https://knowledge.bsigroup.com/products/bs-en-18286-artificial-intelligence-quality-management-system-for-eu-ai-act-regulatory-purposes", label: "BSI (UK national standards body), draft for public comment 25/30521522 DC with preview of prEN 18286:2025", kind: official}
+  - {url: "https://www.bsigroup.com/en-GB/insights-and-media/media-centre/press-releases/2026/july/en-18286-provides-a-framework-for-ai-quality-management-under-the-eu-ai-act/", label: "BSI press release (24 Jul 2026)", kind: official}
+  - {url: "https://www.bsigroup.com/siteassets/pdf/en/insights-and-media/media/webinars/bsi---en-18286-and-eu-ai-act---webinar---21-july-2026.pdf", label: "BSI webinar slides on EN 18286 (21 Jul 2026)", kind: official}
+  - {url: "https://www.evs.ee/en/evs-en-18286-2026", label: "EVS (Estonian national standards body), EVS-EN 18286:2026", kind: official}
+  - {url: "https://lawandtechnology.eu/en/en-18286-the-quality-management-system-for-article-17-of-the-ai-act-nears-publication/", label: lawandtechnology.eu, kind: secondary}
+last_verified: 2026-09-27
+verified_against: official
+review_notes: >
+  Checked on 2026-09-27. Status, work item (JT021039), scope, mandates (M/593, M/613),
+  legal act (2024/1689), DOR 2026-07-12, DAV 2026-07-22, DOA 2026-10-31 and DOP/DOW
+  2027-01-31 come from the CEN-CENELEC project record, which lists the OJEU citation as
+  "Citation expected for Directive 2024/1689". A query of the Publications Office
+  CELLAR endpoint for acts dated from 1 Jun 2026 whose titles mention 2024/1689 found no
+  implementing decision citing harmonised standards, only 2026/1744 and 2026/1755. So as
+  of this date EN 18286 is published but not cited in the OJ and gives no presumption of
+  conformity under AI Act Art. 40; the CEN-CENELEC newsletter says the Commission is
+  expected to publish the reference later in 2026. When it does, add the OJ citation as
+  a milestone with the implementing decision as its source. The Formal Vote question: CEN-CENELEC's
+  newsletter of 27 May 2026 says the draft went out for Formal Vote after the harmonised
+  standard review, although the Oct 2025 acceleration package allowed direct publication
+  after a positive Enquiry. National adoptions seen: EVS-EN 18286:2026 (valid from
+  3 Aug 2026) and BS EN 18286:2026. Requirements: the final text is paywalled and its
+  only official public preview (EVS) sits behind a captcha. Clause titles therefore come
+  from the official enquiry draft (prEN 18286:2025, BSI preview), and are marked verified
+  only where BSI's July 2026 webinar on the final text cites the same clause number for
+  the same topic. The final text has clauses the draft lacked (for example 7.4, 8.8,
+  8.9 and 9.7, per the webinar), so other draft clause numbers may have moved.
+requirements:
+  - id: cl-4
+    ref: Clause 4
+    title: QMS scope, regulatory requirements and strategy for regulatory compliance
+    kind: control
+    category: quality-management
+    roles: [provider]
+    scope: Providers of AI systems, primarily high-risk AI systems
+    risks: [accountability]
+    summary: >
+      Identify the regulatory requirements that apply, determine the scope of the
+      quality management system (a defined set of AI systems), set a strategy for
+      regulatory compliance, and control documented information.
+    controls:
+      - Register of applicable AI Act and sectoral requirements per AI system
+      - Documented compliance strategy, including which conformity assessment route applies
+    evidence: [quality-manual, policy]
+    assurance: [self-assessment, third-party-assessment]
+    assurance_note: >
+      A notified body assesses the QMS where the Annex VII route applies. Presumption of
+      conformity with Art. 17 only once the reference is cited in the OJ (not yet as of
+      Sept 2026).
+    maps_to: [eu-ai-act#art-17, iso-iec-42001#cl-4]
+    source: https://knowledge.bsigroup.com/products/bs-en-18286-artificial-intelligence-quality-management-system-for-eu-ai-act-regulatory-purposes
+    last_verified: 2026-09-27
+    verified_against: official
+    note: >
+      Clause titles 4.2-4.5 from the official enquiry-draft table of contents; BSI's
+      webinar on the final text cites 4.4 for the compliance strategy and lists 4.1-4.5,
+      and says the QMS scope is anchored in a set of AI systems.
+  - id: cl-5-7
+    ref: Clauses 5-7
+    title: Management responsibility, planning and support
+    kind: control
+    category: governance
+    roles: [provider]
+    scope: Providers of AI systems, primarily high-risk AI systems
+    risks: [accountability]
+    summary: >
+      Top management sets a quality policy and assigns roles, responsibilities and
+      authorities; the provider plans actions on risks to the QMS and sets quality
+      objectives; and provides resources, competence and communication, including
+      communication with authorities.
+    evidence: [quality-manual, policy, training-records]
+    assurance: [self-assessment, third-party-assessment]
+    maps_to: [eu-ai-act#art-17, iso-iec-42001#cl-5, iso-iec-42001#cl-7]
+    source: https://knowledge.bsigroup.com/products/bs-en-18286-artificial-intelligence-quality-management-system-for-eu-ai-act-regulatory-purposes
+    last_verified: 2026-09-27
+    verified_against: official
+    note: >
+      Clause titles 5.1-5.3, 6.1-6.2 and 7.1-7.3 from the official enquiry draft; BSI's
+      webinar on the final text places management responsibility, planning and support
+      in clauses 5-7 and cites 7.3.3 for regulatory communication. The final text also
+      has a 7.4 whose title was not seen.
+  - id: cl-8-3
+    ref: Clause 8.3
+    title: Inception, design and development of each AI system
+    kind: control
+    category: quality-management
+    roles: [provider]
+    scope: Providers of AI systems, primarily high-risk AI systems
+    risks: [reliability, health-safety, fundamental-rights]
+    summary: >
+      Control the inception, design and development of each AI system in scope,
+      including engineering its requirements per system.
+    evidence: [technical-documentation, quality-manual]
+    assurance: [self-assessment, third-party-assessment]
+    maps_to: [eu-ai-act#art-17, iso-iec-42001#a-6]
+    source: https://knowledge.bsigroup.com/products/bs-en-18286-artificial-intelligence-quality-management-system-for-eu-ai-act-regulatory-purposes
+    last_verified: 2026-09-27
+    verified_against: official
+    note: >
+      Title from the official enquiry draft; BSI's webinar on the final text cites
+      8.3.2.1 for per-system requirements engineering. Draft 8.1 (actions to address
+      risks) and 8.2 (life-cycle stages) exist in the final numbering too but their final
+      titles were not seen.
+  - id: cl-8-4
+    ref: Clause 8.4
+    title: Verification and validation
+    kind: control
+    category: testing-evaluation
+    roles: [provider]
+    scope: Providers of AI systems, primarily high-risk AI systems
+    risks: [reliability, health-safety]
+    summary: Verification and validation of AI systems, with gates in the life cycle.
+    evidence: [test-reports]
+    assurance: [self-assessment, third-party-assessment]
+    maps_to: [eu-ai-act#art-17, iso-iec-42001#a-6]
+    source: https://knowledge.bsigroup.com/products/bs-en-18286-artificial-intelligence-quality-management-system-for-eu-ai-act-regulatory-purposes
+    last_verified: 2026-09-27
+    verified_against: official
+    note: Same clause number and title in the official enquiry draft and BSI's webinar on the final text ("V&V gates, 8.4").
+  - id: cl-8-5
+    ref: Clause 8.5
+    title: Data management
+    kind: control
+    category: data-governance
+    roles: [provider]
+    scope: Providers of AI systems, primarily high-risk AI systems
+    risks: [discrimination, reliability, privacy]
+    summary: Documented data management procedures within the QMS.
+    evidence: [data-documentation, quality-manual]
+    assurance: [self-assessment, third-party-assessment]
+    maps_to: [eu-ai-act#art-10, eu-ai-act#art-17, iso-iec-42001#a-7]
+    source: https://knowledge.bsigroup.com/products/bs-en-18286-artificial-intelligence-quality-management-system-for-eu-ai-act-regulatory-purposes
+    last_verified: 2026-09-27
+    verified_against: official
+    note: >
+      Same clause number and title in the official enquiry draft and BSI's webinar on
+      the final text. The detailed data duties sit in other JTC 21 drafts (prEN 18283 on
+      bias, prEN 18284 on data sets).
+  - id: cl-8-7
+    ref: Clause 8.7
+    title: Product documentation (technical documentation and instructions for use)
+    kind: control
+    category: technical-documentation
+    roles: [provider]
+    scope: Providers of AI systems, primarily high-risk AI systems
+    risks: [opacity, accountability]
+    summary: Produce and maintain the technical documentation and instructions for use for each AI system.
+    evidence: [technical-documentation, instructions-for-use]
+    assurance: [self-assessment, third-party-assessment]
+    maps_to: [eu-ai-act#art-11, eu-ai-act#art-13, iso-iec-42001#a-6]
+    source: https://knowledge.bsigroup.com/products/bs-en-18286-artificial-intelligence-quality-management-system-for-eu-ai-act-regulatory-purposes
+    last_verified: 2026-09-27
+    verified_against: official
+    note: >
+      Titled "Product documentation" in the official enquiry draft; BSI's webinar on the
+      final text cites 8.7 for "technical documentation + IFU".
+  - id: cl-9-2
+    ref: Clauses 9.2-9.3 (enquiry draft numbering)
+    title: Supply chain and changes to AI systems
+    kind: control
+    category: third-party-management
+    roles: [provider]
+    scope: Providers of AI systems, primarily high-risk AI systems
+    risks: [accountability, reliability]
+    summary: >
+      Control the supply chain for AI systems and manage changes to AI systems,
+      including deciding when a change calls for renewed conformity work.
+    evidence: [quality-manual, technical-documentation]
+    assurance: [self-assessment, third-party-assessment]
+    maps_to: [eu-ai-act#art-17, eu-ai-act#art-25, iso-iec-42001#a-10]
+    note: >
+      Unverified: titles come from the official enquiry draft (prEN 18286:2025), but the
+      final text adds clauses (for example 9.7) and its clause 9 titles were not seen,
+      so the final numbering and content need checking against EN 18286:2026 itself.
+      "Renewed conformity work" is our reading of why change control is in an Art. 17
+      QMS (Art. 43(4) substantial modification), not text from the standard.
+  - id: cl-9-4
+    ref: Clause 9.4
+    title: Post-market monitoring
+    kind: control
+    category: post-market-monitoring
+    roles: [provider]
+    scope: Providers of AI systems, primarily high-risk AI systems
+    risks: [reliability, health-safety, fundamental-rights]
+    summary: Post-market monitoring of AI systems as part of the QMS.
+    evidence: [monitoring-plan]
+    assurance: [self-assessment, third-party-assessment]
+    maps_to: [eu-ai-act#art-72, iso-iec-42001#cl-9-1]
+    source: https://knowledge.bsigroup.com/products/bs-en-18286-artificial-intelligence-quality-management-system-for-eu-ai-act-regulatory-purposes
+    last_verified: 2026-09-27
+    verified_against: official
+    note: Same clause number and title in the official enquiry draft and BSI's webinar on the final text.
+  - id: cl-9-5
+    ref: Clause 9.5
+    title: Reporting serious incidents
+    kind: control
+    category: incident-reporting
+    roles: [provider]
+    scope: Providers of AI systems, primarily high-risk AI systems
+    risks: [health-safety, fundamental-rights]
+    summary: Procedures for reporting serious incidents as part of the QMS.
+    evidence: [incident-report]
+    assurance: [self-assessment, regulator-notification]
+    maps_to: [eu-ai-act#art-73]
+    source: https://knowledge.bsigroup.com/products/bs-en-18286-artificial-intelligence-quality-management-system-for-eu-ai-act-regulatory-purposes
+    last_verified: 2026-09-27
+    verified_against: official
+    note: >
+      Same clause number and title in the official enquiry draft and BSI's webinar on
+      the final text. Investigation steps and timelines are not publicly visible.
+  - id: cl-10
+    ref: Clause 10 (enquiry draft numbering)
+    title: Performance evaluation, review and improvement
+    kind: control
+    category: quality-management
+    roles: [provider]
+    scope: Providers of AI systems, primarily high-risk AI systems
+    risks: [accountability]
+    summary: >
+      Evaluate the performance of the QMS, review it, improve it and plan changes to
+      it; nonconformities are handled in clause 9 of the draft.
+    evidence: [management-review, audit-report]
+    assurance: [internal-audit, third-party-assessment]
+    maps_to: [eu-ai-act#art-17, iso-iec-42001#cl-9-3, iso-iec-42001#cl-10]
+    note: >
+      Unverified: titles 10.1-10.4 and 9.6 (nonconformities) come from the official
+      enquiry draft; BSI's webinar on the final text lists only 10.1 and 10.2 under
+      clause 10, so the final structure needs checking against EN 18286:2026 itself.
+  - id: annex-a
+    ref: Annex A (enquiry draft, informative)
+    title: Consultation with interested parties on fundamental rights
+    kind: recommendation
+    category: impact-assessment
+    roles: [provider]
+    scope: Providers of AI systems, primarily high-risk AI systems
+    risks: [fundamental-rights, discrimination]
+    summary: >
+      Informative guidance on consulting interested parties about fundamental rights and
+      on estimating risk and impact on affected persons.
+    evidence: [impact-assessment]
+    assurance: [self-assessment]
+    maps_to: [eu-ai-act#art-9]
+    note: >
+      Unverified: from the official enquiry-draft table of contents (A.1-A.2); not
+      confirmed in the final text. The enquiry draft also has Annex ZA on the
+      relationship with Regulation (EU) 2024/1689, which is what will define the scope
+      of any presumption of conformity; which Articles it covers in the final text was
+      not seen.

@@ -1,0 +1,356 @@
+id: us-ca-ccpa-admt-regs
+title: >-
+  CCPA Regulations on Automated Decisionmaking Technology, Risk Assessments and
+  Cybersecurity Audits (CCPA Updates, Cyber, Risk, ADMT, and Insurance Regulations)
+short_title: California CCPA ADMT, risk assessment and cybersecurity audit regulations
+type: regulation
+binding: true
+jurisdiction: US-CA
+issuer: California Privacy Protection Agency (CalPrivacy)
+official_id: "Cal. Code Regs. tit. 11, ss. 7001-7302 (OAL Matter No. 2025-0808-04S; OAL file Z-2024-1112-05)"
+url: https://cppa.ca.gov/regulations/ccpa_updates.html
+topics: [automated-decisions, consumer-protection, employment, risk-management, transparency]
+summary: >
+  Regulations under the California Consumer Privacy Act that add three regimes. A
+  business that uses automated decisionmaking technology (ADMT) to make significant
+  decisions about consumers (finance, housing, education, employment and health care)
+  must give a pre-use notice and offer rights to opt out and to access information
+  about the ADMT. Businesses whose processing presents significant privacy risk must
+  run and document risk assessments and file summary information with the Agency.
+  Businesses whose processing presents significant security risk must have an
+  independent cybersecurity audit every year and certify completion to the Agency.
+milestones:
+  - {date: 2024-11-22, event: proposed, scope: "Notice of proposed rulemaking; 45-day comment period opened"}
+  - {date: 2025-07-24, event: adopted, scope: "Adopted by the California Privacy Protection Agency Board"}
+  - {date: 2025-09-22, event: published, scope: "Approved by the Office of Administrative Law and filed with the Secretary of State", note: "Earlier secondary reports gave 23 Sep 2025; OAL's Notice of Approval is dated 22 Sep 2025."}
+  - {date: 2026-01-01, event: entry_into_force}
+  - {date: 2026-01-01, event: applies, scope: "Updated CCPA rules; risk assessments before starting any new significant-risk processing (s. 7155(a))"}
+  - {date: 2027-01-01, event: applies, scope: "ADMT duties (Article 11): pre-use notice, opt-out and access (s. 7200(b))"}
+  - {date: 2027-12-31, event: applies, scope: "Deadline for risk assessments of significant-risk processing that began before 1 Jan 2026 and continues (s. 7155(b))"}
+  - {date: 2028-04-01, event: applies, scope: "First risk assessment information due to the Agency (2026-27 assessments); first cybersecurity audit reports and certifications for businesses with 2026 revenue over $100 million"}
+  - {date: 2029-04-01, event: applies, scope: "First cybersecurity audit reports for businesses with 2027 revenue of $50-100 million"}
+  - {date: 2030-04-01, event: applies, scope: "First cybersecurity audit reports for businesses with 2028 revenue under $50 million; annual audits thereafter"}
+sources:
+  - {url: "https://cppa.ca.gov/regulations/ccpa_updates.html", label: "CPPA rulemaking page (CCPA Updates, Cyber, Risk, ADMT, and Insurance)", kind: official, watch: true}
+  - {url: "https://cppa.ca.gov/regulations/pdf/ccpa_updates_cyber_risk_admt_appr_text.pdf", label: Approved regulations text, kind: official}
+  - {url: "https://cppa.ca.gov/regulations/pdf/ccpa_updates_cyber_risk_admt_noa.pdf", label: OAL Notice of Approval of Regulatory Action (22 Sep 2025), kind: official}
+  - {url: "https://www.mayerbrown.com/en/insights/publications/2026/01/updates-to-the-ccpa-regulations-what-businesses-need-to-know-now-about-automated-decision-making-cybersecurity-audits-and-risk-assessments", label: Mayer Brown (Jan 2026), kind: secondary}
+last_verified: 2026-09-27
+verified_against: official
+review_notes: >
+  Checked on 2026-09-27 against the CPPA rulemaking page, the approved regulations text
+  and OAL's Notice of Approval. The Board adopted the package on 24 Jul 2025. OAL approved
+  it and it was filed with the Secretary of State on 22 Sep 2025, not 23 Sep as some
+  secondary reports said. It took effect on 1 Jan 2026. The phased dates come from
+  ss. 7121, 7155, 7157 and 7200. The Agency now calls itself CalPrivacy and moved its
+  announcements to privacy.ca.gov on 26 Jan 2026. We found no 2026 amendment or delay of
+  these provisions. The package also updates the existing CCPA regulations and adds
+  insurance rules (ss. 7270-7271), which are not modelled here. Our reading: we record
+  OAL approval and filing as "published", because the vocabulary has no event for filing
+  with the Secretary of State. Cybersecurity-audit and filing requirements take their
+  first due date as applies_from; see each note.
+requirements:
+  - id: admt-pre-use-notice
+    ref: Cal. Code Regs. tit. 11, s. 7220
+    title: Pre-use notice before using ADMT for a significant decision
+    kind: obligation
+    category: transparency
+    roles: [deployer]
+    scope: >
+      Businesses using ADMT (technology that replaces or substantially replaces human
+      decisionmaking, meaning without meaningful human involvement) to make a significant
+      decision: provision or denial of financial or lending services, housing, education
+      enrollment or opportunities, employment or independent contracting opportunities or
+      compensation, or healthcare services. Advertising is excluded.
+    risks: [opacity, discrimination, privacy]
+    summary: >
+      At or before collecting the personal information to be processed by ADMT (or
+      before repurposing information already held), give consumers a prominent notice,
+      in the way the business mainly interacts with them. It must set out the specific
+      purpose (not generic wording), the right to opt out and how to use it (or, where an
+      exception applies, the human-appeal route or the exception relied on), the right
+      to access ADMT information, and the ban on retaliation. It must also explain how
+      the ADMT uses personal information to reach a decision, what output it produces
+      and how that output is used, including any human role, and what alternative
+      process applies to consumers who opt out. Trade secrets and security-sensitive
+      detail may be withheld. The notice can be part of the notice at collection, and
+      one consolidated notice can cover several uses.
+    controls:
+      - Inventory of ADMT uses that make significant decisions, with the human-involvement test documented
+      - Pre-use notice at or before collection, with layered detail on logic, outputs and the alternative process
+      - Notice review so purposes are specific rather than generic
+    evidence: [user-notice, policy]
+    assurance: [none]
+    assurance_note: >
+      No filing or audit. Enforced by the Agency through administrative proceedings and
+      by the Attorney General.
+    applies_from: 2027-01-01
+    maps_to: [us-co-sb26-189#pre-use-notice]
+    source: https://cppa.ca.gov/regulations/pdf/ccpa_updates_cyber_risk_admt_appr_text.pdf
+    last_verified: 2026-09-27
+    verified_against: official
+    note: >
+      Businesses already using ADMT for significant decisions before 1 Jan 2027 must
+      comply by that date (s. 7200(b)). The ADMT and significant-decision definitions are
+      in s. 7001(e) and (ddd).
+  - id: admt-opt-out
+    ref: Cal. Code Regs. tit. 11, s. 7221
+    title: Right to opt out of ADMT, or appeal to a human reviewer
+    kind: right
+    category: individual-rights
+    roles: [affected-person, deployer]
+    scope: ADMT used to make significant decisions
+    risks: [opacity, discrimination, reliability]
+    summary: >
+      Consumers can opt out of ADMT being used to make significant decisions about them.
+      The business need not offer an opt-out if it instead lets the consumer appeal to a
+      trained human reviewer who can overturn the decision. It also need not offer one
+      where ADMT is used solely to assess ability to perform in hiring, admission or
+      work-allocation and pay decisions, provided the ADMT works for that purpose and
+      does not unlawfully discriminate. The business must offer at least two opt-out
+      methods (online: an interactive form linked from the pre-use notice). It may not
+      require an account or a verified request. It must stop the processing within 15
+      business days, pass the request on to service providers and others processing for
+      it, and wait 12 months before asking the consumer to consent again.
+    controls:
+      - Opt-out link and form titled for ADMT, plus a second method, with confirmation of processing
+      - Or a human-appeal process with designated reviewers who can interpret the output and change the decision
+      - Evidence that ADMT used under the hiring or work-allocation exceptions works as intended and does not unlawfully discriminate
+      - 15-business-day clock and onward notification to service providers and contractors
+    evidence: [oversight-records, policy, test-reports]
+    assurance: [none]
+    applies_from: 2027-01-01
+    maps_to: [us-co-sb26-189#consumer-rights]
+    source: https://cppa.ca.gov/regulations/pdf/ccpa_updates_cyber_risk_admt_appr_text.pdf
+    last_verified: 2026-09-27
+    verified_against: official
+    note: >
+      Our reading: the hiring and work-allocation exceptions in s. 7221(b)(2)-(3) depend on
+      the business being able to show the ADMT works for its purpose and does not
+      unlawfully discriminate, so we list test-reports as expected evidence, though the
+      text does not name a specific test.
+  - id: admt-access
+    ref: Cal. Code Regs. tit. 11, s. 7222
+    title: Right to access information about ADMT decisions
+    kind: right
+    category: individual-rights
+    roles: [affected-person, deployer]
+    scope: ADMT used to make significant decisions
+    risks: [opacity, accountability]
+    summary: >
+      On a verified request, explain in plain language the specific purpose for which
+      ADMT was used about the consumer. Also explain the logic of the ADMT, enough for
+      the consumer to understand how their personal information produced the output
+      (which may include parameters and the specific output). Explain the outcome and how
+      the output was used in the decision, including other factors and any human role,
+      and any planned future use. Include the ban on retaliation and how to exercise
+      other CCPA rights. Trade secrets and security-sensitive detail may be withheld, and
+      denials must be explained. A business that used the ADMT about the consumer more
+      than four times in 12 months may give an aggregate response.
+    controls:
+      - Request intake and identity verification for ADMT access requests
+      - Per-decision records of ADMT outputs and how they were used, so explanations can be produced
+      - Response templates covering purpose, logic, outcome and future use
+    evidence: [user-notice, logs]
+    assurance: [none]
+    applies_from: 2027-01-01
+    maps_to: [eu-ai-act#art-86, us-co-sb26-189#adverse-outcome-disclosure]
+    source: https://cppa.ca.gov/regulations/pdf/ccpa_updates_cyber_risk_admt_appr_text.pdf
+    last_verified: 2026-09-27
+    verified_against: official
+  - id: risk-assessment
+    ref: Cal. Code Regs. tit. 11, ss. 7150-7152, 7154-7156
+    title: Risk assessment before significant-risk processing
+    kind: obligation
+    category: impact-assessment
+    roles: [deployer, developer]
+    scope: >
+      Selling or sharing personal information; processing sensitive personal information
+      (with a narrow employment-administration exception); using ADMT for a significant
+      decision; automated inferences about applicants, students, employees or contractors
+      from systematic observation, or about people at sensitive locations; and processing
+      personal information to train ADMT for significant decisions or facial-recognition,
+      emotion-recognition or other identification or profiling technology.
+    risks: [privacy, discrimination, security]
+    summary: >
+      Before starting any listed processing, carry out and document a risk assessment
+      that weighs the privacy risks to consumers against the benefits. The report must
+      record the specific purpose, the categories and minimum necessary personal
+      information, and the operational details (collection method, retention, consumer
+      interaction, approximate number of consumers, disclosures, and the recipients of
+      the data). For ADMT it must also record the logic, its assumptions and limitations,
+      and how the output is used. It must identify benefits, negative impacts and their
+      causes, safeguards, whether the processing will go ahead, who contributed, and who
+      reviewed and approved it. The approver must have authority to decide whether the
+      processing goes ahead. Employees involved in the processing must take part. The
+      goal is to restrict or stop processing whose risks outweigh its benefits. Review
+      the assessment at least every three years, and update it within 45 days of a
+      material change. Keep every version for as long as the processing continues or
+      five years after completion, whichever is later.
+    controls:
+      - Risk assessment gate before any listed processing starts
+      - Risk assessment report template covering all s. 7152 elements, including ADMT logic and outputs for ADMT uses
+      - Sign-off by an individual with authority to decide whether the processing goes ahead
+      - Three-year review cycle and 45-day update on material change
+      - Retention of all versions for the life of the processing or five years, whichever is later
+    evidence: [impact-assessment, risk-register]
+    assurance: [self-assessment, regulator-review]
+    assurance_note: >
+      Internal assessment, not an independent audit. The Agency or the Attorney General
+      can demand the full risk assessment reports at any time, and they must be produced
+      within 30 calendar days (s. 7157(e)). Summary information is filed annually; see
+      risk-assessment-submission. External stakeholders, such as bias experts, may be
+      involved but do not have to be.
+    applies_from: 2026-01-01
+    maps_to: [eu-ai-act#art-27, iso-iec-42001#cl-6-1-4]
+    source: https://cppa.ca.gov/regulations/pdf/ccpa_updates_cyber_risk_admt_appr_text.pdf
+    last_verified: 2026-09-27
+    verified_against: official
+    note: >
+      New processing from 1 Jan 2026 needs an assessment before it starts. Processing that
+      began before 1 Jan 2026 and continues must be assessed by 31 Dec 2027 (s. 7155(b)).
+      A single assessment may cover comparable processing, and an assessment made for
+      another law may be reused if supplemented (s. 7156). Our reading: the role is
+      tagged deployer for ADMT use and developer for training ADMT or identification
+      technology; the regulation itself binds any CCPA "business", which has no exact role
+      in our vocabulary.
+  - id: risk-assessment-submission
+    ref: Cal. Code Regs. tit. 11, s. 7157
+    title: Annual submission of risk assessment information to the Agency
+    kind: obligation
+    category: registration
+    roles: [deployer, developer]
+    scope: Businesses required to conduct risk assessments
+    risks: [privacy, accountability]
+    summary: >
+      Submit to the Agency through its website the business's name and contact, the
+      period covered, the number of risk assessments conducted or updated (in total and
+      for each type of processing), and which categories of personal and sensitive
+      personal information they involved. Include an attestation, under penalty of
+      perjury, that the assessments were conducted. Assessments from 2026 and 2027 are
+      due by 1 Apr 2028, and later years by 1 April of the following year. The submitter
+      must be a member of executive management who is directly responsible for
+      risk-assessment compliance, knows the assessments and has authority to submit. The
+      reports themselves are not filed unless the Agency or the Attorney General asks for
+      them; they must then be produced within 30 days.
+    controls:
+      - Register of risk assessments conducted or updated in each calendar year, with the data categories involved
+      - Named executive responsible for the annual attestation
+    evidence: [registration-entry, impact-assessment]
+    assurance: [regulator-registration, regulator-review]
+    assurance_note: >
+      A filing with the Agency, attested under penalty of perjury by a named executive;
+      full reports are available to the Agency or Attorney General on 30 days' demand.
+    applies_from: 2028-04-01
+    source: https://cppa.ca.gov/regulations/pdf/ccpa_updates_cyber_risk_admt_appr_text.pdf
+    last_verified: 2026-09-27
+    verified_against: official
+    note: >
+      Our reading: applies_from is the first filing deadline (1 Apr 2028). The duty itself
+      took effect with the regulations on 1 Jan 2026.
+  - id: admt-developer-facts
+    ref: Cal. Code Regs. tit. 11, s. 7153
+    title: ADMT suppliers give recipients the facts needed for their risk assessments
+    kind: obligation
+    category: third-party-management
+    roles: [developer]
+    scope: ADMT trained using personal information and made available to another business to make significant decisions
+    risks: [opacity, accountability]
+    summary: >
+      A business that makes ADMT trained on personal information available to another
+      business for significant decisions must give that recipient all the facts available
+      to it that the recipient needs to carry out its own risk assessment.
+    controls:
+      - Customer documentation pack covering ADMT logic, assumptions, limitations and outputs
+    evidence: [technical-documentation, instructions-for-use]
+    assurance: [none]
+    applies_from: 2026-01-01
+    maps_to: [us-co-sb26-189#developer-documentation]
+    source: https://cppa.ca.gov/regulations/pdf/ccpa_updates_cyber_risk_admt_appr_text.pdf
+    last_verified: 2026-09-27
+    verified_against: official
+  - id: cybersecurity-audit
+    ref: Cal. Code Regs. tit. 11, ss. 7120-7123
+    title: Annual independent cybersecurity audit
+    kind: obligation
+    category: conformity-assessment
+    roles: [organisation]
+    scope: >
+      Businesses whose processing presents significant risk to consumers' security. That
+      means those that in the preceding year made 50% or more of annual revenue from
+      selling or sharing personal information, or that meet the CCPA revenue threshold
+      (Civ. Code s. 1798.140(d)(1)(A)) and processed the personal information of 250,000
+      or more consumers or households, or the sensitive personal information of 50,000
+      or more consumers.
+    risks: [security, privacy]
+    summary: >
+      Have a qualified, objective, independent professional audit the business's
+      cybersecurity programme every year, using accepted auditing procedures and
+      standards (for example AICPA, PCAOB, ISACA or ISO). The auditor may be internal or
+      external. They must judge impartially, free of influence by the business, and must
+      not have developed procedures, prepared the business's documents, made
+      recommendations (beyond audit findings), or implemented or maintained the
+      programme they audit. An internal lead auditor must report to, and be evaluated
+      and paid by, an executive who is not directly responsible for cybersecurity.
+      Findings must rest mainly on evidence (documents, sampling, testing, interviews),
+      not on management assertions. The audit covers the programme and up to 18
+      components where applicable, including multi-factor authentication, encryption,
+      access controls, inventories, secure configuration, vulnerability scans and
+      penetration tests, logging, training, vendor oversight, retention and disposal,
+      incident response and business continuity. The report must describe the evidence
+      and criteria, the gaps with a plan and timeframe to fix them, any breach notices,
+      and a signed independence statement from the lead auditor. It goes to the
+      executive responsible for cybersecurity. The business and the auditor must keep all
+      audit documents for at least five years.
+    controls:
+      - Auditor independence assessment, covering prior advisory, implementation or document-preparation work
+      - Reporting line for an internal lead auditor to an executive outside the cybersecurity function
+      - Evidence-based audit covering the applicable s. 7123(c) components
+      - Remediation plan with timeframes for every identified gap or weakness
+      - Five-year retention of audit working papers by the business and the auditor
+    evidence: [audit-report, policy, test-reports, incident-report]
+    assurance: [third-party-assessment, internal-audit]
+    assurance_note: >
+      Independence is defined by function rather than employer: an internal auditor
+      qualifies only with the prescribed reporting line and no role in designing or
+      running the programme. The audit report itself is not filed with the Agency; only a
+      certification of completion is (see cybersecurity-audit-certification). An audit
+      done for another purpose, for example against the NIST Cybersecurity Framework 2.0,
+      can be used if it meets or is supplemented to meet these requirements.
+    applies_from: 2028-04-01
+    source: https://cppa.ca.gov/regulations/pdf/ccpa_updates_cyber_risk_admt_appr_text.pdf
+    last_verified: 2026-09-27
+    verified_against: official
+    note: >
+      First report deadlines (s. 7121): 1 Apr 2028 if 2026 revenue was over $100 million
+      (audit period 1 Jan 2027 to 1 Jan 2028); 1 Apr 2029 if 2027 revenue was $50-100 million;
+      1 Apr 2030 if 2028 revenue was under $50 million. After that, audits are annual,
+      with reports due each 1 April. Our reading: applies_from is the earliest first
+      deadline; the role is tagged organisation because the vocabulary has no role for a
+      CCPA business or data controller.
+  - id: cybersecurity-audit-certification
+    ref: Cal. Code Regs. tit. 11, s. 7124
+    title: Annual certification of cybersecurity audit completion to the Agency
+    kind: obligation
+    category: registration
+    roles: [organisation]
+    scope: Businesses required to complete a cybersecurity audit
+    risks: [security, accountability]
+    summary: >
+      By 1 April after each audit year, submit to the Agency through its website a
+      written certification that the audit was completed. It must give the business's
+      contact details and the period audited, and be signed electronically under penalty
+      of perjury by an executive who is directly responsible for audit compliance. The
+      signer attests that the information is true and that the business has not tried to
+      influence the auditor's decisions or assessments.
+    controls:
+      - Named executive responsible for the annual attestation
+      - Records showing no management interference with the auditor
+    evidence: [registration-entry, audit-report]
+    assurance: [regulator-registration]
+    assurance_note: A certification filed with the Agency under penalty of perjury; the audit report is kept, not filed.
+    applies_from: 2028-04-01
+    source: https://cppa.ca.gov/regulations/pdf/ccpa_updates_cyber_risk_admt_appr_text.pdf
+    last_verified: 2026-09-27
+    verified_against: official
+    note: Due on the same phased dates as the first audit reports (1 Apr 2028, 2029 or 2030 by revenue).

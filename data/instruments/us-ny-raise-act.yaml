@@ -1,0 +1,261 @@
+id: us-ny-raise-act
+title: Responsible AI Safety and Education (RAISE) Act
+short_title: New York RAISE Act
+type: legislation
+binding: true
+jurisdiction: US-NY
+issuer: New York State Legislature
+official_id: "S6953-B/A6453-B, Chapter 699 of the Laws of 2025; chapter amendment S8828/A9449, Chapter 96 of the Laws of 2026 (N.Y. Gen. Bus. Law Art. 44-B, ss. 1420-1429)"
+url: "https://nyassembly.gov/leg/?default_fld=&leg_video=&bn=S08828&term=2025&Summary=Y&Actions=Y&Text=Y"
+topics: [frontier-models, transparency, safety-incidents]
+summary: >
+  Applies to developers of frontier models (foundation models trained with more than
+  10^26 operations) that are developed, deployed or operated in New York. All frontier
+  developers must publish transparency reports when deploying new or substantially
+  modified models, and must report critical safety incidents to a new office in the
+  Department of Financial Services within 72 hours. Large frontier developers (over
+  $500 million in annual revenue with affiliates) must also publish a frontier AI
+  framework, send quarterly summaries of internal-use catastrophic-risk assessments,
+  file a disclosure statement with the office and pay assessments. The Attorney General
+  can seek penalties of up to $1 million for a first violation and $3 million for later
+  ones.
+milestones:
+  - {date: 2025-03-27, event: proposed, scope: "S6953 introduced in the Senate"}
+  - {date: 2025-06-12, event: adopted, scope: "S6953-B passed the Senate and the Assembly"}
+  - {date: 2025-12-19, event: signed, scope: "Signed as Chapter 699 of the Laws of 2025, with approval memo 76 committing to chapter amendments", note: "As enacted it would have taken effect 90 days after becoming law; Chapter 96 of 2026 replaced that with 1 Jan 2027 before it took effect."}
+  - {date: 2026-03-27, event: amended, scope: "Chapter amendment S8828/A9449 signed as Chapter 96 of the Laws of 2026; it repeals and replaces Gen. Bus. Law Art. 44-B and sets the effective date to 1 Jan 2027"}
+  - {date: 2027-01-01, event: entry_into_force}
+  - {date: 2027-01-01, event: applies}
+sources:
+  - {url: "https://nyassembly.gov/leg/?default_fld=&leg_video=&bn=S08828&term=2025&Summary=Y&Actions=Y&Text=Y", label: "NY Assembly, S8828 (chapter amendment, Chapter 96 of 2026): actions and text", kind: official, watch: true}
+  - {url: "https://nyassembly.gov/leg/?default_fld=&leg_video=&bn=S06953&term=2025&Summary=Y&Actions=Y&Text=Y", label: "NY Assembly, S6953-B (Chapter 699 of 2025): actions and text", kind: official}
+  - {url: "https://nyassembly.gov/leg/?default_fld=&leg_video=&bn=A09449&term=2025&Summary=Y&Actions=Y&Memo=Y&Text=Y", label: "NY Assembly, A9449 sponsor's memo", kind: official}
+  - {url: "https://www.nysenate.gov/legislation/bills/2025/S8828", label: NY Senate, S8828, kind: official}
+  - {url: "https://www.dfs.ny.gov/reports_and_publications/press_releases/pr20260921", label: "DFS / Governor, RAISE Act implementation (21 Sep 2026)", kind: official, watch: true}
+  - {url: "https://www.dfs.ny.gov/reports_and_publications/press_releases/pr20251222", label: "DFS / Governor, RAISE Act signed (dated 22 Dec 2025)", kind: official}
+  - {url: "https://www.wiley.law/alert-New-York-Finalizes-RAISE-Act-for-Frontier-AI-Models-Law-Takes-Effect-January-1-2027", label: Wiley, kind: secondary}
+  - {url: "https://www.dwt.com/blogs/artificial-intelligence-law-advisor/2026/04/ny-overhauls-frontier-ai-transparency-law", label: Davis Wright Tremaine (Apr 2026), kind: secondary}
+last_verified: 2026-09-27
+verified_against: official
+review_notes: >
+  Checked on 2026-09-27 against the bill status and text on nyassembly.gov (nysenate.gov
+  returned a bot challenge from this environment) and DFS press releases. S6953-B was
+  signed on 19 Dec 2025 as Chapter 699 of 2025 (approval memo 76). The chapter amendment
+  S8828 (same as A9449) passed the Senate on 28 Jan 2026 and the Assembly on 11 Mar 2026,
+  and was signed on 27 Mar 2026 as Chapter 96 of 2026. Section 3 of Chapter 96 changes the
+  effective date of Chapter 699 to 1 Jan 2027, and s. 5 makes the new Art. 44-B take
+  effect on the same date. The final Act follows California SB 53 closely: the same
+  10^26 threshold and $500 million large-developer test, and similar framework,
+  transparency-report and internal-use duties. The differences are 72-hour rather than
+  15-day incident reporting, a DFS office with rule-making power, a disclosure statement
+  with fees, penalties of up to $3 million for later violations, and no whistleblower
+  article. No independent audit is required; one secondary source mentioned "potentially
+  annual independent audits", but that is not in the enacted text. On 21 Sep 2026 DFS
+  and the Governor announced that large frontier developers would be directed to
+  register from November 2026, ahead of the 1 Jan 2027 start, with the Office of Digital
+  Innovation, Governance, Integrity and Trust (DIGIT) in DFS as the office. No DFS
+  regulations had been published as of the check date. Our reading: we keep the
+  original act and its chapter amendment in one entry, as New York treats a chapter
+  amendment as part of the same enactment.
+requirements:
+  - id: frontier-framework
+    ref: N.Y. Gen. Bus. Law s. 1421(1)-(2)
+    title: Frontier AI framework
+    kind: obligation
+    category: risk-management
+    roles: [large-frontier-developer]
+    risks: [catastrophic, security]
+    summary: >
+      Write, implement, comply with and publish on the developer's website a frontier AI
+      framework for its frontier models. It must explain how the developer uses national
+      and international standards and industry best practice, and how it defines and
+      assesses catastrophic-risk capability thresholds. It must cover applying
+      mitigations, reviewing assessments and mitigations before deployment or extensive
+      internal use, using third parties to assess risks and mitigations, updating the
+      framework, securing unreleased model weights, handling critical safety incidents,
+      internal governance, and internal-use risk, including models circumventing
+      oversight. Review it at least once a year. Publish a materially modified framework,
+      with a justification, within 30 days.
+    controls:
+      - Framework reviewed at least annually; material changes and their justification published within 30 days
+      - Capability thresholds for catastrophic risk, with mitigations tied to assessment results
+      - Pre-deployment and extensive-internal-use review of assessments and mitigations
+      - Cybersecurity controls protecting unreleased model weights
+      - Named internal governance for framework compliance
+    evidence: [transparency-report, policy]
+    assurance: [public-disclosure]
+    assurance_note: >
+      Published on the developer's website. The framework must describe how third
+      parties assess catastrophic risk, but the Act does not require an independent
+      audit. Failing to comply with one's own framework can draw a civil penalty from the
+      Attorney General of up to $1 million for a first violation and $3 million for later
+      ones. The DFS office may require the framework to be sent to it by rule (s. 1429).
+    applies_from: 2027-01-01
+    maps_to: [us-ca-sb53#frontier-framework, eu-gpai-code-of-practice#safety-security]
+    source: "https://nyassembly.gov/leg/?default_fld=&leg_video=&bn=S08828&term=2025&Summary=Y&Actions=Y&Text=Y"
+    last_verified: 2026-09-27
+    verified_against: official
+  - id: transparency-report
+    ref: N.Y. Gen. Bus. Law s. 1421(3)
+    title: Transparency report before deployment
+    kind: obligation
+    category: transparency
+    roles: [frontier-developer, large-frontier-developer]
+    risks: [opacity, catastrophic]
+    summary: >
+      Before or when deploying a new or substantially modified frontier model, publish a
+      transparency report on the developer's website. It must give the website, a
+      contact route, the release date, supported languages and output modalities,
+      intended uses and general restrictions on use. Large frontier developers must add
+      summaries of their catastrophic-risk assessments, the results, how far third-party
+      evaluators were involved, and other steps taken under their framework. A system
+      card or model card containing this information counts.
+    controls:
+      - Release checklist that blocks deployment until the transparency report is published
+    evidence: [transparency-report]
+    assurance: [public-disclosure]
+    applies_from: 2027-01-01
+    maps_to: [us-ca-sb53#transparency-report]
+    source: "https://nyassembly.gov/leg/?default_fld=&leg_video=&bn=S08828&term=2025&Summary=Y&Actions=Y&Text=Y"
+    last_verified: 2026-09-27
+    verified_against: official
+  - id: no-misleading-statements
+    ref: N.Y. Gen. Bus. Law s. 1421(4)
+    title: No materially false or misleading statements about catastrophic risk
+    kind: prohibition
+    category: transparency
+    roles: [frontier-developer, large-frontier-developer]
+    risks: [catastrophic, accountability]
+    summary: >
+      Frontier developers may not make materially false or misleading statements about
+      catastrophic risk from their frontier models or how they manage it. Large frontier
+      developers also may not make such statements about how they implement or comply
+      with their frontier AI framework. Statements made in good faith that were
+      reasonable in the circumstances are excluded.
+    controls:
+      - Review of public safety claims against the underlying assessments before release
+    evidence: [transparency-report]
+    assurance: [none]
+    assurance_note: Civil penalties via the Attorney General apply only to large frontier developers (s. 1427).
+    applies_from: 2027-01-01
+    maps_to: [us-ca-sb53#no-misleading-statements]
+    source: "https://nyassembly.gov/leg/?default_fld=&leg_video=&bn=S08828&term=2025&Summary=Y&Actions=Y&Text=Y"
+    last_verified: 2026-09-27
+    verified_against: official
+  - id: redaction-records
+    ref: N.Y. Gen. Bus. Law s. 1421(5)
+    title: Justified redactions and five-year retention of unredacted information
+    kind: obligation
+    category: record-keeping
+    roles: [frontier-developer, large-frontier-developer]
+    risks: [accountability]
+    summary: >
+      Published documents may be redacted only as needed to protect trade secrets, the
+      developer's cybersecurity, public safety or US national security, or to comply
+      with law. The published version must describe the nature of each redaction and
+      the reason for it, as far as those concerns allow. The unredacted information must
+      be kept for five years.
+    controls:
+      - Redaction log with justification for each redaction in published frameworks and reports
+      - Five-year retention of the unredacted versions
+    evidence: [transparency-report, technical-documentation]
+    assurance: [none]
+    applies_from: 2027-01-01
+    source: "https://nyassembly.gov/leg/?default_fld=&leg_video=&bn=S08828&term=2025&Summary=Y&Actions=Y&Text=Y"
+    last_verified: 2026-09-27
+    verified_against: official
+    note: >
+      Chapter 699 as first enacted required the unredacted safety and security protocol to
+      be kept for as long as the model was deployed plus five years. Chapter 96 replaced
+      this with the five-year rule for redacted information.
+  - id: internal-use-summaries
+    ref: N.Y. Gen. Bus. Law s. 1422(2)
+    title: Quarterly summaries of catastrophic-risk assessments from internal use
+    kind: obligation
+    category: risk-management
+    roles: [large-frontier-developer]
+    risks: [catastrophic]
+    summary: >
+      Send the DFS office a summary of any assessment of catastrophic risk arising from
+      internal use of the developer's frontier models every three months. Another
+      reasonable schedule is possible if the developer requests it in writing and the
+      office agrees. The office must limit access to these reports, and they are exempt
+      from public records disclosure.
+    controls:
+      - Quarterly (or agreed) schedule for confidential submissions to the DFS office
+    evidence: [risk-register]
+    assurance: [regulator-notification]
+    assurance_note: Submitted confidentially to the DFS office, which may pass them on to other government bodies, including the Attorney General.
+    applies_from: 2027-01-01
+    maps_to: [us-ca-sb53#internal-use-summaries]
+    source: "https://nyassembly.gov/leg/?default_fld=&leg_video=&bn=S08828&term=2025&Summary=Y&Actions=Y&Text=Y"
+    last_verified: 2026-09-27
+    verified_against: official
+    note: >
+      Unlike SB 53, where the developer sets and communicates an alternative schedule, a
+      New York alternative schedule must be agreed by the office.
+  - id: incident-reporting
+    ref: N.Y. Gen. Bus. Law s. 1422(3), (8)-(9)
+    title: Critical safety incident reporting within 72 hours
+    kind: obligation
+    category: incident-reporting
+    roles: [frontier-developer, large-frontier-developer]
+    risks: [catastrophic, security, health-safety]
+    summary: >
+      Report any critical safety incident involving the developer's frontier models to
+      the DFS office within 72 hours of determining that one occurred, or of learning
+      facts sufficient for a reasonable belief that one occurred. Critical safety
+      incidents are unauthorised access to or exfiltration of model weights causing
+      death or injury, harm from a catastrophic risk materialising, loss of control
+      causing death or injury, or deceptive subversion of the developer's controls
+      showing materially increased risk. If an incident poses an imminent risk of death
+      or serious physical injury, disclose it within 24 hours to an appropriate
+      authority, such as law enforcement or a public safety agency. Amended reports may
+      follow.
+    controls:
+      - Incident triage with 24-hour and 72-hour reporting clocks
+      - Escalation route to law enforcement or public safety agencies for imminent-harm incidents
+    evidence: [incident-report]
+    assurance: [regulator-notification]
+    assurance_note: >
+      Reports go to the DFS office, which must review them, publishes an annual
+      anonymised report from 2028, and may share reports with other agencies. A developer
+      may declare that it follows a federal standard the office has designated as
+      equivalent, and must then copy its federal incident reports to the office.
+    applies_from: 2027-01-01
+    maps_to: [us-ca-sb53#incident-reporting, nist-ai-600-1#incident-disclosure]
+    source: "https://nyassembly.gov/leg/?default_fld=&leg_video=&bn=S08828&term=2025&Summary=Y&Actions=Y&Text=Y"
+    last_verified: 2026-09-27
+    verified_against: official
+    note: California SB 53 allows 15 days; New York allows 72 hours.
+  - id: disclosure-statement
+    ref: N.Y. Gen. Bus. Law s. 1428
+    title: Disclosure statement filed with the DFS office, and assessments
+    kind: obligation
+    category: registration
+    roles: [large-frontier-developer]
+    risks: [accountability]
+    summary: >
+      A large frontier developer may not develop, deploy or operate a frontier model in
+      New York without a current disclosure statement on file with the DFS office and its
+      share of assessments paid. The statement gives the developer's names, its principal
+      and New York addresses, and its beneficial owners: 5% or more (with former 5%
+      owners over five years) for private companies, or 50% or more for public companies.
+      It also names three contacts. It must be renewed every two years, on transfer of
+      model ownership, or on a material change, whichever comes first. The office
+      publishes a list of filers.
+    controls:
+      - Disclosure statement filed before operating in New York, with a renewal calendar and change triggers
+      - Budget and payment process for DFS assessments
+    evidence: [registration-entry]
+    assurance: [regulator-registration]
+    assurance_note: >
+      After notice and a hearing, the office may impose $1,000 a day for failing to file
+      or to correct false information, plus unpaid assessments.
+    applies_from: 2027-01-01
+    source: "https://nyassembly.gov/leg/?default_fld=&leg_video=&bn=S08828&term=2025&Summary=Y&Actions=Y&Text=Y"
+    last_verified: 2026-09-27
+    verified_against: official
+    note: >
+      DFS announced on 21 Sep 2026 that it would direct large frontier developers to
+      register from November 2026, ahead of the 1 Jan 2027 start.

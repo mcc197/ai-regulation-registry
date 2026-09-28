@@ -1,0 +1,271 @@
+id: eu-dsa-audit-delegated-regulation
+title: >-
+  Commission Delegated Regulation supplementing Regulation (EU) 2022/2065 by laying down
+  rules on the performance of audits for very large online platforms and very large
+  online search engines
+short_title: EU DSA Audit Delegated Regulation
+type: regulation
+binding: true
+jurisdiction: EU
+issuer: European Commission
+official_id: Commission Delegated Regulation (EU) 2024/436
+url: https://eur-lex.europa.eu/eli/reg_del/2024/436/oj
+topics: [risk-management, governance, transparency]
+summary: >
+  Sets the rules for the annual independent audits of very large online platforms and
+  search engines under Art. 37 of the Digital Services Act: how the audited provider
+  checks the auditor's independence and cooperates with it, the reasonable level of
+  assurance the audit must reach, the audit risk analysis, audit procedures, evidence
+  and sampling, specific methods for auditing risk assessment, risk mitigation and
+  crisis response, and templates for the audit report and the audit implementation report.
+milestones:
+  - {date: 2023-10-20, event: adopted, scope: Adopted by the Commission}
+  - {date: 2024-02-02, event: published, scope: "Official Journal, L series"}
+  - date: 2024-02-22
+    event: entry_into_force
+    note: >
+      Twentieth day after publication (Art. 18). No separate date of application, so it
+      applies from entry into force. Our reading: audits already under way for the first
+      designated services (audit period from 25 Aug 2023) were expected to follow it,
+      since recital 2 aims for audits to be comparable from the DSA's date of application.
+relations:
+  - {type: implements, target: eu-dsa}
+sources:
+  - {url: "https://eur-lex.europa.eu/eli/reg_del/2024/436/oj", label: EUR-Lex (original text), kind: official, watch: true}
+  - {url: "https://publications.europa.eu/resource/celex/32024R0436", label: "Publications Office CELLAR, CELEX 32024R0436 (OJ text as read)", kind: official}
+last_verified: 2026-09-27
+verified_against: official
+review_notes: >
+  Checked against the Official Journal text on 2026-09-27, read through the Publications
+  Office (CELLAR, CELEX 32024R0436) because EUR-Lex serves a bot challenge. The adoption
+  date (20 Oct 2023) and publication date (2 Feb 2024) come from the OJ header; entry into
+  force is computed from Art. 18. Parts of the Annex I and II templates are
+  published as images in the OJ HTML; only Sections A, B, F and G of the audit report
+  template and Section A of the implementation report template could be read as text, so
+  the template summaries are general. Roles gap: the role vocabulary has no "very large
+  online platform" or "auditor" role; `service-provider` is used for audited providers
+  and `organisation` for auditing organisations, and each requirement's scope says which.
+requirements:
+  - id: art-4-7
+    ref: Arts 4, 5 and 7
+    title: Auditor selection checks, cooperation and the audit agreement
+    kind: obligation
+    category: third-party-management
+    roles: [service-provider]
+    scope: Audited providers of very large online platforms and search engines designated under DSA Art. 33
+    risks: [accountability]
+    summary: >
+      Before selecting an auditor, the audited provider checks that it meets the DSA
+      Art. 37(3) independence, expertise and objectivity conditions; for consortia and
+      sub-contractors, each member must be independent and objective and together they
+      must have the expertise. Before any audit procedure, the provider sends the auditor
+      a description of its internal controls for each audited obligation (with indicators,
+      measurements and benchmarks), any preliminary analysis of inherent and control risks,
+      and information on decision-making structures, the compliance function, IT systems,
+      data sources and algorithmic systems. It grants access without undue delay to data,
+      systems, testing environments, staff, premises and sub-contractors. Provider and
+      auditor sign a written agreement listing the audited obligations, responsibilities
+      and signatories, access procedures, the timeline and a dispute procedure; it is
+      annexed to the audit report.
+    controls:
+      - Auditor due-diligence file covering independence, prior non-audit services, rotation, fees and competence
+      - Audit-readiness pack describing internal controls, indicators and benchmarks for each audited obligation
+      - Written audit agreement with a dispute procedure and access contact points
+    evidence: [policy, audit-report]
+    assurance: [third-party-assessment]
+    assurance_note: The auditor assesses the provider's compliance with DSA Art. 37 itself, including its cooperation in the current audit (Art. 16).
+    applies_from: 2024-02-22
+    maps_to: [eu-dsa#art-37]
+    source: https://eur-lex.europa.eu/legal-content/EN/TXT/HTML/?uri=CELEX:32024R0436#art_4
+    last_verified: 2026-09-27
+    verified_against: official
+  - id: art-3-8
+    ref: Arts 3 and 8
+    title: Reasonable assurance, audit period and graded conclusions and opinions
+    kind: obligation
+    category: conformity-assessment
+    roles: [organisation]
+    scope: Organisations auditing very large online platforms and search engines under DSA Art. 37
+    risks: [accountability]
+    summary: >
+      The audit must allow the auditor to assess compliance with every audited obligation
+      and commitment to a reasonable level of assurance (high but not absolute, based on
+      sufficient and appropriate evidence). Each audit covers the period since the last
+      one; a first audit starts four months after designation, and its report is due
+      within a year of that start. The report gives a conclusion per obligation or
+      commitment ("positive", "positive with comments" where the auditor remarks on the
+      provider's benchmarks or recommends non-substantive improvements, or "negative"),
+      then an overall opinion for the DSA obligations and one per code of conduct or crisis
+      protocol: "positive" only if every conclusion is positive, "negative" if any is
+      negative. Recommendations must be specific to each obligation and explain their
+      effect relative to the materiality threshold. Periods of temporary non-compliance
+      and any inability to reach reasonable assurance must be documented.
+    controls:
+      - Audit plan sized to reach reasonable assurance for every audited obligation and commitment
+      - Opinion roll-up rules applied consistently from per-obligation conclusions
+    evidence: [audit-report]
+    assurance: [third-party-assessment]
+    applies_from: 2024-02-22
+    maps_to: [eu-dsa#art-37-report, iso-iec-42001#cert]
+    source: https://eur-lex.europa.eu/legal-content/EN/TXT/HTML/?uri=CELEX:32024R0436#art_8
+    last_verified: 2026-09-27
+    verified_against: official
+    note: >
+      The ISO/IEC 42001 link is loose: both are independent assurance engagements, but
+      this one is a statutory compliance audit with a graded opinion rather than
+      certification of a management system.
+  - id: art-9
+    ref: Art. 9
+    title: Audit risk analysis
+    kind: obligation
+    category: risk-management
+    roles: [organisation]
+    scope: Organisations auditing very large online platforms and search engines under DSA Art. 37
+    risks: [accountability]
+    summary: >
+      Before performing audit procedures, the auditor carries out a substantiated audit
+      risk analysis for each audited obligation or commitment, covering inherent, control
+      and detection risks, and updates it when new evidence materially changes the
+      assessment. It takes into account the nature of the service and its societal and
+      economic context (including exposure to crises), the nature of the obligations, and
+      information from previous audits, Board reports and Commission guidance, and audit
+      reports published by comparable VLOPs and VLOSEs. The analysis is included in the
+      audit report.
+    controls:
+      - Per-obligation audit risk matrix (inherent, control and detection risk), versioned as evidence changes
+      - Review of prior audits, Board reports, Commission guidelines and peer audit reports during planning
+    evidence: [risk-register, audit-report]
+    assurance: [third-party-assessment]
+    applies_from: 2024-02-22
+    source: https://eur-lex.europa.eu/legal-content/EN/TXT/HTML/?uri=CELEX:32024R0436#art_9
+    last_verified: 2026-09-27
+    verified_against: official
+  - id: art-10-12
+    ref: Arts 10 to 12
+    title: Audit methodology, procedures, evidence and sampling, including tests of algorithmic systems
+    kind: obligation
+    category: testing-evaluation
+    roles: [organisation]
+    scope: Organisations auditing very large online platforms and search engines under DSA Art. 37
+    risks: [accountability, reliability]
+    summary: >
+      The auditor designs its methodology before any audit procedure: audit criteria and
+      a materiality threshold for each obligation, and the tests, substantive analytical
+      procedures and evidence it will use; later changes are reported. Procedures must at
+      least test and analyse the provider's internal controls, analyse compliance with
+      each obligation including as regards algorithmic systems, and test (including
+      algorithmic systems) wherever the auditor has reasonable doubts, which arise from
+      professional scepticism, external indications such as Board reports or Commission
+      guidance, or events during the audit. Publicly reported information must be checked
+      for material error or omission. Evidence must be relevant, sufficient and reliable.
+      Samples are chosen without interference by the provider, to minimise detection risk
+      and be representative (including of personalisation and of minors, vulnerable groups
+      and minorities), and the choice is justified in the report.
+    controls:
+      - Documented audit criteria and materiality thresholds per obligation, fixed before fieldwork
+      - Independent testing of recommender and other algorithmic systems where doubts arise
+      - Sampling design that is representative, free from provider interference and justified in the report
+    evidence: [test-reports, audit-report]
+    assurance: [third-party-assessment]
+    applies_from: 2024-02-22
+    source: https://eur-lex.europa.eu/legal-content/EN/TXT/HTML/?uri=CELEX:32024R0436#art_10
+    last_verified: 2026-09-27
+    verified_against: official
+  - id: art-13-15
+    ref: Arts 13 to 15
+    title: Specific methods for auditing systemic risk assessment, mitigation and crisis response
+    kind: obligation
+    category: conformity-assessment
+    roles: [organisation]
+    scope: Organisations auditing very large online platforms and search engines under DSA Art. 37
+    risks: [fundamental-rights, misinformation, child-safety, accountability]
+    summary: >
+      For DSA Art. 34 the auditor analyses how the provider identified, analysed and
+      assessed each systemic risk and each influencing factor (including recommender and
+      algorithmic systems), its information sources, whether it tested assumptions with the
+      most affected groups, timeliness, the identification of critical new functionalities
+      and document retention. For Art. 35 it analyses how mitigation measures were chosen,
+      why listed measures were not applied, and whether the measures are reasonable,
+      proportionate and effective, comparing risks before and after. In both cases it tests
+      internal controls, evaluates the work of compliance officers and the management body
+      under Art. 41, and tests algorithmic systems where it has reasonable doubts. For
+      Art. 36 crisis decisions it checks the systems, measures and reports required.
+    controls:
+      - Risk assessment and mitigation reports, supporting documents and internal-control evidence made available in full, including confidential parts
+      - Before-and-after metrics for each mitigation measure
+      - Records of consultation with the groups most affected by each risk
+    evidence: [risk-register, test-reports, audit-report]
+    assurance: [third-party-assessment]
+    applies_from: 2024-02-22
+    maps_to: [eu-dsa#art-34, eu-dsa#art-35]
+    source: https://eur-lex.europa.eu/legal-content/EN/TXT/HTML/?uri=CELEX:32024R0436#art_13
+    last_verified: 2026-09-27
+    verified_against: official
+  - id: art-16-17
+    ref: Arts 16 and 17
+    title: Auditing Art. 37 itself, auditor continuity, and codes of conduct and crisis protocols
+    kind: obligation
+    category: conformity-assessment
+    roles: [organisation, service-provider]
+    scope: >
+      Organisations auditing very large online platforms and search engines under DSA
+      Art. 37 (organisation); the audited providers (service-provider)
+    risks: [accountability]
+    summary: >
+      Each audit assesses compliance with Art. 37 and this Regulation for the previous
+      year's audit, and the provider's cooperation in the current one. Where the same
+      auditor, or any entity from the previous audit team, audits again, the report
+      explains the steps taken to ensure objectivity. The provider gives the auditor the
+      codes of conduct and crisis protocols it has signed, its commitments under them, the
+      agreed key performance indicators and related data and reports; audits of codes of
+      conduct measure those indicators, state the materiality threshold and check that the
+      reported data is accurate.
+    controls:
+      - Register of code-of-conduct and crisis-protocol commitments with KPIs and data sources
+      - Objectivity safeguards documented when the auditor is reappointed
+    evidence: [audit-report, policy]
+    assurance: [third-party-assessment]
+    applies_from: 2024-02-22
+    maps_to: [eu-dsa#art-37]
+    source: https://eur-lex.europa.eu/legal-content/EN/TXT/HTML/?uri=CELEX:32024R0436#art_16
+    last_verified: 2026-09-27
+    verified_against: official
+  - id: art-6-templates
+    ref: Art. 6, Annexes I and II
+    title: Audit report and audit implementation report templates
+    kind: obligation
+    category: conformity-assessment
+    roles: [organisation, service-provider]
+    scope: >
+      Organisations auditing very large online platforms and search engines under DSA
+      Art. 37 write the audit report (organisation); audited providers write the
+      implementation report (service-provider)
+    risks: [accountability]
+    summary: >
+      The auditor draws up the audit report without interference from the provider, using
+      the Annex I template and giving detailed, substantiated conclusions for every element.
+      The template covers the auditing organisation and team, their qualifications and
+      declaration of interests, the independence and auditing standards applied, the third
+      parties consulted, any other information such as inherent limitations, and
+      signatures. Annexes include the audit agreement, the audit risk analysis, documents
+      showing the Art. 37(3) conditions are met, the documentation and results of tests
+      (including of algorithmic systems) and the relevant codes of conduct and crisis
+      protocols. Where required, the provider draws up the audit implementation report on
+      the Annex II template, identifying the audit report it responds to and which
+      obligations and commitments it covers.
+    controls:
+      - Audit report built on the Annex I template, with all annexes attached
+      - Implementation report built on the Annex II template within one month of a report that is not positive
+    evidence: [audit-report]
+    assurance: [third-party-assessment, public-disclosure]
+    assurance_note: Both reports are published under DSA Art. 42(4), with confidential information removable from public versions.
+    applies_from: 2024-02-22
+    maps_to: [eu-dsa#art-37-report]
+    source: https://eur-lex.europa.eu/legal-content/EN/TXT/HTML/?uri=CELEX:32024R0436#anx_I
+    last_verified: 2026-09-27
+    verified_against: official
+    note: >
+      Parts of both templates are images in the OJ HTML read on 2026-09-27; this summary
+      reflects the sections readable as text (Annex I Sections B, F and G and the list of
+      annexes; Annex II Section A) plus Arts 6 to 8. The remaining sections (such as the
+      per-obligation conclusions and recommendations tables) were not read.
