@@ -1,0 +1,15 @@
+{
+  "name": "AI Obligations Register",
+  "short_name": "AI Register",
+  "description": "AI laws and standards by obligation, evidence and assurance.",
+  "start_url": "./",
+  "scope": "./",
+  "display": "standalone",
+  "background_color": "#F4F5F1",
+  "theme_color": "#1E5D57",
+  "icons": [
+    {"src": "icon-192.png", "sizes": "192x192", "type": "image/png"},
+    {"src": "icon-512.png", "sizes": "512x512", "type": "image/png"},
+    {"src": "icon-512.png", "sizes": "512x512", "type": "image/png", "purpose": "maskable"}
+  ]
+}

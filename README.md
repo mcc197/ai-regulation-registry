@@ -35,6 +35,18 @@ embedded. It has three tabs: **Obligations** (filters and search), **Ask** (Clau
 answers questions from the register, citing requirements) and **Laws & standards**.
 It is published as a claude.ai artifact; rebuild and republish it after data changes.
 
+## The phone app
+
+`python -m airegs site` builds the explorer as an installable web app (PWA) in
+`build/site`: full screen, its own icon, works offline, no sign-in. It has no Ask tab,
+because asking Claude needs the claude.ai version. The `app` workflow publishes it to
+GitHub Pages on every push to `main`
+(https://mcc197.github.io/ai-regulation-registry/).
+
+One-off setup: **Settings → Pages → Build and deployment → Source: GitHub Actions**.
+On an iPhone, open the link in Safari, tap Share, then Add to Home Screen. On Android,
+open it in Chrome and choose Install app.
+
 ## Adding or updating an instrument
 
 1. Add or edit a file under `data/instruments/<id>.yaml`. Copy an existing one.

@@ -244,6 +244,8 @@ button.chip:hover { border-color: var(--accent); }
 
 <script>
 const DATA = /*REGISTRY_DATA*/null;
+// "artifact" on claude.ai (Ask available); "app" for the standalone phone app (no Ask).
+const MODE = /*APP_MODE*/"artifact";
 const V = DATA.vocab;
 const INST = Object.fromEntries(DATA.instruments.map(i => [i.id, i]));
 const REQ = Object.fromEntries(DATA.requirements.map(r => [r.key, r]));
@@ -604,7 +606,11 @@ async function ask() {
 $("#askBtn").addEventListener("click", ask);
 $("#stopBtn").addEventListener("click", () => ctl && ctl.abort());
 
-(async () => {
+if (MODE === "app") {
+  $("#tab-ask").hidden = true;
+  if (state.tab === "ask") state.tab = "obligations";
+}
+if (MODE !== "app") (async () => {
   try {
     sample = window.claude ? await window.claude.use("sample") : null;
     if (sample) { const lim = await sample.limits().catch(() => null); canUseTools = !!(lim && lim.tools); }

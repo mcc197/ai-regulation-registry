@@ -226,3 +226,21 @@ def test_obligations_cli(capsys):
     cli.main(["obligations", "--role", "deployer", "-j", "EU", "--category", "impact-assessment"])
     out = capsys.readouterr().out
     assert "eu-ai-act#art-27" in out and "1 requirement(s)" in out
+
+
+def test_site_builds_installable_app(tmp_path):
+    out = tmp_path / "site"
+    cli.main(["site", "--out", str(out), "--today", "2026-09-28"])
+    html = (out / "index.html").read_text()
+    assert html.startswith("<!doctype html>")
+    assert 'rel="manifest"' in html and 'const MODE = "app"' in html
+    assert "__BUILD_ID__" not in (out / "sw.js").read_text()
+    for name in ("manifest.webmanifest", "icon-192.png", "icon-512.png", "apple-touch-icon.png"):
+        assert (out / name).exists()
+
+
+def test_artifact_build_keeps_ask(tmp_path):
+    out = tmp_path / "e.html"
+    cli.main(["explorer", "--out", str(out), "--today", "2026-09-28"])
+    html = out.read_text()
+    assert 'const MODE = /*APP_MODE*/"artifact"' in html and "<!doctype" not in html
