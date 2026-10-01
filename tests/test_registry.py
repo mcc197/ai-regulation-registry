@@ -270,7 +270,7 @@ def test_export_and_explorer(registry, tmp_path, capsys):
 def test_obligations_cli(capsys):
     cli.main(["obligations", "--role", "deployer", "-j", "EU", "--category", "impact-assessment"])
     out = capsys.readouterr().out
-    assert "eu-ai-act#art-27" in out and "1 requirement(s)" in out
+    assert "eu-ai-act#art-27" in out and "eu-gdpr#art-35-36" in out and "2 requirement(s)" in out
 
 
 def test_site_builds_installable_app(tmp_path):

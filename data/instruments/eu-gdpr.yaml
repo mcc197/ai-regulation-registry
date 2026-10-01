@@ -1,0 +1,165 @@
+id: eu-gdpr
+title: Regulation on the protection of natural persons with regard to the processing of personal data and on the free movement of such data (General Data Protection Regulation)
+short_title: EU GDPR
+type: legislation
+binding: true
+jurisdiction: EU
+issuer: European Parliament and Council of the EU
+official_id: Regulation (EU) 2016/679
+url: https://eur-lex.europa.eu/eli/reg/2016/679/oj
+topics: [automated-decisions, risk-management, transparency, governance]
+summary: >
+  The EU's general data protection law. It applies to most AI systems that are trained
+  on, or make decisions about, personal data. The parts recorded here are the ones AI
+  work most often turns on: the right not to be subject to solely automated decisions
+  with significant effects (Art. 22), the duty to explain the logic of such decisions
+  (Arts. 13 to 15), data protection by design (Art. 25), and data protection impact
+  assessments with prior consultation of the regulator (Arts. 35 and 36). Duties fall
+  on the controller, which may be the provider or the deployer of an AI system. A
+  pending Commission proposal (the Digital Omnibus, COM(2025) 837) would rewrite
+  Art. 22 and add a legal basis for processing in AI development and operation.
+milestones:
+  - {date: 2012-01-25, event: proposed, scope: "Commission proposal COM(2012) 11"}
+  - {date: 2016-04-14, event: adopted, scope: European Parliament second-reading approval of the Council position}
+  - {date: 2016-04-27, event: signed}
+  - {date: 2016-05-04, event: published, scope: "Official Journal L 119"}
+  - {date: 2016-05-24, event: entry_into_force}
+  - {date: 2018-05-25, event: applies}
+relations:
+  - {type: amended_by, target: eu-digital-omnibus}
+sources:
+  - {url: "https://eur-lex.europa.eu/eli/reg/2016/679/oj", label: EUR-Lex (original text), kind: official, watch: true}
+  - {url: "https://eur-lex.europa.eu/legal-content/EN/TXT/?uri=CELEX:32016R0679R(02)", label: "Corrigendum, OJ L 127, 23.5.2018", kind: official}
+last_verified: 2026-10-01
+verified_against: official
+review_notes: >
+  Checked on 2026-10-01 against the Official Journal text read through the
+  Publications Office (CELLAR, CELEX 32016R0679), whose Art. 99 gives entry into force
+  on the twentieth day after publication (4 May 2016) and application from
+  25 May 2018; the signature date and the procedure footnote (Parliament's approval of
+  14 Apr 2016) come from the same text, and the proposal date from the CELLAR record
+  for COM(2012) 11. CELLAR lists no amending act. Of the three corrigenda, only the
+  2018 one has an English version; it changes recital 71 and Arts. 37 to 70, none of
+  the articles modelled here. Two Commission proposals would amend the Regulation:
+  COM(2025) 837 (recorded as eu-digital-omnibus) and COM(2025) 501, which extends SME
+  relief to small mid-caps (for example Art. 30 records for organisations under 750
+  staff) and does not touch the articles modelled here.
+requirements:
+  - id: art-22
+    ref: Art. 22
+    title: Solely automated decisions with legal or similarly significant effects
+    kind: right
+    category: individual-rights
+    roles: [affected-person, deployer]
+    scope: Decisions based solely on automated processing, including profiling, that have legal or similarly significant effects
+    risks: [fundamental-rights, discrimination, opacity, accountability]
+    summary: >
+      People have the right not to be subject to a decision based solely on automated
+      processing, including profiling, that has legal or similarly significant effects
+      on them. The exceptions are decisions necessary for a contract, authorised by law
+      with safeguards, or based on explicit consent. For contract and consent cases the
+      controller must offer at least human intervention, a chance to give one's view
+      and a way to contest the decision. Such decisions may use special category data
+      only with explicit consent or on substantial public interest grounds, with
+      safeguards.
+    controls:
+      - Inventory of decisions made without meaningful human involvement, with the exception relied on
+      - Route to a human reviewer with authority to change the outcome
+      - Way for people to give their view and contest a decision
+      - Check that special category data is not used without explicit consent or a legal basis
+    evidence: [policy, oversight-records, user-notice]
+    assurance: [self-assessment]
+    assurance_note: Enforced by national data protection authorities.
+    maps_to: [eu-ai-act#art-86, eu-ai-act#art-14, us-ca-ccpa-admt-regs#admt-opt-out]
+    source: https://eur-lex.europa.eu/legal-content/EN/TXT/HTML/?uri=CELEX:32016R0679#art_22
+    last_verified: 2026-10-01
+    verified_against: official
+    note: >
+      The Digital Omnibus proposal (COM(2025) 837) would recast Art. 22(1)-(2) as a rule
+      that such decisions are allowed only in the three listed cases, and would apply the
+      contract case even where the decision could be taken without automation. Not
+      adopted as of 2026-10-01.
+  - id: art-13-15-adm
+    ref: "Arts. 13(2)(f), 14(2)(g) and 15(1)(h)"
+    title: Information about automated decision-making and its logic
+    kind: obligation
+    category: transparency
+    roles: [deployer, provider]
+    scope: Controllers using automated decision-making covered by Art. 22(1) and (4)
+    risks: [opacity, fundamental-rights]
+    summary: >
+      When collecting personal data, and again when a person asks for access, the
+      controller tells them that automated decision-making, including profiling, takes
+      place and gives meaningful information about the logic involved, its significance
+      and the expected consequences for them.
+    controls:
+      - Privacy notice section describing each automated decision and how it works in plain terms
+      - Access-request process that can explain the logic and consequences for the individual
+    evidence: [user-notice]
+    assurance: [self-assessment]
+    maps_to: [eu-ai-act#art-86, us-ca-ccpa-admt-regs#admt-pre-use-notice, us-ca-ccpa-admt-regs#admt-access]
+    source: https://eur-lex.europa.eu/legal-content/EN/TXT/HTML/?uri=CELEX:32016R0679#art_13
+    last_verified: 2026-10-01
+    verified_against: official
+  - id: art-25
+    ref: Art. 25
+    title: Data protection by design and by default
+    kind: obligation
+    category: data-governance
+    roles: [provider, deployer]
+    scope: Controllers, from the design of processing onwards
+    risks: [privacy, security]
+    summary: >
+      Taking account of the state of the art, cost and risks, the controller builds
+      data protection principles such as data minimisation into processing from the
+      moment the means are chosen, using measures such as pseudonymisation. By default,
+      only the personal data needed for each purpose is processed, kept and made
+      accessible. An approved certification can help show compliance.
+    controls:
+      - Privacy review at design stage for each AI system or model that uses personal data
+      - Data minimisation and pseudonymisation of training and input data where possible
+      - Default settings that limit collection, retention and access
+    evidence: [policy, data-documentation, technical-documentation]
+    assurance: [self-assessment, certification]
+    assurance_note: An approved certification mechanism under Art. 42 may be used as one element in showing compliance.
+    maps_to: [eu-ai-act#art-10, iso-iec-42001#a-7]
+    source: https://eur-lex.europa.eu/legal-content/EN/TXT/HTML/?uri=CELEX:32016R0679#art_25
+    last_verified: 2026-10-01
+    verified_against: official
+  - id: art-35-36
+    ref: Arts. 35 and 36
+    title: Data protection impact assessment and prior consultation
+    kind: obligation
+    category: impact-assessment
+    roles: [deployer, provider]
+    scope: >
+      Processing likely to result in a high risk, including systematic and extensive
+      automated evaluation with legal or similarly significant effects, large-scale
+      processing of special category or criminal data, and large-scale monitoring of
+      public areas
+    risks: [privacy, fundamental-rights, discrimination]
+    summary: >
+      Before high-risk processing, especially with new technologies, the controller
+      assesses its impact: a description of the processing and purposes, necessity and
+      proportionality, the risks to people, and the measures to address them, seeking
+      the data protection officer's advice. National authorities publish lists of
+      processing that needs an assessment. If the assessment shows high risk that the
+      controller has not mitigated, it must consult the supervisory authority before
+      starting; the authority gives written advice within eight weeks, extendable by
+      six.
+    controls:
+      - Screening of every AI use case against the DPIA criteria and national lists
+      - DPIA completed and signed off before processing starts, reviewed when risk changes
+      - Prior consultation route to the regulator for unmitigated high risk
+    evidence: [impact-assessment, risk-register]
+    assurance: [self-assessment, regulator-review]
+    assurance_note: Prior consultation of the supervisory authority under Art. 36 where high risk remains.
+    maps_to: [eu-ai-act#art-27, eu-ai-act#art-26, iso-iec-42005#cl-5-8, us-ca-ccpa-admt-regs#risk-assessment]
+    source: https://eur-lex.europa.eu/legal-content/EN/TXT/HTML/?uri=CELEX:32016R0679#art_35
+    last_verified: 2026-10-01
+    verified_against: official
+    note: >
+      AI Act Art. 26(9) tells deployers to use the provider's Art. 13 information for
+      their DPIA, and Art. 27(4) lets the FRIA cross-refer to it. The Digital Omnibus
+      proposal would move the DPIA lists, template and method to EU level (Board
+      proposals adopted by the Commission); national lists stay valid until then.

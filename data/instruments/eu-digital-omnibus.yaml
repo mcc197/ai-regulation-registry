@@ -1,0 +1,37 @@
+id: eu-digital-omnibus
+title: Proposal amending the GDPR and other digital laws as regards the simplification of the digital legislative framework (Digital Omnibus)
+short_title: EU Digital Omnibus (data) proposal
+type: legislation
+binding: true
+jurisdiction: EU
+issuer: European Commission (proposal to the European Parliament and Council)
+official_id: COM(2025) 837, procedure 2025/0360(COD)
+url: https://eur-lex.europa.eu/legal-content/EN/TXT/?uri=CELEX:52025PC0837
+topics: [automated-decisions, governance, innovation]
+summary: >
+  Commission proposal, not yet adopted, published with the Digital Omnibus on AI.
+  Among many changes to EU data and cyber laws, it would amend the GDPR in ways that
+  matter for AI: a new Art. 88c letting controllers rely on legitimate interests to
+  process personal data for developing and operating AI systems and models, with
+  safeguards and an unconditional right to object; a new Art. 9(2)(k) and 9(5) on
+  special category data that turns up in AI training data, which must be removed or
+  protected; Art. 22 recast as a rule that solely automated decisions are allowed only
+  where necessary for a contract, authorised by law or based on explicit consent; and
+  EU-level lists, template and method for data protection impact assessments.
+milestones:
+  - {date: 2025-11-19, event: proposed, scope: "Commission proposal COM(2025) 837"}
+relations:
+  - {type: amends, target: eu-gdpr}
+sources:
+  - {url: "https://eur-lex.europa.eu/legal-content/EN/TXT/?uri=CELEX:52025PC0837", label: "EUR-Lex, COM(2025) 837", kind: official}
+  - {url: "https://oeil.secure.europarl.europa.eu/oeil/en/procedure-file?reference=2025/0360(COD)", label: "European Parliament Legislative Observatory, 2025/0360(COD)", kind: official}
+last_verified: 2026-10-01
+verified_against: official
+review_notes: >
+  Checked on 2026-10-01 against the proposal text read through the Publications Office
+  (CELLAR, CELEX 52025PC0837, Art. 3 amending Regulation (EU) 2016/679) and the
+  Legislative Observatory. As of that date it awaits a committee decision in the
+  Parliament (referral announced 19 Jan 2026, joint committee); no Council position is
+  recorded there. The proposal also amends the ePrivacy Directive, the Data Act, NIS2
+  and others, which are not in this register. No requirements are recorded until it is
+  adopted; the nightly watch on the GDPR will show an "amended by" entry when it is.
