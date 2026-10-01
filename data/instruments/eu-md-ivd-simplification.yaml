@@ -1,0 +1,38 @@
+id: eu-md-ivd-simplification
+title: Proposal amending the Medical Devices and In Vitro Diagnostic Medical Devices Regulations, Regulation (EU) 2022/123 and the AI Act's Annex I
+short_title: EU medical devices simplification proposal
+type: legislation
+binding: true
+jurisdiction: EU
+issuer: European Commission (proposal to the European Parliament and Council)
+official_id: COM(2025) 1023, procedure 2025/0404(COD)
+url: https://eur-lex.europa.eu/legal-content/EN/TXT/?uri=CELEX:52025PC1023
+topics: [high-risk, governance]
+summary: >
+  Commission proposal, not yet adopted. Besides simplifying the medical device rules,
+  Art. 4 would move the Medical Devices Regulation (EU) 2017/745 and the In Vitro
+  Diagnostic Regulation (EU) 2017/746 from Section A to Section B of Annex I to the AI
+  Act. Under Art. 2(2) of the AI Act as amended by Regulation (EU) 2026/1744, AI
+  systems that are high-risk because of Section B legislation are covered by only
+  Art. 6(1), Art. 60a and Arts. 102 to 112, so AI-enabled devices would leave the AI
+  Act's high-risk requirements and conformity route. The AI requirements in Chapter III,
+  Section 2 would instead be taken into account in device implementing and delegated
+  acts, and device notified bodies would have to meet the AI Act's Art. 31(4), (5),
+  (10) and (11).
+milestones:
+  - {date: 2025-12-16, event: proposed, scope: "Commission proposal COM(2025) 1023"}
+relations:
+  - {type: amends, target: eu-ai-act}
+sources:
+  - {url: "https://eur-lex.europa.eu/legal-content/EN/TXT/?uri=CELEX:52025PC1023", label: "EUR-Lex, COM(2025) 1023", kind: official}
+  - {url: "https://oeil.secure.europarl.europa.eu/oeil/en/procedure-file?reference=2025/0404(COD)", label: "European Parliament Legislative Observatory, 2025/0404(COD)", kind: official}
+last_verified: 2026-10-01
+verified_against: official
+review_notes: >
+  Checked on 2026-10-01 against the proposal text, read through the Publications Office
+  (CELLAR, CELEX 52025PC1023, explanatory memorandum, recital 23 and Art. 4), and the
+  Legislative Observatory. As of that date the proposal is in the Parliament's SANT
+  committee (referral announced 25 Mar 2026, draft report 30 Jun 2026) with a first
+  reading plenary forecast for 14 Dec 2026; the Council position is not recorded there.
+  The nightly watch on the AI Act will show an "amended by" entry when this is adopted.
+  No requirements are recorded until it is adopted.
