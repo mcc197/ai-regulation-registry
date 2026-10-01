@@ -1,0 +1,123 @@
+# Scheduled checks that keep the register current (DESIGN.md section 4).
+# Nothing here edits the data: each job opens or updates one issue for a person to act on.
+#   watch: nightly. Hashes watched sources and, for EUR-Lex acts, lists amending acts,
+#          corrigenda, consolidated versions and proposals. Issue label: source-change.
+#   stale: weekly. Instruments and requirements due for re-verification. Issue label: stale.
+# GitHub disables schedules after 60 days without repository activity; re-enable them
+# from the Actions tab if that happens.
+name: watch
+
+on:
+  schedule:
+    - cron: "17 5 * * *"   # watch, daily 05:17 UTC
+    - cron: "23 6 * * 1"   # stale, Mondays 06:23 UTC
+  workflow_dispatch:
+    inputs:
+      job:
+        description: Which check to run
+        type: choice
+        options: [watch, stale]
+        default: watch
+
+permissions:
+  contents: read
+  issues: write
+
+concurrency:
+  group: watch-${{ github.event.schedule || inputs.job }}
+
+env:
+  GH_TOKEN: ${{ github.token }}
+  GH_REPO: ${{ github.repository }}
+
+jobs:
+  watch:
+    if: github.event.schedule == '17 5 * * *' || inputs.job == 'watch'
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: "3.12"
+      - run: pip install -r requirements.txt
+      # The saved hashes live in the Actions cache. If it is ever evicted, the next run
+      # records every source as "new" and starts comparing again from there.
+      - uses: actions/cache/restore@v4
+        with:
+          path: state/watch.json
+          key: watch-state-${{ github.run_id }}
+          restore-keys: watch-state-
+      - name: Check sources
+        id: check
+        run: |
+          set +e
+          python -m airegs watch > watch.txt
+          code=$?
+          set -e
+          cat watch.txt
+          { echo '```'; cat watch.txt; echo '```'; } >> "$GITHUB_STEP_SUMMARY"
+          if [ "$code" -ne 0 ] && [ "$code" -ne 3 ]; then exit "$code"; fi
+          echo "changed=$([ "$code" -eq 3 ] && echo true || echo false)" >> "$GITHUB_OUTPUT"
+      - uses: actions/cache/save@v4
+        with:
+          path: state/watch.json
+          key: watch-state-${{ github.run_id }}
+      - name: Open or update the source-change issue
+        if: steps.check.outputs.changed == 'true'
+        run: |
+          {
+            echo "The nightly watch found changes on $(date -u +%F). Check each one against the"
+            echo "official text and update the affected YAML in a pull request."
+            echo
+            echo '```'
+            grep -E '^(changed|error)|^ +[+-] ' watch.txt
+            echo '```'
+          } > body.md
+          gh label create source-change --color d93f0b --description "Watched source changed" --force
+          n=$(gh issue list --label source-change --state open --json number --jq '.[0].number')
+          if [ -n "$n" ]; then
+            gh issue comment "$n" --body-file body.md
+          else
+            gh issue create --title "Watched sources changed" --label source-change --body-file body.md
+          fi
+
+  stale:
+    if: github.event.schedule == '23 6 * * 1' || inputs.job == 'stale'
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: "3.12"
+      - run: pip install -r requirements.txt
+      - name: List entries due for verification
+        id: check
+        run: |
+          set +e
+          python -m airegs stale --official --exit-code > instruments.txt; a=$?
+          python -m airegs stale --official --requirements --exit-code > requirements.txt; b=$?
+          set -e
+          for c in $a $b; do if [ "$c" -ne 0 ] && [ "$c" -ne 3 ]; then exit "$c"; fi; done
+          {
+            echo "Entries not verified against official sources in the last 90 days, as of $(date -u +%F)."
+            echo "Instruments are ordered by their next milestone. This issue is rewritten every Monday"
+            echo "and closed when nothing is due."
+            echo
+            echo "### Instruments"; echo '```'; cat instruments.txt; echo '```'
+            echo "### Requirements"; echo '```'; cat requirements.txt; echo '```'
+          } > body.md
+          cat body.md >> "$GITHUB_STEP_SUMMARY"
+          echo "due=$([ "$a" -eq 3 ] || [ "$b" -eq 3 ] && echo true || echo false)" >> "$GITHUB_OUTPUT"
+      - name: Open, update or close the stale issue
+        run: |
+          gh label create stale --color fbca04 --description "Due for re-verification" --force
+          n=$(gh issue list --label stale --state open --json number --jq '.[0].number')
+          if [ "${{ steps.check.outputs.due }}" = "true" ]; then
+            if [ -n "$n" ]; then
+              gh issue edit "$n" --body-file body.md
+            else
+              gh issue create --title "Entries due for re-verification" --label stale --body-file body.md
+            fi
+          elif [ -n "$n" ]; then
+            gh issue close "$n" --comment "Nothing is due for re-verification any more."
+          fi

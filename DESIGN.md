@@ -120,8 +120,14 @@ without changing the source of truth.
 **Watchers (tier 1, deterministic).** Each source can set `watch: true`. `airegs watch`
 fetches the page, normalises the text (strips tags and whitespace), hashes it, and
 compares the hash with `state/watch.json`. A change becomes a "check this" item. It
-does not change any facts on its own. Where a source offers structured feeds, use those
-in preference to scraping:
+does not change any facts on its own. A page with no visible text counts as an error,
+not a hash, because it is usually a bot challenge. EUR-Lex ELI links are not scraped
+(EUR-Lex serves scripts an empty challenge, and an Official Journal text never changes):
+the watcher asks the CELLAR SPARQL endpoint which acts amend, correct, consolidate,
+repeal, supplement or propose to amend the act, and reports each new one by CELEX
+number. Sites that block scripts outright (iso.org, coe.int) are not watched; the weekly
+stale report covers them. Where a source offers structured feeds, use those in
+preference to scraping:
 
 | Source | Feed |
 |---|---|
@@ -142,9 +148,12 @@ The human reviewer checks the quotes. The model never becomes the source.
 ordered by the nearest upcoming milestone. A deadline next month matters more than a
 2023 standard.
 
-**Scheduling.** GitHub Actions cron (nightly watch, weekly discovery, weekly stale
-report posted as an issue). The workflow in this repo only validates and tests. The
-scheduled jobs are described here but not switched on.
+**Scheduling.** `.github/workflows/watch.yml` runs the watch nightly and the stale
+report weekly (Mondays, with `--official`). The watch opens an issue labelled
+`source-change` when anything changes, or comments on the open one. The stale report
+keeps one issue labelled `stale` up to date and closes it when nothing is due. The
+watch hashes are kept in the Actions cache; if it is evicted, the next run starts
+again from "new". Weekly discovery is not built yet.
 
 ## 5. Querying
 

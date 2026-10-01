@@ -144,7 +144,7 @@ def cmd_stale(instruments, args):
             print(f"{r.key:40} verified {str(r.last_verified or 'never'):10} "
                   f"{('(' + r.verified_against + ')') if r.verified_against else ''}")
         print(f"{len(pending)} requirement(s) due for verification")
-        return
+        return 3 if args.exit_code and pending else None
     if not stale:
         print(f"Everything verified since {cutoff}.")
     for i in sorted(stale, key=lambda i: (next_milestone(i), i.id)):
@@ -152,6 +152,7 @@ def cmd_stale(instruments, args):
         nxt_s = f"next milestone {nxt}" if nxt != dt.date.max else "no upcoming milestone"
         against = f"({i.verified_against})" if i.verified_against else ""
         print(f"{i.id:32} verified {str(i.last_verified or 'never'):10} {against:12} {nxt_s}")
+    return 3 if args.exit_code and stale else None
 
 
 def _wrap(text, indent="      ", width=88):
@@ -293,6 +294,10 @@ def cmd_watch(instruments, args):
     for r in results:
         extra = f"  {r['error']}" if r.get("error") else ""
         print(f"{r['status']:9} {r['instrument']:28} {r['url']}{extra}")
+        for sign, key in (("+", "added"), ("-", "removed")):
+            for item in r.get(key, []):
+                celex = item.rsplit(" ", 1)[1]
+                print(f"          {sign} {item}  https://eur-lex.europa.eu/legal-content/EN/TXT/?uri=CELEX:{celex}")
     if any(r["status"] == "changed" for r in results):
         return 3  # lets a scheduled job open an issue only when something moved
 
@@ -343,6 +348,8 @@ def main(argv=None) -> int:
                     help="also list entries verified only against secondary sources")
     sp.add_argument("--requirements", action="store_true",
                     help="list requirements instead of instruments")
+    sp.add_argument("--exit-code", action="store_true",
+                    help="exit 3 if anything is due (for scheduled jobs)")
     sp.set_defaults(fn=cmd_stale)
 
     sp = sub.add_parser("obligations", help="filter requirements across instruments")
