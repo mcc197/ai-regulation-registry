@@ -16,7 +16,7 @@ python -m airegs show eu-ai-act                          # full timeline + sourc
 python -m airegs search 'literacy OR watermark*'         # full-text search
 python -m airegs stale                                   # due for re-verification
 python -m airegs build    # -> build/registry.db (open with sqlite3 or `datasette`)
-python -m airegs watch    # hash watched source pages; exit code 3 if any changed
+python -m airegs watch    # check watched sources (EUR-Lex via CELLAR); exit 3 if any changed
 
 # Obligations: filter requirements across every law and standard
 python -m airegs obligations --assurance certification --assurance third-party-assessment
@@ -57,7 +57,9 @@ open it in Chrome and choose Install app.
    and `verified_against` to `official` or `secondary` for what you actually read.
 4. Run `python -m airegs validate` and `pytest`.
 
-`airegs stale` lists entries not checked in the last 90 days. `airegs stale --official`
+`airegs stale` lists entries not checked in the last 90 days (`--exit-code` exits 3
+if anything is due). Both checks run on a schedule and report through GitHub issues;
+see "Scheduling" in DESIGN.md. `airegs stale --official`
 also lists entries checked only against secondary sources (law-firm notes,
 trackers). As of 27 Sept 2026 that is four entries (Korea, the two Colorado laws and
 the CoE Convention), because their official sites were unreachable from the

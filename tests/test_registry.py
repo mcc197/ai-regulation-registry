@@ -118,6 +118,51 @@ def test_watch_records_fetch_errors(registry, tmp_path):
     assert r["status"] == "error" and "offline" in r["error"]
 
 
+def test_watch_treats_blank_pages_as_errors(registry, tmp_path):
+    # EUR-Lex serves scripts an empty bot challenge; hashing it would hide real changes.
+    (r,) = watch.check([registry["nist-ai-rmf"]], tmp_path / "w.json", lambda url: "<script>x</script>")
+    assert r["status"] == "error" and "no visible text" in r["error"]
+
+
+def test_watch_lists_added_and_removed_items(registry, tmp_path):
+    insts, state = [registry["nist-ai-rmf"]], tmp_path / "w.json"
+    feeds = iter([["corrigendum A", "amended by B"], ["amended by B", "amended by B"],
+                  ["amended by B", "amended by C"]])
+    fetch = lambda url: next(feeds)
+    assert [r["status"] for r in watch.check(insts, state, fetch)] == ["new"]
+    assert [r["status"] for r in watch.check(insts, state, fetch)] == ["changed"]
+    (r,) = watch.check(insts, state, fetch)
+    assert r["status"] == "changed" and r["added"] == ["amended by C"] and r["removed"] == []
+
+
+def test_watch_sends_eurlex_links_to_cellar(monkeypatch):
+    seen = []
+    monkeypatch.setattr(watch, "eu_relations", lambda eli, timeout: seen.append(eli) or ["x"])
+    assert watch.fetch("https://eur-lex.europa.eu/eli/reg/2024/1689/oj") == ["x"]
+    assert seen == ["http://data.europa.eu/eli/reg/2024/1689/oj"]
+
+
+@pytest.mark.parametrize("p, celex, kept", [
+    ("resource_legal_amends_resource_legal", "32026R1744", "amended by 32026R1744"),
+    ("act_consolidated_consolidates_resource_legal", "02024R1689-20260727",
+     "consolidated version 02024R1689-20260727"),
+    ("act_consolidated_consolidates_resource_legal", "02018R1139-20260802", None),
+    ("resource_legal_proposes_to_amend_resource_legal", "52025PC0836", "proposal to amend 52025PC0836"),
+    ("resource_legal_based_on_resource_legal", "52025IP0198", None),
+])
+def test_eu_relation_filter(p, celex, kept):
+    row = {"own": "32024R1689", "p": f"http://publications.europa.eu/ontology/cdm#{p}", "celex": celex}
+    assert watch._relation(row) == kept
+
+
+def test_stale_exit_code_only_when_something_is_due(tmp_path):
+    raw = minimal(last_verified="2026-09-01", verified_against="official")
+    (tmp_path / "x.yaml").write_text(yaml.safe_dump(raw))
+    args = ["--data", str(tmp_path), "stale", "--exit-code"]
+    assert cli.main(args + ["--today", "2026-09-27"]) == 0
+    assert cli.main(args + ["--today", "2027-09-27"]) == 3
+
+
 def test_verified_against_is_required_with_last_verified():
     with pytest.raises(ValidationError, match="needs verified_against"):
         parse(minimal(last_verified="2026-01-01"), "x.yaml")
@@ -225,7 +270,7 @@ def test_export_and_explorer(registry, tmp_path, capsys):
 def test_obligations_cli(capsys):
     cli.main(["obligations", "--role", "deployer", "-j", "EU", "--category", "impact-assessment"])
     out = capsys.readouterr().out
-    assert "eu-ai-act#art-27" in out and "1 requirement(s)" in out
+    assert "eu-ai-act#art-27" in out and "eu-gdpr#art-35-36" in out and "2 requirement(s)" in out
 
 
 def test_site_builds_installable_app(tmp_path):

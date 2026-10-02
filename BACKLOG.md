@@ -41,7 +41,6 @@ must be verified when each entry is added.
 |---|---|
 | **China AI-generated content Labelling Measures** (in force 1 Sep 2025) and **GB 45438-2025** | Detailed explicit and implicit labelling duties; completes the China picture |
 | **China Deep Synthesis and Algorithm Recommendation provisions** | Algorithm filing and security assessment regime the GenAI Measures rely on |
-| **EU GDPR Art. 22 and Art. 35 (DPIA)** | Automated decisions and data protection impact assessments for most AI processing personal data |
 | **EU Product Liability Directive (EU) 2024/2853** (applies Dec 2026) | Software and AI become products for strict liability; drives documentation and logging |
 | **EU Cyber Resilience Act** | Security-by-design and vulnerability handling for products with digital elements, including AI components |
 | **Texas TRAIGA (HB 149)**, **Illinois HB 3773**, **Utah AI Policy Act** | State AI laws on disclosure, employment and prohibited uses |

@@ -20,7 +20,7 @@ milestones:
   - {date: 2024-05-17, event: adopted, scope: Committee of Ministers}
   - {date: 2024-09-05, event: signed, scope: Opened for signature}
 sources:
-  - {url: "https://www.coe.int/en/web/conventions/full-list?module=treaty-detail&treatynum=225", label: CoE Treaty Office (signatures and ratifications), kind: official, watch: true}
+  - {url: "https://www.coe.int/en/web/conventions/full-list?module=treaty-detail&treatynum=225", label: CoE Treaty Office (signatures and ratifications), kind: official}
   - {url: "https://www.coe.int/en/web/artificial-intelligence/-/european-union-ratifies-the-council-of-europe-framework-convention-on-artificial-intelligence", label: CoE news (EU ratification), kind: official}
   - {url: "https://op.europa.eu/en/publication-detail/-/publication/c54893c6-4e64-11f1-b3e2-01aa75ed71a1/language-en", label: Council Decision (EU) 2026/1080, kind: official}
   - {url: "https://eur-lex.europa.eu/eli/agree_internation/2026/1081/oj", label: "Convention text in the EU Official Journal (OJ L 2026/1081)", kind: official}

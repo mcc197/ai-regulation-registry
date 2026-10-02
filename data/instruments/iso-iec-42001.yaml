@@ -18,8 +18,8 @@ relations:
   - {type: supported_by, target: iso-iec-42005}
   - {type: referenced_by, target: en-18286}
 sources:
-  - {url: "https://www.iso.org/standard/81230.html", label: ISO catalogue, kind: official, watch: true}
-  - {url: "https://webstore.iec.ch/en/publication/90574", label: IEC webstore, kind: official}
+  - {url: "https://www.iso.org/standard/81230.html", label: ISO catalogue, kind: official}
+  - {url: "https://webstore.iec.ch/en/publication/90574", label: IEC webstore, kind: official, watch: true}
   - {url: "https://www.dataguidance.com/news/international-iso-publishes-isoiec-420012023-ai", label: DataGuidance, kind: secondary}
 last_verified: 2026-09-27
 verified_against: official

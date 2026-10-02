@@ -13,7 +13,8 @@ summary: >
   high-risk systems and their providers and deployers, sets transparency duties for
   some systems and AI-generated content, and sets obligations for general-purpose AI
   models. Application is phased. The Digital Omnibus on AI (2026/1744) moved the
-  high-risk dates and added two prohibited practices.
+  high-risk dates and added two prohibited practices. A pending proposal
+  (COM(2025) 1023) would move AI in medical devices out of the high-risk regime.
 milestones:
   - {date: 2021-04-21, event: proposed, scope: Commission proposal COM(2021) 206}
   - {date: 2024-06-13, event: signed}
@@ -41,12 +42,14 @@ milestones:
     note: Was 2 Aug 2027 before Regulation (EU) 2026/1744
 relations:
   - {type: amended_by, target: eu-ai-omnibus}
+  - {type: amended_by, target: eu-md-ivd-simplification}
   - {type: implemented_by, target: eu-gpai-code-of-practice}
   - {type: supported_by, target: en-18286}
   - {type: supported_by, target: pren-18283}
   - {type: references, target: eu-dsa}
 sources:
   - {url: "https://eur-lex.europa.eu/eli/reg/2024/1689/oj", label: EUR-Lex (original text), kind: official, watch: true}
+  - {url: "https://eur-lex.europa.eu/legal-content/EN/TXT/?uri=CELEX:02024R1689-20260727", label: "EUR-Lex consolidated text (as amended by 2026/1744, from 27 Jul 2026)", kind: official}
   - {url: "https://www.gibsondunn.com/eu-ai-act-omnibus-agreement-postponed-high-risk-deadlines-and-other-key-changes/", label: Gibson Dunn on the Omnibus dates, kind: secondary}
 last_verified: 2026-09-27
 verified_against: official
@@ -60,6 +63,14 @@ review_notes: >
   2 Dec 2026 milestone for the new prohibitions, which was missing. Not recorded as a
   milestone: 2026/1744 also makes Arts 102 to 110 (amendments to other Union acts)
   apply from 27 Jul 2026. No consolidated text was checked.
+  Checked on 2026-10-01 against the CELLAR metadata the nightly watch now uses: the
+  Publications Office has published a consolidated text dated 27 Jul 2026 (added as a
+  source). The four corrigenda to the original text (R(01) to R(04), Oct 2025 to May
+  2026) exist only in other language versions, not English, so they do not affect the
+  English text checked here. Commission Implementing Regulation (EU) 2026/1755 of
+  20 Jul 2026 sets procedural rules for Commission proceedings under the Act and adds
+  no duties for providers or deployers. Proposal COM(2025) 1023 is recorded as
+  eu-md-ivd-simplification.
 requirements:
   - id: art-4
     ref: Art. 4
